@@ -136,7 +136,14 @@ Only now should you start worrying about what the device should look like. Devel
 
 \*\***Take a video of your prototyped interaction.**\*\*
 
+#### Set up DateLight Profile
+[![Prototyped Interaction Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%201/videocover3.png)](https://drive.google.com/file/d/1Yi82T-KeCm0laz-F20mP987x540bj-D5/view?usp=sharing)
+
+#### Walk past someone with low compatibility
 [![Prototyped Interaction Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%201/videocover.png)](https://drive.google.com/file/d/1SKNph4-WmPY0BgrFO4LxD8fuE-YXKRYg/view?usp=sharing)
+
+#### Walk past someone with high compatibility: Matches
+[![Prototyped Interaction Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%201/videocover4.png)](https://drive.google.com/file/d/1ibcCMtaqHJMdF6IdU9tX90gv_mVqfJAu/view?usp=sharing)
 
 \*\***Please indicate anyone you collaborated with on this Lab.**\*\*
 
