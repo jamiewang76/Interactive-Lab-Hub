@@ -111,10 +111,10 @@ Now, hange the goal within the same setting, and update the interaction with the
 
 \*\***Show the follow-up work here.**\*\*
 
-# Find a friend with DateLight:
+#### Find a friend with DateLight:
 ![Alt Text](findfriend.png)
 
-# Find a lover with DateLight:
+#### Find a lover with DateLight:
 ![Alt Text](findlover.png)
 
 
