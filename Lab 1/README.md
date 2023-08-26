@@ -125,8 +125,7 @@ Think about the setting of the device: is the environment a place where the devi
 
 \*\***Take a video of your prototyped interaction.**\*\*
 
-![Alt Text](Datelight.mp4)
-
+[![Staging Interaction Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%201/storyboard.png)](https://drive.google.com/file/d/1SKNph4-WmPY0BgrFO4LxD8fuE-YXKRYg/view?usp=sharing)
 \*\***Please indicate anyone you collaborated with on this Lab.**\*\*
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
 
