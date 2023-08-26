@@ -87,28 +87,21 @@ _Goals:_ To help user make friends/find love in a big city
 
 ## Part B. Act out the Interaction
 
-Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
-
 \*\***Are there things that seemed better on paper than acted out?**\*\*
+
+No.
 
 \*\***Are there new ideas that occur to you or your collaborators that come up from the acting?**\*\*
 
+Yes. At first, we planned to directly change the color from white to pink if the user meets other matched users. As we started the acting, we decided to make the transition smoother. As the two users walk closer to each other, the light color of the necklace gradually changes from white to pink.
 
 ## Part C. Prototype the device
 
-You will be using your smartphone as a stand-in for the device you are prototyping. You will use the browser of your smart phone to act as a “light” and use a remote control interface to remotely change the light on that device. 
-
-Code for the "Tinkerbelle" tool, and instructions for setting up the server and your phone are [here](https://github.com/FAR-Lab/tinkerbelle).
-
-We invented this tool for this lab! 
-
-If you run into technical issues with this tool, you can also use a light switch, dimmer, etc. that you can can manually or remotely control.
-
 \*\***Give us feedback on Tinkerbelle.**\*\*
 
+Still having error to set up even though python3 version has been updated to 3.8.8 in both base and virtual environment.
 
 ## Part D. Wizard the device
-Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record. 
 
 \*\***Include your first attempts at recording the set-up video here.**\*\*
 
