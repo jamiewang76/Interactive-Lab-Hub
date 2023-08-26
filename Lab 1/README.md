@@ -59,15 +59,22 @@ Labs are due on Mondays. Make sure this page is linked to on your main class hub
 
 ## Part A. Plan 
 
-To stage an interaction with your interactive device, think about:
+In today's challenging dating scene, where face-to-face interactions can be intimidating, DateLight is our solution. It revolutionizes compatibility assessment through color indicators displayed on users' heart-shaped pendant necklace. DateLight assigns colors — from white to hot pink, it indicates different levels of compatibility between users — enabling users to gauge potential matches as they cross paths.
 
-_Setting:_ Where is this interaction happening? (e.g., a jungle, the kitchen) When is it happening?
+_Setting:_ In the central park, where passersby are scattered in a moderate density.
 
-_Players:_ Who is involved in the interaction? Who else is there? If you reflect on the design of current day interactive devices like the Amazon Alexa, it’s clear they didn’t take into account people who had roommates, or the presence of children. Think through all the people who are in the setting.
+_Players:_ Users who use the DateLight app, in search for high compatibility friends or lovers.
 
-_Activity:_ What is happening between the actors?
+_Activity:_ 
+1. User individually set up a dating profile on DateLight
+2. DateLight can be accessed on smartphones, tablets, and smart watches
+3. DateLight would auto-compare two profiles and output a matching score from 0-100 (least matchable to most matchable)
+4. Score 0-100 mirrors to the gradient shift of blue to bright pink
+5. DateLight will detect DateLight users within 10-meters radius and display colors to show compatibility
+6. When two users’ matching score is higher than 80, DateLight will alert both users that a high-matching candidate is within the radius, and their devices would vibrate/play sound
 
-_Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening the fridge). 
+
+_Goals:_ To help user make friends/find love in a big city
 
 The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
 
