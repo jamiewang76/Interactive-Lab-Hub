@@ -128,6 +128,9 @@ Only now should you start worrying about what the device should look like. Devel
 
 \*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\*
 
+1.We designed the device to be wearable as a necklace because we want to separate the experience from regular phone activities.
+2.Necklace also serves as a signifier of DateLight users, so that the matched users can recognize each other easier.
+
 
 ## Part F. Record
 
@@ -136,7 +139,8 @@ Only now should you start worrying about what the device should look like. Devel
 [![Prototyped Interaction Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%201/videocover.png)](https://drive.google.com/file/d/1SKNph4-WmPY0BgrFO4LxD8fuE-YXKRYg/view?usp=sharing)
 
 \*\***Please indicate anyone you collaborated with on this Lab.**\*\*
-Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
+
+Members: Jamie Wang, Yiming Sheng, Yunfei Jiao
 
 
 
