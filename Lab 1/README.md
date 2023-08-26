@@ -80,8 +80,8 @@ _Goals:_ To help user make friends/find love in a big city
 
 \*\***Include pictures of your storyboards here**\*\*
 
-![alt text](Lab 1/Screen Shot 2023-08-25 at 10.43.25 PM.png)
-![Alt Text](Lab 1/Screen Shot 2023-08-25 at 10.43.25 PM.png)
+![alt text](Screen Shot 2023-08-25 at 10.43.25 PM.png)
+![Alt Text](Screen Shot 2023-08-25 at 10.43.25 PM.png)
 
 \*\***Summarize feedback you got here.**\*\*
 
