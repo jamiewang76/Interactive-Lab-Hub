@@ -105,6 +105,8 @@ Still having error to set up even though python3 version has been updated to 3.8
 
 \*\***Include your first attempts at recording the set-up video here.**\*\*
 
+[![set-up video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%201/videocover2.png)](https://drive.google.com/file/d/1haPE5jgVUpp3t6X2N_RBVlau4dIB0gUo/view?usp=sharing)
+
 Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
 
 \*\***Show the follow-up work here.**\*\*
@@ -125,7 +127,8 @@ Think about the setting of the device: is the environment a place where the devi
 
 \*\***Take a video of your prototyped interaction.**\*\*
 
-[![Staging Interaction Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%201/videocover.png)](https://drive.google.com/file/d/1SKNph4-WmPY0BgrFO4LxD8fuE-YXKRYg/view?usp=sharing)
+[![Prototyped Interaction Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%201/videocover.png)](https://drive.google.com/file/d/1SKNph4-WmPY0BgrFO4LxD8fuE-YXKRYg/view?usp=sharing)
+
 \*\***Please indicate anyone you collaborated with on this Lab.**\*\*
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
 
