@@ -84,6 +84,9 @@ _Goals:_ To help user make friends/find love in a big city
 
 \*\***Summarize feedback you got here.**\*\*
 
+Distance should be considered when designing which user in the range would DateLight compare to;
+Besides light signals, we could also utilize audio or vibrations. Considering the cases where the users are in public settings, vibrations might be a better complement;
+Matching users solely based on heart rate is not sufficiently accurate, as confounding factors such as workouts or nervousness before an interview can also influence users' heart rates.
 
 ## Part B. Act out the Interaction
 
