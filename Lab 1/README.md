@@ -128,6 +128,7 @@ Only now should you start worrying about what the device should look like. Devel
 \*\***Include sketches of what your devices might look like here.**\*\*
 
 ![Alt Text](DateLight_sketch.png)
+![Alt Text](heart_tattoo.jpg)
 
 \*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\*
 
