@@ -166,6 +166,10 @@ This describes the second week's work for this lab activity.
 You will be assigned three partners from another group. Go to their github pages, view their videos, and provide them with reactions, suggestions & feedback: explain to them what you saw happening in their video. Guess the scene and the goals of the character. Ask them about anything that wasn’t clear. 
 
 \*\***Summarize feedback from your partners here.**\*\*
+- Hard to differentiate users when more than 2 people are within the detection range <br /> 
+- Add pointer arrows to indicate the direction of potential matches <br /> 
+- Examine the feasibility of this product<br /> 
+- profile picture for each user could be removed
 
 ## Make it your own
 
@@ -179,8 +183,6 @@ Do last week’s assignment again, but this time:
 IDD-2
 Team members: Jamie Wang, Yiming Sheng, Yunfei Jiao
 *
-
-
 
 
 ## Ex.1 Restroom communication system
