@@ -14,6 +14,7 @@ Author(s): Melissa LeBlanc-Williams for Adafruit Industries
 import digitalio
 import board
 from PIL import Image, ImageDraw
+from adafruit_rgb_display.rgb import color565
 import adafruit_rgb_display.ili9341 as ili9341
 import adafruit_rgb_display.st7789 as st7789  # pylint: disable=unused-import
 import adafruit_rgb_display.hx8357 as hx8357  # pylint: disable=unused-import
@@ -57,6 +58,12 @@ disp = st7789.ST7789(
 )
 # pylint: enable=line-too-long
 
+# these setup the code for our buttons and the backlight and tell the pi to treat the GPIO pins as digitalIO vs analogIO
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
+
 # Create blank image for drawing.
 # Make sure to create image with mode 'RGB' for full color.
 if disp.rotation % 180 == 90:
@@ -75,6 +82,10 @@ draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 disp.image(image)
 
 image = Image.open("red.jpg")
+
+# jamie
+image2 = Image.open("spider.jpeg")
+
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
@@ -91,11 +102,39 @@ else:
     scaled_height = image.height * width // image.width
 image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
 
+# Scale jamie image to the smaller screen dimension
+image_ratio2 = image2.width / image2.height
+screen_ratio = width / height
+if screen_ratio < image_ratio2:
+    scaled_width = image2.width * height // image2.height
+    scaled_height = height
+else:
+    scaled_width = width
+    scaled_height = image2.height * width // image2.width
+image2 = image2.resize((scaled_width, scaled_height), Image.BICUBIC)
+
 # Crop and center the image
 x = scaled_width // 2 - width // 2
 y = scaled_height // 2 - height // 2
 image = image.crop((x, y, x + width, y + height))
 
-# Display image.
-disp.image(image)
+# Crop and center jamie image
+x = scaled_width // 2 - width // 2
+y = scaled_height // 2 - height // 2
+image2 = image2.crop((x, y, x + width, y + height))
 
+# Display image.
+# disp.image(image)
+
+# Main loop:
+while True:
+    if buttonA.value and buttonB.value:
+        backlight.value = False  # turn off backlight
+    else:
+        backlight.value = True  # turn on backlight
+    if buttonB.value and not buttonA.value:  # just button A pressed
+        disp.image(image)
+    if buttonA.value and not buttonB.value:  # just button B pressed
+        disp.image(image2)
+    if not buttonA.value and not buttonB.value:  # none pressed
+        disp.fill(color565(0, 255, 0))  # green
