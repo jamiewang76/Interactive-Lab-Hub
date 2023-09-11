@@ -167,12 +167,38 @@ def main_screen():
 
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
     draw.text((x2, y2), display_hour, font=time_font, fill="#FFFFFF")
-    draw.text((x3, y3), display_title, font=text_font, fill="#FFFFFF")
-    draw.text((x4, y4), display_title2, font=text_font, fill="#FFFFFF")
+    draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
+    draw.text((x4, y4), display_title2, font=text_font, fill="#20E200")
     draw.text((x5, y5), display_option1, font=text_font, fill="#FFFFFF")
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
 # /////////////////////////////////////
+
+def scale_and_crop_and_center(image):
+    image_ratio = image.width / image.height
+    screen_ratio = width / height
+    if screen_ratio < image_ratio:
+        scaled_width = image.width * height // image.height
+        scaled_height = height
+    else:
+        scaled_width = width
+        scaled_height = image.height * width // image.width
+    image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
+    x = scaled_width // 2 - width // 2
+    y = scaled_height // 2 - height // 2
+    image = image.crop((x, y, x + width, y + height))
+    return image
+
+def to_past():
+    image = Image.open("red.jpg")
+    scale_and_crop_and_center(image)
+    disp.image(image)
+
+def to_future():
+    image = Image.open("spider.jpeg")
+    scale_and_crop_and_center(image)
+    disp.image(image)
+    
 
 
 # Main loop:
@@ -193,6 +219,13 @@ while True:
     if state == 0:
         main_screen()
 
+        # Top: state 1: go to past
+        if buttonB.value and not buttonA.value:
+            state = 1
+        # Bottom: state 2: go to future
+        elif not buttonB.value and buttonA.value:
+            state = 2
+        
         # draw.rectangle((0, 0, width, height), outline=0, fill=400)
         # font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
         # x1 = 0.3*width
@@ -204,24 +237,19 @@ while True:
         # draw.text((x1, y1), display_date, font=font, fill="#FFFFFF")
         # draw.text((x2, y2), display_hour, font=font, fill="#FFFFFF")
 
-        # # Top: state 1: go to past
-        # if buttonB.value and not buttonA.value:
-        #     state = 1
-        # # Bottom: state 2: go to future
-        # elif not buttonB.value and buttonA.value:
-        #     state = 2
-
-    #     # traveling to the past
-    # elif state == 1:
-    #     to_past()
+        # traveling to the past
+        elif state == 1:
+            to_past()
+        elif state == 2:
+            to_future()
         
-    #     # Top: randomize
-    #     if buttonB.value and not buttonA.value:
-    #         selected_quote = randrange(10)
-    #         selected_color = randrange(10)
-    #     # Bottom: return to main
-    #     elif not buttonB.value and buttonA.value:
-    #         state = 0
+        # # Top: randomize
+        # if buttonB.value and not buttonA.value:
+        #     selected_quote = randrange(10)
+        #     selected_color = randrange(10)
+        # # Bottom: return to main
+        # elif not buttonB.value and buttonA.value:
+        #     state = 0
 
     # # traveling to the future
     # elif state == 2:
