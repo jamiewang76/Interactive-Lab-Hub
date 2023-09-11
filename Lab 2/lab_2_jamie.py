@@ -173,7 +173,7 @@ while True:
         draw.rectangle((0, 0, width, height), outline=0, fill=400)
         font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
         x1 = 0.3*width
-        x2 = 0.4*width
+        x2 = 0.35*width
         y1 = 0.05*height
         y2 = 0.2*height
         display_date = strftime("%m/%d/%Y")
