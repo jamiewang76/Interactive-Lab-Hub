@@ -63,9 +63,9 @@ disp = st7789.ST7789(
 # pylint: enable=line-too-long
 
 # these setup the code for our buttons and the backlight and tell the pi to treat the GPIO pins as digitalIO vs analogIO
-# backlight = digitalio.DigitalInOut(board.D22)
-# backlight.switch_to_output()
-# backlight.value = True
+backlight = digitalio.DigitalInOut(board.D22)
+backlight.switch_to_output()
+backlight.value = True
 buttonA = digitalio.DigitalInOut(board.D23)
 buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
@@ -202,11 +202,11 @@ while True:
             state = 1
 
         if buttonB.value and buttonA.value:
-            # backlight.value = False
+            backlight.value = False
             state = 0
 
         if not buttonB.value and not buttonA.value:
-            # backlight.value = False
+            backlight.value = False
             state = 0
 
     elif state == 1:
