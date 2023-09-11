@@ -123,11 +123,6 @@ def main_screen():
     draw.text((x5, y5), display_option1, font=text_font, fill="#FFFFFF")
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
-def ToPast():
-    Jiao()
-    PastCarousel()
-    print("to past")
-
 
 def Jiao():
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
@@ -247,6 +242,10 @@ def Wright():
     draw.text((x3, y3), display_title, font=text_font, fill="#9A00E2")
     draw.text((x4, y4), display_title2, font=text_font, fill="#9A00E2")
 
+def ToPast():
+    Jiao()
+    PastCarousel()
+    print("to past")
 
 def ToFuture():
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 12)
