@@ -11,6 +11,7 @@ not support PIL/pillow (python imaging library)!
 Author(s): Melissa LeBlanc-Williams for Adafruit Industries
 """
 import time
+import subprocess
 import digitalio
 import board
 from PIL import Image, ImageDraw, ImageFont
@@ -21,6 +22,8 @@ import adafruit_rgb_display.hx8357 as hx8357  # pylint: disable=unused-import
 import adafruit_rgb_display.st7735 as st7735  # pylint: disable=unused-import
 import adafruit_rgb_display.ssd1351 as ssd1351  # pylint: disable=unused-import
 import adafruit_rgb_display.ssd1331 as ssd1331  # pylint: disable=unused-import
+
+from time import strftime, sleep
 
 # Configuration for CS and DC pins (these are PiTFT defaults):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -73,80 +76,78 @@ padding = -2
 top = padding
 bottom = height - padding
 
-# Create blank image for drawing.
-# Make sure to create image with mode 'RGB' for full color.
-if disp.rotation % 180 == 90:
-    height = disp.width  # we swap height/width to rotate it to landscape!
-    width = disp.height
-else:
-    width = disp.width  # we swap height/width to rotate it to landscape!
-    height = disp.height
+# # Create blank image for drawing.
+# # Make sure to create image with mode 'RGB' for full color.
+# if disp.rotation % 180 == 90:
+#     height = disp.width  # we swap height/width to rotate it to landscape!
+#     width = disp.height
+# else:
+#     width = disp.width  # we swap height/width to rotate it to landscape!
+#     height = disp.height
 image = Image.new("RGB", (width, height))
 
-# Get drawing object to draw on image.
+# # Get drawing object to draw on image.
 draw = ImageDraw.Draw(image)
 
-# Draw a black filled box to clear the image.
-draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-disp.image(image)
+# # Draw a black filled box to clear the image.
+# draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+# disp.image(image)
 
-image = Image.open("red.jpg")
+# image = Image.open("red.jpg")
 
-# jamie
-image2 = Image.open("spider.jpeg")
+# # jamie
+# image2 = Image.open("spider.jpeg")
 
-backlight = digitalio.DigitalInOut(board.D22)
-backlight.switch_to_output()
-backlight.value = True
+# backlight = digitalio.DigitalInOut(board.D22)
+# backlight.switch_to_output()
+# backlight.value = True
 
 
-# Scale the image to the smaller screen dimension
-image_ratio = image.width / image.height
-screen_ratio = width / height
-if screen_ratio < image_ratio:
-    scaled_width = image.width * height // image.height
-    scaled_height = height
-else:
-    scaled_width = width
-    scaled_height = image.height * width // image.width
-image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
+# # Scale the image to the smaller screen dimension
+# image_ratio = image.width / image.height
+# screen_ratio = width / height
+# if screen_ratio < image_ratio:
+#     scaled_width = image.width * height // image.height
+#     scaled_height = height
+# else:
+#     scaled_width = width
+#     scaled_height = image.height * width // image.width
+# image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
 
-# Scale jamie image to the smaller screen dimension
-image_ratio2 = image2.width / image2.height
-screen_ratio = width / height
-if screen_ratio < image_ratio2:
-    scaled_width = image2.width * height // image2.height
-    scaled_height = height
-else:
-    scaled_width = width
-    scaled_height = image2.height * width // image2.width
-image2 = image2.resize((scaled_width, scaled_height), Image.BICUBIC)
+# # Scale jamie image to the smaller screen dimension
+# image_ratio2 = image2.width / image2.height
+# screen_ratio = width / height
+# if screen_ratio < image_ratio2:
+#     scaled_width = image2.width * height // image2.height
+#     scaled_height = height
+# else:
+#     scaled_width = width
+#     scaled_height = image2.height * width // image2.width
+# image2 = image2.resize((scaled_width, scaled_height), Image.BICUBIC)
 
-# Crop and center the image
-x = scaled_width // 2 - width // 2
-y = scaled_height // 2 - height // 2
-image = image.crop((x, y, x + width, y + height))
+# # Crop and center the image
+# x = scaled_width // 2 - width // 2
+# y = scaled_height // 2 - height // 2
+# image = image.crop((x, y, x + width, y + height))
 
-# Crop and center jamie image
-x = scaled_width // 2 - width // 2
-y = scaled_height // 2 - height // 2
-image2 = image2.crop((x, y, x + width, y + height))
+# # Crop and center jamie image
+# x = scaled_width // 2 - width // 2
+# y = scaled_height // 2 - height // 2
+# image2 = image2.crop((x, y, x + width, y + height))
 
 # Display image.
 # disp.image(image)
 
 def main_screen():
-    cur_date = time.strftime("%m/%d/%Y", time.localtime())
-    cur_hour = time.localtime()[3]
-    
-    # Print day
+    # draw.rectangle((0, 0, width, height), outline=0, fill=400)
+
     font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+    x = 0.5*width
     y = top
-    x = font.getsize(" ")[0]*11
-    draw.text((x,y), cur_date, font=font, fill= "#20E200")
-    line_inc = font.getsize(cur_date)[1]
-    y += line_inc*1.7
-    x = 0
+    display_date = strftime("%m/%d/%Y")
+    display_hour = strftime("%H:%M:%S")
+    draw.text((x, y), display_date, font=font, fill="#FFFFFF")
+    draw.text((x, 10*y), display_hour, font=font, fill="#FFFFFF")
 
 
 # Main loop:
