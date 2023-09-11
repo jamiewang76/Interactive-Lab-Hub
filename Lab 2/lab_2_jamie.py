@@ -201,13 +201,13 @@ while True:
         if buttonA.value and not buttonB.value:
             state = 1
 
-        if buttonB.value and buttonA.value:
-            # backlight.value = False
-            state = 0
+        # if buttonB.value and buttonA.value:
+        #     # backlight.value = False
+        #     state = 0
 
-        if not buttonB.value and not buttonA.value:
-            # backlight.value = False
-            state = 0
+        # if not buttonB.value and not buttonA.value:
+        #     # backlight.value = False
+        #     state = 0
 
     elif state == 1:
         to_past()
