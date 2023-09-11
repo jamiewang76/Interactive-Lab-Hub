@@ -64,6 +64,8 @@ buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
 
+state = 0
+
 # First define some constants to allow easy resizing of shapes.
 height = disp.width  # we swap height/width to rotate it to landscape!
 width = disp.height
