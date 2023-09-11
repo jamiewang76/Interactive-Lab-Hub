@@ -170,7 +170,7 @@ while True:
     if state == 0:
         # main_screen()
 
-        draw.rectangle((0, 0, width, height), outline=0, fill=400)
+        # draw.rectangle((0, 0, width, height), outline=0, fill=400)
         font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
         x1 = 0.3*width
         x2 = 0.35*width
