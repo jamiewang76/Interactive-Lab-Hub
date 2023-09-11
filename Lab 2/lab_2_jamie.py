@@ -243,9 +243,15 @@ while True:
 
         # Bottom: state 2: go to future
         elif not buttonB.value and buttonA.value:
-            state = 2
+            state = 1
+
+        elif buttonB.value and buttonA.value:
+            state = 0
+
+        elif not buttonB.value and not buttonA.value:
+            state = 0
 
     elif state == 1:
         to_past()
-        
+
     time.sleep(1)
