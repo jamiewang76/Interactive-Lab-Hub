@@ -67,7 +67,7 @@ while True:
 
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
 
-    font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
+    font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
     y = top
     display_time = strftime("%m/%d/%Y %H:%M:%S")
     draw.text((x, y), display_time, font=font, fill="#FFFFFF")
