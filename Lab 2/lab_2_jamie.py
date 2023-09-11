@@ -149,9 +149,9 @@ def main_screen():
     y2 = 0.17*height
 
     x3 = 0.1*width
-    y3 = 0.3*height
+    y3 = 0.35*height
     x4 = 0.4*width
-    y4 = 0.4*height
+    y4 = 0.45*height
 
     display_date = strftime("%m/%d/%Y")
     display_hour = strftime("%H:%M:%S")
