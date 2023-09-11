@@ -32,12 +32,18 @@ disp = st7789.ST7789(
     y_offset=40,
 )
 
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
+
 # Create blank image for drawing.
 # Make sure to create image with mode 'RGB' for full color.
 height = disp.width  # we swap height/width to rotate it to landscape!
 width = disp.height
 image = Image.new("RGB", (width, height))
 rotation = 90
+state = 0
 
 # Get drawing object to draw on image.
 draw = ImageDraw.Draw(image)
@@ -115,12 +121,83 @@ def main_screen():
     draw.text((x5, y5), display_option1, font=text_font, fill="#FFFFFF")
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
+def ToPast():
+    time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 20)
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 20)
+
+    x1 = 0.3*width
+    y1 = 0.05*height
+    x2 = 0.35*width
+    y2 = 0.17*height
+
+    x3 = 0.1*width
+    y3 = 0.33*height
+    x4 = 0.4*width
+    y4 = 0.46*height
+
+    x5 = 0.1*width
+    y5 = 0.65*height
+    x6 = 0.1*width
+    y6 = 0.80*height
+
+    display_date = strftime("%m/%d/%Y")
+    display_hour = strftime("%H:%M:%S")
+    display_title = "ARE YOU READY"
+    display_title2 = "FOR TIME TRAVEL?"
+    display_option1 = "> Forward to the back"
+    display_option2 = "> Back to the future"
+
+    draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
+    draw.text((x2, y2), display_hour, font=time_font, fill="#FFFFFF")
+    draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
+    draw.text((x4, y4), display_title2, font=text_font, fill="#20E200")
+    draw.text((x5, y5), display_option1, font=text_font, fill="#FFFFFF")
+    draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
+def ToFuture():
+    time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 12)
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 12)
+
+    x1 = 0.3*width
+    y1 = 0.05*height
+    x2 = 0.35*width
+    y2 = 0.17*height
+
+    x3 = 0.1*width
+    y3 = 0.33*height
+    x4 = 0.4*width
+    y4 = 0.46*height
+
+    x5 = 0.1*width
+    y5 = 0.65*height
+    x6 = 0.1*width
+    y6 = 0.80*height
+
+    display_date = strftime("%m/%d/%Y")
+    display_hour = strftime("%H:%M:%S")
+    display_title = "ARE YOU READY"
+    display_title2 = "FOR TIME TRAVEL?"
+    display_option1 = "> Forward to the back"
+    display_option2 = "> Back to the future"
+
+    draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
+    draw.text((x2, y2), display_hour, font=time_font, fill="#FFFFFF")
+    draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
+    draw.text((x4, y4), display_title2, font=text_font, fill="#20E200")
+    draw.text((x5, y5), display_option1, font=text_font, fill="#FFFFFF")
+    draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
 
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=400)
 
-    main_screen()
+    if state == 0:
+        main_screen()
+        if buttonA.value and not buttonB.value:
+            ToPast()
+        if buttonB.value and not buttonA.value:
+            ToFuture()
 
 
 
