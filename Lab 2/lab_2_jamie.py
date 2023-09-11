@@ -82,12 +82,7 @@ def delta_sleep(s):
         needed_sleep = (initial_time+s) - int(time.time())
         time.sleep(needed_sleep)
 
-
-
-while True:
-    # Draw a black filled box to clear the image.
-    draw.rectangle((0, 0, width, height), outline=0, fill=400)
-
+def main_screen():
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
     text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
@@ -120,25 +115,34 @@ while True:
     draw.text((x5, y5), display_option1, font=text_font, fill="#FFFFFF")
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
+
+while True:
+    # Draw a black filled box to clear the image.
+    draw.rectangle((0, 0, width, height), outline=0, fill=400)
+
+    main_screen()
+
+
+
     
-    #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
-    font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
-    y = top
-    display_time = strftime("%m/%d/%Y %H:%M:%S")
-    # draw.text((x, y), display_time, font=font, fill="#FFFFFF")
+    # #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
+    # font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
+    # y = top
+    # display_time = strftime("%m/%d/%Y %H:%M:%S")
+    # # draw.text((x, y), display_time, font=font, fill="#FFFFFF")
     
-    if current_year>1983:
-        draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
-        print(current_year)
-        disp.image(image, rotation)
-        current_year -= 10
-    else: 
-        def now_we_stop():
-            draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
-        delta_sleep(5)
-        current_year -= 10
-        disp.image(image, rotation)
-        draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
+    # if current_year>1983:
+    #     draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+    #     print(current_year)
+    #     disp.image(image, rotation)
+    #     current_year -= 10
+    # else: 
+    #     def now_we_stop():
+    #         draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
+    #     delta_sleep(5)
+    #     current_year -= 10
+    #     disp.image(image, rotation)
+    #     draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
 
     
 
