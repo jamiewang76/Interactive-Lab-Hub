@@ -172,12 +172,14 @@ while True:
 
         draw.rectangle((0, 0, width, height), outline=0, fill=400)
         font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-        x = 0.5*width
-        y = top
+        x1 = 0.5*width
+        x2 = 0.5*width
+        y1 = 0.1*height
+        y2 = 0.2*height
         display_date = strftime("%m/%d/%Y")
         display_hour = strftime("%H:%M:%S")
-        draw.text((x, y), display_date, font=font, fill="#FFFFFF")
-        draw.text((x, y), display_hour, font=font, fill="#FFFFFF")
+        draw.text((x1, y1), display_date, font=font, fill="#FFFFFF")
+        draw.text((x2, y2), display_hour, font=font, fill="#FFFFFF")
 
         # # Top: state 1: go to past
         # if buttonB.value and not buttonA.value:
