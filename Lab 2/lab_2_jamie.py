@@ -192,7 +192,6 @@ def scale_and_crop_and_center(image):
 def to_past():
     text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
-
     x3 = 0.1*width
     y3 = 0.33*height
     x4 = 0.4*width
@@ -248,32 +247,5 @@ while True:
 
     elif state == 1:
         to_past()
-
-    # traveling to the past
-    # elif state == 1:
-    #     to_past()
-    # elif state == 2:
-    #     to_future()
         
-        # # Top: randomize
-        # if buttonB.value and not buttonA.value:
-        #     selected_quote = randrange(10)
-        #     selected_color = randrange(10)
-        # # Bottom: return to main
-        # elif not buttonB.value and buttonA.value:
-        #     state = 0
-
-    # # traveling to the future
-    # elif state == 2:
-    #     to_future()
-        
-    #     # Top: start mental minute and return to main when complete
-    #     if buttonB.value and not buttonA.value:
-    #         mental_minute()
-    #         state = 0
-    #     # Bottom: return to main
-    #     elif not buttonB.value and buttonA.value:
-    #         state = 0
-    # Display image.
-    disp.image(image, rotation)
     time.sleep(1)
