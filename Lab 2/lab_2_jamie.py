@@ -177,7 +177,7 @@ while True:
         display_date = strftime("%m/%d/%Y")
         display_hour = strftime("%H:%M:%S")
         draw.text((x, y), display_date, font=font, fill="#FFFFFF")
-        draw.text((x, 10*y), display_hour, font=font, fill="#FFFFFF")
+        draw.text((x, y), display_hour, font=font, fill="#FFFFFF")
 
         # # Top: state 1: go to past
         # if buttonB.value and not buttonA.value:
