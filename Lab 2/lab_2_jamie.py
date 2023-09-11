@@ -126,6 +126,7 @@ def main_screen():
 def ToPast():
     Jiao()
     PastCarousel()
+    print("to past")
 
 
 def Jiao():
@@ -160,8 +161,9 @@ def Jiao():
     draw.text((x4, y4), display_title2, font=text_font, fill="#20E200")
     draw.text((x5, y5), display_option1, font=text_font, fill="#FFFFFF")
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
-
+    
     time.sleep(5)
+    event_num += 1
 
 def PastCarousel():
     if event_num == 1:
@@ -286,19 +288,19 @@ while True:
 
     if state == 0:
         main_screen()
-        if buttonA.value and not buttonB.value:
-            state = 1
         if buttonB.value and not buttonA.value:
+            state = 1
+        if buttonA.value and not buttonB.value:
             state = 2
     
-    if state == 1:
+    elif state == 1:
         ToPast()
-        if buttonA.value and not buttonB.value:
-            event_num+=1
         if buttonB.value and not buttonA.value:
             event_num+=1
+        if buttonA.value and not buttonB.value:
+            event_num+=1
 
-    if state == 2:
+    elif state == 2:
         ToFuture()
 
     # Display image.
