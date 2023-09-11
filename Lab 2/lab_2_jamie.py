@@ -195,34 +195,16 @@ while True:
     if state == 0:
         main_screen()
         if buttonA.value and not buttonB.value:
-            ToPast()
+            state = 1
         if buttonB.value and not buttonA.value:
-            ToFuture()
-
-
-
+            state = 2
     
-    # #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
-    # font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
-    # y = top
-    # display_time = strftime("%m/%d/%Y %H:%M:%S")
-    # # draw.text((x, y), display_time, font=font, fill="#FFFFFF")
-    
-    # if current_year>1983:
-    #     draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
-    #     print(current_year)
-    #     disp.image(image, rotation)
-    #     current_year -= 10
-    # else: 
-    #     def now_we_stop():
-    #         draw.text((x, y),'now we stop', font=font, fill="#FFFFFF")
-    #     delta_sleep(5)
-    #     current_year -= 10
-    #     disp.image(image, rotation)
-    #     draw.text((x, y),str(current_year), font=font, fill="#FFFFFF")
+    if state == 1:
+        ToPast()
 
-    
+    if state == 2:
+        ToFuture()
 
     # Display image.
-    disp.image(image, rotation)
+    # disp.image(image, rotation)
     time.sleep(0.5)
