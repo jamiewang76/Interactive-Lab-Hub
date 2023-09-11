@@ -72,6 +72,7 @@ state = 0
 # First define some constants to allow easy resizing of shapes.
 height = disp.width  # we swap height/width to rotate it to landscape!
 width = disp.height
+rotation = 90
 padding = -2
 top = padding
 bottom = height - padding
@@ -169,7 +170,7 @@ while True:
     if state == 0:
         # main_screen()
 
-
+        draw.rectangle((0, 0, width, height), outline=0, fill=400)
         font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
         x = 0.5*width
         y = top
@@ -208,3 +209,6 @@ while True:
     #     # Bottom: return to main
     #     elif not buttonB.value and buttonA.value:
     #         state = 0
+    # Display image.
+    disp.image(image, rotation)
+    time.sleep(1)
