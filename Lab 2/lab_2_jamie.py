@@ -191,12 +191,28 @@ def scale_and_crop_and_center(image):
 
 def to_past():
     image = Image.open("red.jpg")
-    scale_and_crop_and_center(image)
+    image_ratio = image.width / image.height
+    screen_ratio = width / height
+    if screen_ratio < image_ratio:
+        scaled_width = image.width * height // image.height
+        scaled_height = height
+    else:
+        scaled_width = width
+        scaled_height = image.height * width // image.width
+    image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
     disp.image(image)
 
 def to_future():
-    image = Image.open("spider.jpeg")
-    scale_and_crop_and_center(image)
+    image = Image.open("red.jpg")
+    image_ratio = image.width / image.height
+    screen_ratio = width / height
+    if screen_ratio < image_ratio:
+        scaled_width = image.width * height // image.height
+        scaled_height = height
+    else:
+        scaled_width = width
+        scaled_height = image.height * width // image.width
+    image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
     disp.image(image)
     
 
