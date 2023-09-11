@@ -156,9 +156,11 @@ def Jiao():
     draw.text((x4, y4), display_title2, font=text_font, fill="#20E200")
     draw.text((x5, y5), display_option1, font=text_font, fill="#FFFFFF")
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
+    global event_num
+    event_num += 1
     
     time.sleep(5)
-    event_num += 1
 
 def PastCarousel():
     if event_num == 1:
@@ -243,9 +245,10 @@ def Wright():
     draw.text((x4, y4), display_title2, font=text_font, fill="#9A00E2")
 
 def ToPast():
+    print("to past")
     Jiao()
     PastCarousel()
-    print("to past")
+    print("past finished")
 
 def ToFuture():
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 12)
