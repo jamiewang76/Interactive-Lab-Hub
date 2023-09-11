@@ -206,5 +206,5 @@ while True:
         ToFuture()
 
     # Display image.
-    # disp.image(image, rotation)
+    disp.image(image, rotation)
     time.sleep(0.5)
