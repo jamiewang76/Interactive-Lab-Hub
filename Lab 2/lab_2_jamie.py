@@ -149,9 +149,9 @@ def main_screen():
     y2 = 0.17*height
 
     x3 = 0.1*width
-    y3 = 0.3*height
+    y3 = 0.33*height
     x4 = 0.4*width
-    y4 = 0.43*height
+    y4 = 0.46*height
 
     x5 = 0.1*width
     y5 = 0.65*height
