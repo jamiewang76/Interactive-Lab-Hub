@@ -141,14 +141,23 @@ draw = ImageDraw.Draw(image)
 # /////////////////////////////////////
 def main_screen():
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
+    title_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+
     x1 = 0.3*width
-    x2 = 0.35*width
     y1 = 0.05*height
-    y2 = 0.15*height
+    x2 = 0.35*width
+    y2 = 0.17*height
+
+    x3 = 0.1*width
+    y3 = 0.3*height
+
     display_date = strftime("%m/%d/%Y")
     display_hour = strftime("%H:%M:%S")
+    display_title = "ARE YOU READY FOR TIME TRAVEL?"
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
     draw.text((x2, y2), display_hour, font=time_font, fill="#FFFFFF")
+    draw.text((x3, y3), display_title, font=title_font, fill="#FFFFFF")
+
 # /////////////////////////////////////
 
 
