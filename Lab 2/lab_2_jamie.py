@@ -203,7 +203,7 @@ def to_past():
     x = scaled_width // 2 - width // 2
     y = scaled_height // 2 - height // 2
     image = image.crop((x, y, x + width, y + height))
-    disp.image(image)
+    disp.image(image, rotation)
 
 def to_future():
     image = Image.open("red.jpg")
@@ -219,22 +219,12 @@ def to_future():
     x = scaled_width // 2 - width // 2
     y = scaled_height // 2 - height // 2
     image = image.crop((x, y, x + width, y + height))
-    disp.image(image)
+    disp.image(image, rotation)
     
 
 
 # Main loop:
 while True:
-    # if buttonA.value and buttonB.value:
-    #     backlight.value = False  # turn off backlight
-    # else:
-    #     backlight.value = True  # turn on backlight
-    # if buttonB.value and not buttonA.value:  # just button A pressed
-    #     disp.image(image)
-    # if buttonA.value and not buttonB.value:  # just button B pressed
-    #     disp.image(image2)
-    # if not buttonA.value and not buttonB.value:  # none pressed
-    #     disp.fill(color565(0, 255, 0))  # green
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
     # Main screen
@@ -243,12 +233,13 @@ while True:
         # Top: state 1: go to past
         if buttonB.value and not buttonA.value:
             state = 1
-            to_past()
 
         # Bottom: state 2: go to future
         elif not buttonB.value and buttonA.value:
             state = 2
-            to_future()
+
+    elif state == 1:
+        to_past()
 
     # traveling to the past
     # elif state == 1:
