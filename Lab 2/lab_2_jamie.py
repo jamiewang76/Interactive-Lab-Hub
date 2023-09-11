@@ -234,19 +234,21 @@ while True:
     # Main screen
     if state == 0:
         main_screen()
-
         # Top: state 1: go to past
         if buttonB.value and not buttonA.value:
             state = 1
+            to_past()
+
         # Bottom: state 2: go to future
         elif not buttonB.value and buttonA.value:
             state = 2
+            to_future()
 
     # traveling to the past
-    elif state == 1:
-        to_past()
-    elif state == 2:
-        to_future()
+    # elif state == 1:
+    #     to_past()
+    # elif state == 2:
+    #     to_future()
         
         # # Top: randomize
         # if buttonB.value and not buttonA.value:
