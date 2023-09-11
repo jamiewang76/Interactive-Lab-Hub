@@ -225,23 +225,12 @@ while True:
         # Bottom: state 2: go to future
         elif not buttonB.value and buttonA.value:
             state = 2
-        
-        # draw.rectangle((0, 0, width, height), outline=0, fill=400)
-        # font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-        # x1 = 0.3*width
-        # x2 = 0.35*width
-        # y1 = 0.05*height
-        # y2 = 0.2*height
-        # display_date = strftime("%m/%d/%Y")
-        # display_hour = strftime("%H:%M:%S")
-        # draw.text((x1, y1), display_date, font=font, fill="#FFFFFF")
-        # draw.text((x2, y2), display_hour, font=font, fill="#FFFFFF")
 
-        # traveling to the past
-        elif state == 1:
-            to_past()
-        elif state == 2:
-            to_future()
+    # traveling to the past
+    elif state == 1:
+        to_past()
+    elif state == 2:
+        to_future()
         
         # # Top: randomize
         # if buttonB.value and not buttonA.value:
