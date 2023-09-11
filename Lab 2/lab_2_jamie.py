@@ -198,7 +198,7 @@ while True:
             state = 1
 
         # Bottom: state 2: go to future
-        elif buttonA.value and not buttonB.value:
+        if buttonA.value and not buttonB.value:
             state = 1
 
         # if buttonB.value and buttonA.value:
