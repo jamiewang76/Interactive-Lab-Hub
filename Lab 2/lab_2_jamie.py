@@ -190,36 +190,44 @@ def scale_and_crop_and_center(image):
     return image
 
 def to_past():
-    image = Image.open("red.jpg")
-    image_ratio = image.width / image.height
-    screen_ratio = width / height
-    if screen_ratio < image_ratio:
-        scaled_width = image.width * height // image.height
-        scaled_height = height
-    else:
-        scaled_width = width
-        scaled_height = image.height * width // image.width
-    image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
-    x = scaled_width // 2 - width // 2
-    y = scaled_height // 2 - height // 2
-    image = image.crop((x, y, x + width, y + height))
-    disp.image(image, rotation)
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
-def to_future():
-    image = Image.open("red.jpg")
-    image_ratio = image.width / image.height
-    screen_ratio = width / height
-    if screen_ratio < image_ratio:
-        scaled_width = image.width * height // image.height
-        scaled_height = height
-    else:
-        scaled_width = width
-        scaled_height = image.height * width // image.width
-    image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
-    x = scaled_width // 2 - width // 2
-    y = scaled_height // 2 - height // 2
-    image = image.crop((x, y, x + width, y + height))
-    disp.image(image, rotation)
+
+    x3 = 0.1*width
+    y3 = 0.33*height
+    x4 = 0.4*width
+    y4 = 0.46*height
+
+    x5 = 0.1*width
+    y5 = 0.65*height
+    x6 = 0.1*width
+    y6 = 0.80*height
+
+    display_title = "ARE YOU READY"
+    display_title2 = "FOR TIME TRAVEL?"
+    display_option1 = "> Forward to the back"
+    display_option2 = "> Back to the future"
+
+    draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
+    draw.text((x4, y4), display_title2, font=text_font, fill="#20E200")
+    draw.text((x5, y5), display_option1, font=text_font, fill="#FFFFFF")
+    draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
+# def to_future():
+#     image = Image.open("red.jpg")
+#     image_ratio = image.width / image.height
+#     screen_ratio = width / height
+#     if screen_ratio < image_ratio:
+#         scaled_width = image.width * height // image.height
+#         scaled_height = height
+#     else:
+#         scaled_width = width
+#         scaled_height = image.height * width // image.width
+#     image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
+#     x = scaled_width // 2 - width // 2
+#     y = scaled_height // 2 - height // 2
+#     image = image.crop((x, y, x + width, y + height))
+#     disp.image(image, rotation)
     
 
 
