@@ -29,10 +29,10 @@ from time import strftime, sleep
 # Configuration for CS and DC pins (these are PiTFT defaults):
 cs_pin = digitalio.DigitalInOut(board.CE0)
 dc_pin = digitalio.DigitalInOut(board.D25)
-reset_pin = None
+reset_pin = digitalio.DigitalInOut(board.D24)
 
 # Config for display baudrate (default max is 24mhz):
-BAUDRATE = 64000000
+BAUDRATE = 24000000
 
 # Setup SPI bus using hardware SPI:
 spi = board.SPI()
@@ -63,9 +63,6 @@ disp = st7789.ST7789(
 # pylint: enable=line-too-long
 
 # these setup the code for our buttons and the backlight and tell the pi to treat the GPIO pins as digitalIO vs analogIO
-backlight = digitalio.DigitalInOut(board.D22)
-backlight.switch_to_output()
-backlight.value = True
 buttonA = digitalio.DigitalInOut(board.D23)
 buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
@@ -196,18 +193,6 @@ while True:
         # Top: state 1: go to past
         if buttonB.value and not buttonA.value:
             state = 1
-
-        # Bottom: state 2: go to future
-        if buttonA.value and not buttonB.value:
-            state = 1
-
-        if buttonB.value and buttonA.value:
-            backlight.value = False
-            state = 0
-
-        if not buttonB.value and not buttonA.value:
-            backlight.value = False
-            state = 0
 
     elif state == 1:
         to_past()
