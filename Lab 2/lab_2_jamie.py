@@ -141,7 +141,7 @@ draw = ImageDraw.Draw(image)
 # /////////////////////////////////////
 def main_screen():
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
-    title_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+    title_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
     x1 = 0.3*width
     y1 = 0.05*height
