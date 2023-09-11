@@ -150,13 +150,17 @@ def main_screen():
 
     x3 = 0.1*width
     y3 = 0.3*height
+    x4 = 0.4*width
+    y4 = 0.4*height
 
     display_date = strftime("%m/%d/%Y")
     display_hour = strftime("%H:%M:%S")
-    display_title = "ARE YOU READY FOR TIME TRAVEL?"
+    display_title = "ARE YOU READY"
+    display_title2 = "FOR TIME TRAVEL?"
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
     draw.text((x2, y2), display_hour, font=time_font, fill="#FFFFFF")
     draw.text((x3, y3), display_title, font=title_font, fill="#FFFFFF")
+    draw.text((x4, y4), display_title2, font=title_font, fill="#FFFFFF")
 
 # /////////////////////////////////////
 
