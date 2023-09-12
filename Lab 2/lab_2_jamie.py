@@ -306,8 +306,10 @@ while True:
         ToPast()
         if buttonB.value and not buttonA.value:
             event_num+=1
+            print("button B")
         if buttonA.value and not buttonB.value:
             event_num+=1
+            print("button A")
 
     elif state == 2:
         ToFuture()
