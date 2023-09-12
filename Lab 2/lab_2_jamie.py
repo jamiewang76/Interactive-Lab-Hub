@@ -162,8 +162,8 @@ def Jiao():
     draw.text((x5, y5), display_option1, font=text_font, fill="#FFFFFF")
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
-    # global event_num
-    # event_num += 1
+    global event_num
+    event_num += 1
     
     time.sleep(5)
 
@@ -307,6 +307,7 @@ while True:
         main_screen()
         print("state = 0")
         Jiao_run = False
+        event_num = 0
         if buttonB.value and not buttonA.value:
             state = 1
         if buttonA.value and not buttonB.value:
