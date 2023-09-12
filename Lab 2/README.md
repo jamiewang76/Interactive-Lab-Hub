@@ -220,7 +220,7 @@ After that, Git will ask you to login to your GitHub account to push the updates
 
 \*\*\***Take a video of your PiClock.**\*\*\*
 
-[![Pi Clock Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%202/Screen%20Shot%202023-09-11%20at%2011.41.23%20PM.png)](https://drive.google.com/file/d/1IubblKcMstaUsifW58l3HJDnBdeZOazq/view?usp=drivesdk)
+[![Pi Clock Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%202/Screen%20Shot%202023-09-11%20at%2011.41.23%20PM.png)](https://drive.google.com/file/d/1PtC4T0ZQHoISKAkquqewGS4sYvwy1Wr3/view?usp=drive_link)
 
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
