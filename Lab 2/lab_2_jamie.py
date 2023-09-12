@@ -77,6 +77,30 @@ current_year = 2023
 
 initial_time = int(time.time()) #frame of reference in seconds
 
+def editImage(filename):
+    image = Image.open(filename).convert("RGB")
+    
+    
+     # Scale the image to the smaller screen dimension
+    image_ratio = image.width / image.height
+    screen_ratio = width / height
+    if screen_ratio < image_ratio:
+        scaled_width = image.width * height // image.height
+        scaled_height = height
+    else:
+        scaled_width = width
+        scaled_height = image.height * width // image.width
+    image = image.resize((int(scaled_width*0.5), int(scaled_height*0.5)), Image.BICUBIC)
+
+    # Crop and center the image
+    x = scaled_width // 2 - width // 2
+    y = scaled_height // 2 - height // 2 - (scaled_height - height) // 2
+    image = image.crop((x, y, x + width, y + height))
+
+    
+    return image
+
+
 def delta_sleep(s):
     """
     Parameters:
@@ -201,6 +225,8 @@ def Internet():
     y6 = 0.80*height
     display_option2 = "> Continue"
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
+    disp.image(editImage("spider.jpeg"), rotation)
 
     print("internet")
 
