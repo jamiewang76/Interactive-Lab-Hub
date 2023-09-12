@@ -156,18 +156,18 @@ def JiaoPast():
     
     global current_year
 
-    if current_year > 1973:
+    if current_year > 1983:
         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
         print(current_year)
         disp.image(image, rotation)
         current_year -= 10
-    elif current_year == 1973:
+    elif current_year == 1983:
         delta_sleep(5)
         disp.image(image, rotation)
         draw.text((x, y),'<<1983>>', font=font, fill="#FFFFFF")
     
     global event_num
-    if current_year == 1973:
+    if current_year == 1983:
         event_num += 1
 
 def PastCarousel():
@@ -394,13 +394,6 @@ def Cyborg():
     print("cyborg")
     print("future finished")
 
-# def ToPast():
-#     # print("to past")
-#     if Jiao_run == False:
-#         Jiao()
-#     PastCarousel()
-#     print("past finished")
-
 def ToFutureTest():
     # print("to past")
     if event_num >= 1:
@@ -423,16 +416,7 @@ while True:
             state = 2
     
     elif state == 1:
-        # ToPast()
-        # if buttonB.value and not buttonA.value:
-        #     event_num+=1
-        #     print("button B")
-        # if buttonA.value and not buttonB.value:
-        #     event_num+=1
-        #     print("button A")
-
-        # //////////////////////////////
-        if current_year>1973:
+        if current_year>1983:
             JiaoPast()
 
         ToPastTest()
