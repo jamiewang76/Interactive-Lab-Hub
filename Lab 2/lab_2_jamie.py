@@ -154,6 +154,8 @@ def JiaoTest():
     x = 0.4*width
     y = 0.46*height
     
+    global current_year
+
     if current_year > 1983:
         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
         print(current_year)
