@@ -143,9 +143,10 @@ def Jiao():
 
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
     draw.text((x2, y2), display_hour, font=time_font, fill="#FFFFFF")
-
+    
     global event_num
-    event_num += 1
+    if event_num == 0:
+        event_num += 1
     
     time.sleep(5)
 
@@ -153,10 +154,13 @@ def PastCarousel():
     global state
     if event_num == 1:
         Internet()
+        Jiao()
     if event_num == 2:
         Moon()
+        Jiao()
     if event_num == 3:
         WWII()
+        Jiao()
     if event_num == 4:
         Wright()
     if event_num == 5:
@@ -178,6 +182,7 @@ def Internet():
     draw.text((x4, y4), display_title2, font=text_font, fill="#E20000")
 
     print("internet")
+    time.sleep(60)
 
 def Moon():
     text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
@@ -194,6 +199,7 @@ def Moon():
     draw.text((x4, y4), display_title2, font=text_font, fill="#E2B100")
 
     print("moon")
+    time.sleep(60)
 
 def WWII():
     text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
@@ -210,6 +216,7 @@ def WWII():
     draw.text((x4, y4), display_title2, font=text_font, fill="#00BAE2")
 
     print("wwii")
+    time.sleep(60)
 
 def Wright():
     text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
