@@ -44,6 +44,7 @@ width = disp.height
 image = Image.new("RGB", (width, height))
 rotation = 90
 state = 0
+Jiao_run = False
 
 event_num = 0
 
@@ -125,6 +126,10 @@ def main_screen():
 
 
 def Jiao():
+    print("Jiao")
+    global Jiao_run
+    Jiao_run = True
+
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
     text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
@@ -190,6 +195,8 @@ def Internet():
     draw.text((x3, y3), display_title, font=text_font, fill="#E20000")
     draw.text((x4, y4), display_title2, font=text_font, fill="#E20000")
 
+    print("internet")
+
 def Moon():
     text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
@@ -204,6 +211,8 @@ def Moon():
     draw.text((x3, y3), display_title, font=text_font, fill="#E2B100")
     draw.text((x4, y4), display_title2, font=text_font, fill="#E2B100")
 
+    print("moon")
+
 def WWII():
     text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
@@ -217,6 +226,8 @@ def WWII():
 
     draw.text((x3, y3), display_title, font=text_font, fill="#00BAE2")
     draw.text((x4, y4), display_title2, font=text_font, fill="#00BAE2")
+
+    print("wwii")
 
 def Wright():
     text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
@@ -245,9 +256,12 @@ def Wright():
     draw.text((x3, y3), display_title, font=text_font, fill="#9A00E2")
     draw.text((x4, y4), display_title2, font=text_font, fill="#9A00E2")
 
+    print("wright")
+
 def ToPast():
-    print("to past")
-    Jiao()
+    # print("to past")
+    if Jiao_run == False:
+        Jiao()
     PastCarousel()
     print("past finished")
 
@@ -291,6 +305,8 @@ while True:
 
     if state == 0:
         main_screen()
+        print("state = 0")
+        Jiao_run = False
         if buttonB.value and not buttonA.value:
             state = 1
         if buttonA.value and not buttonB.value:
