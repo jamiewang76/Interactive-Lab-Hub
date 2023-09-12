@@ -226,6 +226,11 @@ def Internet():
     display_option2 = "> Continue"
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
+    x3 = 0.3*width
+    y3 = 0.4*height
+    display_title = "Advent of DNS"
+    draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
+
     disp.image(editImage("spider.jpeg"), rotation)
 
     print("internet")
