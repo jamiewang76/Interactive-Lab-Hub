@@ -187,55 +187,42 @@ def PastCarousel():
 
 
 def Internet():
-    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+    time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
-    x3 = 0.1*width
-    y3 = 0.33*height
-    x4 = 0.4*width
-    y4 = 0.46*height
+    x1 = 0.3*width
+    y1 = 0.05*height
 
-    display_title = "ARE YOU READY"
-    display_title2 = "FOR TIME TRAVEL?"
+    display_date = "01/01/1983"
 
-    draw.text((x3, y3), display_title, font=text_font, fill="#E20000")
-    draw.text((x4, y4), display_title2, font=text_font, fill="#E20000")
+    draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
 
     print("internet")
 
 def Moon():
-    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+    time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
-    x3 = 0.1*width
-    y3 = 0.33*height
-    x4 = 0.4*width
-    y4 = 0.46*height
+    x1 = 0.3*width
+    y1 = 0.05*height
 
-    display_title = "ARE YOU READY"
-    display_title2 = "FOR TIME TRAVEL?"
+    display_date = "07/21/1969"
 
-    draw.text((x3, y3), display_title, font=text_font, fill="#E2B100")
-    draw.text((x4, y4), display_title2, font=text_font, fill="#E2B100")
+    draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
 
     print("moon")
 
 def WWII():
-    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+    time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
-    x3 = 0.1*width
-    y3 = 0.33*height
-    x4 = 0.4*width
-    y4 = 0.46*height
+    x1 = 0.3*width
+    y1 = 0.05*height
 
-    display_title = "ARE YOU READY"
-    display_title2 = "FOR TIME TRAVEL?"
+    display_date = "09/01/1939"
 
-    draw.text((x3, y3), display_title, font=text_font, fill="#00BAE2")
-    draw.text((x4, y4), display_title2, font=text_font, fill="#00BAE2")
+    draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
 
     print("wwii")
 
 def Wright():
-    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
@@ -244,22 +231,11 @@ def Wright():
     x2 = 0.35*width
     y2 = 0.17*height
 
-    display_date = strftime("%m/%d/%Y")
+    display_date = "12/17/1903"
     display_hour = strftime("%H:%M:%S")
 
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
     draw.text((x2, y2), display_hour, font=time_font, fill="#FFFFFF")
-
-    x3 = 0.1*width
-    y3 = 0.33*height
-    x4 = 0.4*width
-    y4 = 0.46*height
-
-    display_title = "ARE YOU READY"
-    display_title2 = "FOR TIME TRAVEL?"
-
-    draw.text((x3, y3), display_title, font=text_font, fill="#9A00E2")
-    draw.text((x4, y4), display_title2, font=text_font, fill="#9A00E2")
 
     print("wright")
     print("past finished")
