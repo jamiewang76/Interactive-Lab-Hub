@@ -196,6 +196,12 @@ def Internet():
 
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
 
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
+    x6 = 0.1*width
+    y6 = 0.80*height
+    display_option2 = "> Continue"
+    draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
     print("internet")
 
 def Moon():
@@ -208,6 +214,12 @@ def Moon():
 
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
 
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
+    x6 = 0.1*width
+    y6 = 0.80*height
+    display_option2 = "> Continue"
+    draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
     print("moon")
 
 def WWII():
@@ -219,6 +231,12 @@ def WWII():
     display_date = "09/01/1939"
 
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
+
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
+    x6 = 0.1*width
+    y6 = 0.80*height
+    display_option2 = "> Continue"
+    draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
     print("wwii")
 
@@ -236,6 +254,12 @@ def Wright():
 
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
     draw.text((x2, y2), display_hour, font=time_font, fill="#FFFFFF")
+
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
+    x6 = 0.1*width
+    y6 = 0.80*height
+    display_option2 = "> Back to Present"
+    draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
     print("wright")
     print("past finished")
@@ -302,6 +326,12 @@ def Maldives():
 
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
 
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
+    x6 = 0.1*width
+    y6 = 0.80*height
+    display_option2 = "> Continue"
+    draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
     print("Maldives")
 
 def Flight():
@@ -314,6 +344,12 @@ def Flight():
 
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
 
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
+    x6 = 0.1*width
+    y6 = 0.80*height
+    display_option2 = "> Continue"
+    draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
     print("flight")
 
 def Mars():
@@ -325,6 +361,12 @@ def Mars():
     display_date = "01/01/2192"
 
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
+
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
+    x6 = 0.1*width
+    y6 = 0.80*height
+    display_option2 = "> Continue"
+    draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
     print("Mars")
 
@@ -341,6 +383,12 @@ def Cyborg():
 
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
     draw.text((x2, y2), display_hour, font=time_font, fill="#FFFFFF")
+
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
+    x6 = 0.1*width
+    y6 = 0.80*height
+    display_option2 = "> Back to Present"
+    draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
     print("cyborg")
     print("future finished")
