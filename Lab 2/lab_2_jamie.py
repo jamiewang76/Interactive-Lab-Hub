@@ -226,12 +226,12 @@ def Internet():
     display_option2 = "> Continue"
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
-    x3 = 0.3*width
+    x3 = 0.27*width
     y3 = 0.4*height
     display_title = "Advent of DNS"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
-    disp.image(editImage("spider.jpeg"), rotation)
+    disp.image(editImage("dns.png"), rotation)
 
     print("internet")
 
@@ -251,6 +251,13 @@ def Moon():
     display_option2 = "> Continue"
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
+    x3 = 0.3*width
+    y3 = 0.4*height
+    display_title = "Land on Moon"
+    draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
+
+    disp.image(editImage("moon.png"), rotation)
+
     print("moon")
 
 def WWII():
@@ -268,6 +275,13 @@ def WWII():
     y6 = 0.80*height
     display_option2 = "> Continue"
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
+    x3 = 0.25*width
+    y3 = 0.4*height
+    display_title = "Beginning of WWII"
+    draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
+
+    disp.image(editImage("ww2.png"), rotation)
 
     print("wwii")
 
@@ -291,6 +305,13 @@ def Wright():
     y6 = 0.80*height
     display_option2 = "> Back to Present"
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
+    x3 = 0.27*width
+    y3 = 0.4*height
+    display_title = "Invention of Wright Flyer"
+    draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
+
+    disp.image(editImage("wright.png"), rotation)
 
     print("wright")
     print("past finished")
