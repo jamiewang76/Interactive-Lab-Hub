@@ -90,7 +90,7 @@ def editImage(filename):
     else:
         scaled_width = width
         scaled_height = image.height * width // image.width
-    image = image.resize((int(scaled_width*0.5), int(scaled_height*0.5)), Image.BICUBIC)
+    image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
 
     # Crop and center the image
     x = scaled_width // 2 - width // 2
@@ -306,7 +306,7 @@ def Wright():
     display_option2 = "> Back to Present"
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
-    x3 = 0.27*width
+    x3 = 0.2*width
     y3 = 0.4*height
     display_title = "Invention of Wright Flyer"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
@@ -384,6 +384,13 @@ def Maldives():
     display_option2 = "> Continue"
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
+    x3 = 0.3*width
+    y3 = 0.4*height
+    display_title = "Maldives Sinks"
+    draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
+
+    disp.image(editImage("maldives.png"), rotation)
+
     print("Maldives")
 
 def Flight():
@@ -402,6 +409,13 @@ def Flight():
     display_option2 = "> Continue"
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
+    x3 = 0.2*width
+    y3 = 0.4*height
+    display_title = "Low Cost Private Jet"
+    draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
+
+    disp.image(editImage("flight.png"), rotation)
+
     print("flight")
 
 def Mars():
@@ -419,6 +433,13 @@ def Mars():
     y6 = 0.80*height
     display_option2 = "> Continue"
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
+    x3 = 0.33*width
+    y3 = 0.4*height
+    display_title = "Colonize Mars"
+    draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
+
+    disp.image(editImage("mars.png"), rotation)
 
     print("Mars")
 
@@ -441,6 +462,13 @@ def Cyborg():
     y6 = 0.80*height
     display_option2 = "> Back to Present"
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
+    x3 = 0.4*width
+    y3 = 0.4*height
+    display_title = "Cyberware"
+    draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
+
+    disp.image(editImage("cyborg.png"), rotation)
 
     print("cyborg")
     print("future finished")
