@@ -146,7 +146,7 @@ def main_screen():
 #     if event_num == 0:
 #         event_num += 1
 
-def JiaoTest():
+def JiaoPast():
     print("Jiao")
     global Jiao_run
     Jiao_run = True
@@ -277,38 +277,135 @@ def ToPastTest():
         PastCarousel()
     # print("past finished")
 
-def ToFuture():
-    time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 12)
-    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 12)
+def JiaoFuture():
+    print("Jiao")
+    global Jiao_run
+    Jiao_run = True
 
-    x1 = 0.3*width
-    y1 = 0.05*height
-    x2 = 0.35*width
-    y2 = 0.17*height
+    x = 0.4*width
+    y = 0.46*height
+    
+    global current_year
+
+    if current_year < 2053:
+        draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+        print(current_year)
+        disp.image(image, rotation)
+        current_year += 10
+    elif current_year == 2053:
+        delta_sleep(5)
+        disp.image(image, rotation)
+        draw.text((x, y),'<<2050>>', font=font, fill="#FFFFFF")
+    
+    global event_num
+    if current_year == 2053:
+        event_num += 1
+
+def FutureCarousel():
+    global state
+    if event_num == 1:
+        Maldives()
+    if event_num == 2:
+        Flight()
+    if event_num == 3:
+        Mars()
+    if event_num == 4:
+        Cyborg()
+    if event_num == 5:
+        state = 0
+        global current_year
+        current_year = 2023
+        
+def Maldives():
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
     x3 = 0.1*width
     y3 = 0.33*height
     x4 = 0.4*width
     y4 = 0.46*height
 
-    x5 = 0.1*width
-    y5 = 0.65*height
-    x6 = 0.1*width
-    y6 = 0.80*height
+    display_title = "ARE YOU READY"
+    display_title2 = "FOR TIME TRAVEL?"
+
+    draw.text((x3, y3), display_title, font=text_font, fill="#E20000")
+    draw.text((x4, y4), display_title2, font=text_font, fill="#E20000")
+
+    print("internet")
+
+def Flight():
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+
+    x3 = 0.1*width
+    y3 = 0.33*height
+    x4 = 0.4*width
+    y4 = 0.46*height
+
+    display_title = "ARE YOU READY"
+    display_title2 = "FOR TIME TRAVEL?"
+
+    draw.text((x3, y3), display_title, font=text_font, fill="#00BAE2")
+    draw.text((x4, y4), display_title2, font=text_font, fill="#00BAE2")
+
+    print("flight")
+
+def Mars():
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+
+    x3 = 0.1*width
+    y3 = 0.33*height
+    x4 = 0.4*width
+    y4 = 0.46*height
+
+    display_title = "ARE YOU READY"
+    display_title2 = "FOR TIME TRAVEL?"
+
+    draw.text((x3, y3), display_title, font=text_font, fill="#E2B100")
+    draw.text((x4, y4), display_title2, font=text_font, fill="#E2B100")
+
+    print("Mars")
+
+def Cyborg():
+    text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+
+    time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+
+    x1 = 0.3*width
+    y1 = 0.05*height
+    x2 = 0.35*width
+    y2 = 0.17*height
 
     display_date = strftime("%m/%d/%Y")
     display_hour = strftime("%H:%M:%S")
-    display_title = "ARE YOU READY"
-    display_title2 = "FOR TIME TRAVEL?"
-    display_option1 = "> Forward to the back"
-    display_option2 = "> Back to the future"
 
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
     draw.text((x2, y2), display_hour, font=time_font, fill="#FFFFFF")
-    draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
-    draw.text((x4, y4), display_title2, font=text_font, fill="#20E200")
-    draw.text((x5, y5), display_option1, font=text_font, fill="#FFFFFF")
-    draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
+
+    x3 = 0.1*width
+    y3 = 0.33*height
+    x4 = 0.4*width
+    y4 = 0.46*height
+
+    display_title = "ARE YOU READY"
+    display_title2 = "FOR TIME TRAVEL?"
+
+    draw.text((x3, y3), display_title, font=text_font, fill="#9A00E2")
+    draw.text((x4, y4), display_title2, font=text_font, fill="#9A00E2")
+
+    print("cyborg")
+    print("future finished")
+
+# def ToPast():
+#     # print("to past")
+#     if Jiao_run == False:
+#         Jiao()
+#     PastCarousel()
+#     print("past finished")
+
+def ToFutureTest():
+    # print("to past")
+    if event_num >= 1:
+        FutureCarousel()
+    # print("past finished")
 
 
 while True:
@@ -336,7 +433,7 @@ while True:
 
         # //////////////////////////////
         if current_year>1983:
-            JiaoTest()
+            JiaoPast()
 
         ToPastTest()
 
@@ -349,7 +446,18 @@ while True:
 
 
     elif state == 2:
-        ToFuture()
+        # ToFuture()
+        if current_year<2053:
+            JiaoFuture()
+
+        ToFutureTest()
+
+        if buttonB.value and not buttonA.value:
+            event_num+=1
+            print("button B")
+        if buttonA.value and not buttonB.value:
+            event_num+=1
+            print("button A")
 
     # Display image.
     disp.image(image, rotation)
