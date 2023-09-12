@@ -100,7 +100,7 @@ if screen_ratio < image_ratio:
 else:
     scaled_width = width
     scaled_height = image.height * width // image.width
-image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
+image = image.resize((0.5*scaled_width, 0.5*scaled_height), Image.BICUBIC)
 
 # Scale jamie image to the smaller screen dimension
 image_ratio2 = image2.width / image2.height
