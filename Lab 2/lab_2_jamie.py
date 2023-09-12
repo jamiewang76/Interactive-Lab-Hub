@@ -232,6 +232,7 @@ def Internet():
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
     disp.image(editImage("dns.png"), rotation)
+    delta_sleep(60)
 
     print("internet")
 
@@ -306,7 +307,7 @@ def Wright():
     display_option2 = "> Back to Present"
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
-    x3 = 0.2*width
+    x3 = 0.15*width
     y3 = 0.4*height
     display_title = "Invention of Wright Flyer"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
@@ -434,7 +435,7 @@ def Mars():
     display_option2 = "> Continue"
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
-    x3 = 0.33*width
+    x3 = 0.30*width
     y3 = 0.4*height
     display_title = "Colonize Mars"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
@@ -463,7 +464,7 @@ def Cyborg():
     display_option2 = "> Back to Present"
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
-    x3 = 0.4*width
+    x3 = 0.35*width
     y3 = 0.4*height
     display_title = "Cyberware"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
