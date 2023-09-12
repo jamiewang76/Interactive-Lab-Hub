@@ -45,7 +45,6 @@ image = Image.new("RGB", (width, height))
 rotation = 90
 state = 0
 Jiao_run = False
-
 event_num = 0
 
 # Get drawing object to draw on image.
@@ -74,7 +73,7 @@ backlight.value = True
 
 
 current_year = 2023
-year_bk_1 = 1983
+# year_bk_1 = 1983
 
 initial_time = int(time.time()) #frame of reference in seconds
 
@@ -125,46 +124,64 @@ def main_screen():
     draw.text((x6, y6), display_option2, font=text_font, fill="#FFFFFF")
 
 
-def Jiao():
+# def Jiao():
+#     print("Jiao")
+#     global Jiao_run
+#     Jiao_run = True
+
+#     x = 0.4*width
+#     y = 0.46*height
+    
+#     if current_year > 1983:
+#         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+#         print(current_year)
+#         disp.image(image, rotation)
+#         current_year -= 10
+#     elif current_year == 1983:
+#         delta_sleep(5)
+#         disp.image(image, rotation)
+#         draw.text((x, y),'<<1983>>', font=font, fill="#FFFFFF")
+    
+#     global event_num
+#     if event_num == 0:
+#         event_num += 1
+
+def JiaoTest():
     print("Jiao")
     global Jiao_run
     Jiao_run = True
 
-    time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-
-    x1 = 0.3*width
-    y1 = 0.05*height
-    x2 = 0.35*width
-    y2 = 0.17*height
-
-
-    display_date = strftime("%m/%d/%Y")
-    display_hour = strftime("%H:%M:%S")
-
-    draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
-    draw.text((x2, y2), display_hour, font=time_font, fill="#FFFFFF")
+    x = 0.4*width
+    y = 0.46*height
+    
+    if current_year > 1983:
+        draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+        print(current_year)
+        disp.image(image, rotation)
+        current_year -= 10
+    elif current_year == 1983:
+        delta_sleep(5)
+        disp.image(image, rotation)
+        draw.text((x, y),'<<1983>>', font=font, fill="#FFFFFF")
     
     global event_num
-    if event_num == 0:
+    if current_year == 1983:
         event_num += 1
-    
-    time.sleep(5)
 
 def PastCarousel():
     global state
     if event_num == 1:
         Internet()
-        Jiao()
     if event_num == 2:
         Moon()
-        Jiao()
     if event_num == 3:
         WWII()
-        Jiao()
     if event_num == 4:
         Wright()
     if event_num == 5:
         state = 0
+        global current_year
+        current_year = 2023
 
 
 def Internet():
@@ -182,7 +199,6 @@ def Internet():
     draw.text((x4, y4), display_title2, font=text_font, fill="#E20000")
 
     print("internet")
-    time.sleep(60)
 
 def Moon():
     text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
@@ -199,7 +215,6 @@ def Moon():
     draw.text((x4, y4), display_title2, font=text_font, fill="#E2B100")
 
     print("moon")
-    time.sleep(60)
 
 def WWII():
     text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
@@ -216,7 +231,6 @@ def WWII():
     draw.text((x4, y4), display_title2, font=text_font, fill="#00BAE2")
 
     print("wwii")
-    time.sleep(60)
 
 def Wright():
     text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
@@ -246,13 +260,20 @@ def Wright():
     draw.text((x4, y4), display_title2, font=text_font, fill="#9A00E2")
 
     print("wright")
-
-def ToPast():
-    # print("to past")
-    if Jiao_run == False:
-        Jiao()
-    PastCarousel()
     print("past finished")
+
+# def ToPast():
+#     # print("to past")
+#     if Jiao_run == False:
+#         Jiao()
+#     PastCarousel()
+#     print("past finished")
+
+def ToPastTest():
+    # print("to past")
+    if event_num >= 1:
+        PastCarousel()
+    # print("past finished")
 
 def ToFuture():
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 12)
@@ -303,13 +324,27 @@ while True:
             state = 2
     
     elif state == 1:
-        ToPast()
+        # ToPast()
+        # if buttonB.value and not buttonA.value:
+        #     event_num+=1
+        #     print("button B")
+        # if buttonA.value and not buttonB.value:
+        #     event_num+=1
+        #     print("button A")
+
+        # //////////////////////////////
+        if current_year>1983:
+            JiaoTest()
+
+        ToPastTest()
+
         if buttonB.value and not buttonA.value:
             event_num+=1
             print("button B")
         if buttonA.value and not buttonB.value:
             event_num+=1
             print("button A")
+
 
     elif state == 2:
         ToFuture()
