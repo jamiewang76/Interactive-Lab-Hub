@@ -1,5 +1,7 @@
 # Interactive Prototyping: The Clock of Pi
-**NAMES OF COLLABORATORS HERE**
+Jamie Wang zw448
+Yiming Sheng ys2262
+Yunfei Jiao yj497
 
 Does it feel like time is moving strangely during this semester?
 
@@ -196,6 +198,8 @@ Please sketch/diagram your clock idea. (Try using a [Verplank digram](http://www
 
 **We strongly discourage and will reject the results of literal digital or analog clock display.**
 
+![piClock](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/477e7e2c-ce97-4525-aa9d-121a6da40791)
+
 
 \*\*\***A copy of your code should be in your Lab 2 Github repo.**\*\*\*
 
@@ -217,6 +221,16 @@ After that, Git will ask you to login to your GitHub account to push the updates
 
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
+
+1. Using joystick to change your (user's) position on the timeline.<br /> 
+  Move stick forward: proceed in time, i.e. to the future <br /> 
+  Move stick backward: move back in time, i.e. to the past <br /> 
+  Move stick left/right: view more details of the major event around the time you stopped at <br />
+
+![joystick](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/353b9da0-1981-467b-aaec-1e46b7e7bb3d)
+  
+2. While the user time travels, the green LED will be on. <br /> 
+  While the user stops, the red LED will turn on.
 
 
 # Prep for Part 2
