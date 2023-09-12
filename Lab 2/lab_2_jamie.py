@@ -156,18 +156,18 @@ def JiaoPast():
     
     global current_year
 
-    if current_year > 1983:
+    if current_year > 1973:
         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
         print(current_year)
         disp.image(image, rotation)
         current_year -= 10
-    elif current_year == 1983:
+    elif current_year == 1973:
         delta_sleep(5)
         disp.image(image, rotation)
         draw.text((x, y),'<<1983>>', font=font, fill="#FFFFFF")
     
     global event_num
-    if current_year == 1983:
+    if current_year == 1973:
         event_num += 1
 
 def PastCarousel():
@@ -432,7 +432,7 @@ while True:
         #     print("button A")
 
         # //////////////////////////////
-        if current_year>1983:
+        if current_year>1973:
             JiaoPast()
 
         ToPastTest()
