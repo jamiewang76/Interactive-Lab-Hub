@@ -510,6 +510,9 @@ def ToFutureTest():
         FutureCarousel()
     # print("past finished")
 
+def time_travel():
+    draw.text((0, 0), str(current_year), font=font, fill="#000000")
+    image.paste(editImage(pictures[current_year]), (0.2*width,0.2*height))
 
 while True:
     # Draw a black filled box to clear the image.
@@ -542,8 +545,10 @@ while True:
          print(current_year,"While true")
     if x <= 575 and x >= 450 and y <= 575 and y >= 450:
         print("center",state)
+        draw.text((0, 0), str(current_year), font=font, fill="#000000")
         print(current_year,"While true")
         if b == 0:
+            time_travel()
             print("Button")
 
     if state == 0:
