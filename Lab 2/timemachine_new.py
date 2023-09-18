@@ -514,7 +514,7 @@ def ToFutureTest():
 def time_travel():
     display_date = strftime("%m/%d")
     display_hour = strftime("%H:%M:%S")
-    draw.text((100, 100), str(current_year), font=font, fill="#000000")
+    draw.text((100, 98), str(current_year), font=font, fill="#000000")
     draw.text((25, 114), str(display_date), font=font, fill="#000000")
     draw.text((135, 114), str(display_hour), font=font, fill="#000000")
 
