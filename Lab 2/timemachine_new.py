@@ -523,8 +523,8 @@ while True:
     b = myJoystick.button
     if current_year <= 1903:
         current_year = 1903
-    if current_year >= 2223:
-        current_year = 2223
+    if current_year >= 2093:
+        current_year = 2093
     if x > 575:
          state = 1
          print("L", state)
@@ -549,13 +549,14 @@ while True:
          draw.text((0, 0), str(current_year), font=font, fill="#000000")
 
          print(current_year,"While true")
-         current_year += 50
+         current_year += 10
          print(current_year,"While true")
          timeTravel = False
     if x <= 575 and x >= 450 and y <= 575 and y >= 450:
         print("center",state)
         draw.text((0, 0), str(current_year), font=font, fill="#000000")
         print(current_year,"While true")
+        draw.text((20, 20), "Press down button to time travel", font=font, fill="#000000")
         if timeTravel:
             time_travel()
         if b == 0:
