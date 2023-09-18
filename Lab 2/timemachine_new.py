@@ -556,7 +556,8 @@ while True:
         print("center",state)
         draw.text((0, 0), str(current_year), font=font, fill="#000000")
         print(current_year,"While true")
-        draw.text((20, 20), "Press down button to time travel", font=font, fill="#000000")
+        if state !=0:
+            draw.text((10, 20), "Press down button to time travel", font=font, fill="#000000")
         if timeTravel:
             time_travel()
         if b == 0:
