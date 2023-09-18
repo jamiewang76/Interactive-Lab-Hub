@@ -51,6 +51,7 @@ state = 0
 Jiao_run = False
 event_num = 0
 myJoystick = qwiic_joystick.QwiicJoystick()
+timeTravel = False
 
 # Get drawing object to draw on image.
 draw = ImageDraw.Draw(image)
@@ -523,9 +524,11 @@ while True:
     if x > 575:
          state = 1
          print("L", state)
+         timeTravel = False
     elif x < 450:
          state = 1
          print("R", state)
+         timeTravel = False
     if y > 575:
          state = 1
          print("U", state)
@@ -534,6 +537,7 @@ while True:
          print(current_year,"While true")
          current_year -= 10
          print(current_year,"While true")
+         timeTravel = False
     elif y < 450:
          state = 1
          print("D", state)
@@ -543,12 +547,15 @@ while True:
          print(current_year,"While true")
          current_year += 10
          print(current_year,"While true")
+         timeTravel = False
     if x <= 575 and x >= 450 and y <= 575 and y >= 450:
         print("center",state)
         draw.text((0, 0), str(current_year), font=font, fill="#000000")
         print(current_year,"While true")
-        if b == 0:
+        if timeTravel:
             time_travel()
+        if b == 0:
+            timeTravel = True
             print("Button")
 
     if state == 0:
