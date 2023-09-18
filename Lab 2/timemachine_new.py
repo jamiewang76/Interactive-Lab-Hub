@@ -216,7 +216,7 @@ def PastCarousel():
 
 
 def Internet():
-    image.paste(editImage("dns.png",(0,0)))
+    image.paste(editImage("dns.png"), (0,0))
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
     x1 = 0.3*width
@@ -243,7 +243,7 @@ def Internet():
     print("internet")
 
 def Moon():
-    image.paste(editImage("moon.png",(0,0)))
+    image.paste(editImage("moon.png"),(0,0))
 
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
@@ -272,7 +272,7 @@ def Moon():
     print("moon")
 
 def WWII():
-    image.paste(editImage("ww2.png",(0,0)))
+    image.paste(editImage("ww2.png"),(0,0))
 
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
@@ -300,7 +300,7 @@ def WWII():
     print("wwii")
 
 def Wright():
-    image.paste(editImage("wright.png",(0,0)))
+    image.paste(editImage("wright.png"),(0,0))
 
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
@@ -385,7 +385,7 @@ def FutureCarousel():
         current_year = 2023
         
 def Maldives():
-    image.paste(editImage("maldives.png",(0,0)))
+    image.paste(editImage("maldives.png"),(0,0))
 
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
@@ -413,7 +413,7 @@ def Maldives():
     print("Maldives")
 
 def Flight():
-    image.paste(editImage("flight.png",(0,0)))
+    image.paste(editImage("flight.png"),(0,0))
 
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
@@ -441,7 +441,7 @@ def Flight():
     print("flight")
 
 def Mars():
-    image.paste(editImage("mars.png",(0,0)))
+    image.paste(editImage("mars.png"),(0,0))
 
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
@@ -469,7 +469,7 @@ def Mars():
     print("Mars")
 
 def Cyborg():
-    image.paste(editImage("cyborg.png",(0,0)))
+    image.paste(editImage("cyborg.png"),(0,0))
 
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
