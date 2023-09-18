@@ -520,16 +520,16 @@ while True:
     if x > 575:
          state = 1
          print("L")
-         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
-         print(current_year,"While true")
-         current_year -= 10
-         print(current_year,"While true")
     elif x < 450:
          state = 1
          print("R")
     if y > 575:
          state = 1
          print("U")
+         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+         print(current_year,"While true")
+         current_year -= 10
+         print(current_year,"While true")
     elif y < 450:
          state = 1
          print("D")
