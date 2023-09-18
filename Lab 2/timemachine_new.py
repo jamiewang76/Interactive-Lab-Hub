@@ -165,8 +165,8 @@ def main_screen():
     display_hour = strftime("%H:%M:%S")
     display_title = "ARE YOU READY"
     display_title2 = "FOR TIME TRAVEL?"
-    display_option1 = "> Forward to the back"
-    display_option2 = "> Back to the future"
+    display_option1 = "Steer Left to the back"
+    display_option2 = "Steer Right to the future"
 
     draw.text((x1, y1), display_date, font=time_font, fill="#FFFFFF")
     draw.text((x2, y2), display_hour, font=time_font, fill="#FFFFFF")
@@ -578,9 +578,10 @@ while True:
          timeTravel = False
     if x <= 575 and x >= 450 and y <= 575 and y >= 450:
         print("center",state)
-        draw.text((100, 70), str(current_year), font=font, fill="#000000")
+        # draw.text((100, 70), str(current_year), font=font, fill="#000000")
         print(current_year,"While true")
         if state !=0:
+            draw.text((100, 70), str(current_year), font=font, fill="#000000")
             draw.text((40, 20), "Press down button", font=font, fill="#000000")
             draw.text((52, 35), "to time travel!", font=font, fill="#000000")
         if timeTravel:
