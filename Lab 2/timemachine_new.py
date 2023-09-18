@@ -512,7 +512,7 @@ def ToFutureTest():
 
 def time_travel():
     draw.text((0, 0), str(current_year), font=font, fill="#000000")
-    image.paste(editImage(pictures[current_year]), (0.2*width,0.2*height))
+    image.paste(editImage(pictures[current_year]), (20,20))
 
 while True:
     # Draw a black filled box to clear the image.
