@@ -558,7 +558,7 @@ while True:
         print(current_year,"While true")
         if state !=0:
             draw.text((30, 20), "Press down button", font=font, fill="#000000")
-            draw.text((35, 30), "to time travel", font=font, fill="#000000")
+            draw.text((38, 35), "to time travel!", font=font, fill="#000000")
 
         if timeTravel:
             time_travel()
