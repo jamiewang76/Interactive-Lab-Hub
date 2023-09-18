@@ -79,6 +79,9 @@ backlight.value = True
 
 current_year = 2023
 # year_bk_1 = 1983
+start_year = 2023
+current_year = 2023
+pictures = {1983: 'dns.jpg', 1963: 'ww2.jpg',1903:'wright.jpg'}
 
 initial_time = int(time.time()) #frame of reference in seconds
 
@@ -515,12 +518,20 @@ while True:
     y = myJoystick.vertical
     b = myJoystick.button
     if x > 575:
+         state = 1
          print("L")
+         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+         print(current_year,"While true")
+         current_year -= 10
+         print(current_year,"While true")
     elif x < 450:
+         state = 1
          print("R")
     if y > 575:
+         state = 1
          print("U")
     elif y < 450:
+         state = 1
          print("D")
     if x <= 575 and x >= 450 and y <= 575 and y >= 450:
         print("center")
@@ -529,41 +540,43 @@ while True:
 
     if state == 0:
         main_screen()
-        print("state = 0")
-        Jiao_run = False
-        event_num = 0
-        if buttonB.value and not buttonA.value:
-            state = 1
-        if buttonA.value and not buttonB.value:
-            state = 2
+    # if state == 0:
+    #     main_screen()
+    #     print("state = 0")
+    #     Jiao_run = False
+    #     event_num = 0
+    #     if buttonB.value and not buttonA.value:
+    #         state = 1
+    #     if buttonA.value and not buttonB.value:
+    #         state = 2
     
-    elif state == 1:
-        if current_year>1983:
-            JiaoPast()
+    # elif state == 1:
+    #     if current_year>1983:
+    #         JiaoPast()
 
-        ToPastTest()
+    #     ToPastTest()
 
-        if buttonB.value and not buttonA.value:
-            event_num+=1
-            print("button B")
-        if buttonA.value and not buttonB.value:
-            event_num+=1
-            print("button A")
+    #     if buttonB.value and not buttonA.value:
+    #         event_num+=1
+    #         print("button B")
+    #     if buttonA.value and not buttonB.value:
+    #         event_num+=1
+    #         print("button A")
 
 
-    elif state == 2:
-        # ToFuture()
-        if current_year<2053:
-            JiaoFuture()
+    # elif state == 2:
+    #     # ToFuture()
+    #     if current_year<2053:
+    #         JiaoFuture()
 
-        ToFutureTest()
+    #     ToFutureTest()
 
-        if buttonB.value and not buttonA.value:
-            event_num+=1
-            print("button B")
-        if buttonA.value and not buttonB.value:
-            event_num+=1
-            print("button A")
+    #     if buttonB.value and not buttonA.value:
+    #         event_num+=1
+    #         print("button B")
+    #     if buttonA.value and not buttonB.value:
+    #         event_num+=1
+    #         print("button A")
 
     # Display image.
     disp.image(image, rotation)
