@@ -514,9 +514,9 @@ def ToFutureTest():
 def time_travel():
     display_date = strftime("%m/%d/%Y")
     display_hour = strftime("%H:%M:%S")
-    draw.text((100, 80), str(current_year), font=font, fill="#000000")
-    draw.text((20, 100), str(display_date), font=font, fill="#000000")
-    draw.text((130, 100), str(display_hour), font=font, fill="#000000")
+    draw.text((100, 95), str(current_year), font=font, fill="#000000")
+    draw.text((20, 110), str(display_date), font=font, fill="#000000")
+    draw.text((130, 110), str(display_hour), font=font, fill="#000000")
 
     image.paste(editImage(pictures[current_year]), (0,0))
 
