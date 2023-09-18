@@ -521,6 +521,10 @@ while True:
     x = myJoystick.horizontal
     y = myJoystick.vertical
     b = myJoystick.button
+    if current_year <= 1903:
+        current_year = 1903
+    if current_year >= 2223:
+        current_year = 2223
     if x > 575:
          state = 1
          print("L", state)
