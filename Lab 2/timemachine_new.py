@@ -82,7 +82,26 @@ current_year = 2023
 # year_bk_1 = 1983
 start_year = 2023
 current_year = 2023
-pictures = {1983: 'dns.png', 1963: 'ww2.png',1903:'wright.png'}
+pictures = {2093: "2093.png",
+            2083: "2083.png",
+            2073: "mars.png",
+            2063: "2063.png",
+            2053: "2053.png",
+            2043: "2043.png",
+            2033: "2033.png",
+            2023: "dns.png",
+            2013: "Obama.png", 
+            2003: "Shenzhou.png", 
+            1993: "Schindler.png", 
+            1983: "MarioBros.png", 
+            1973: "Viet.png", 
+            1963: "JFK.png", 
+            1953: "Queen.png", 
+            1943: "Stalingrad.png",
+            1933: "Depression.png", 
+            1923: "Turkey.png", 
+            1913: "Wilson.png",
+            1903: "wright.png"}
 
 initial_time = int(time.time()) #frame of reference in seconds
 
