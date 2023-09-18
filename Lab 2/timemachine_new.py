@@ -533,6 +533,10 @@ while True:
     elif y < 450:
          state = 1
          print("D")
+         draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+         print(current_year,"While true")
+         current_year += 10
+         print(current_year,"While true")
     if x <= 575 and x >= 450 and y <= 575 and y >= 450:
         print("center")
         print(current_year,"While true")
