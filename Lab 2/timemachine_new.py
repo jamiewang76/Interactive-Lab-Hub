@@ -104,7 +104,7 @@ def editImage(filename):
     # Crop and center the image
     x = scaled_width // 2 - width // 2
     y = scaled_height // 2 - height // 2 - (scaled_height - height) // 2
-    image = image.crop((x, y, x + width, y + height))
+    image = image.crop((x, y, x + width, y + height - 40))
 
     
     return image
@@ -512,8 +512,13 @@ def ToFutureTest():
     # print("past finished")
 
 def time_travel():
-    draw.text((0, 0), str(current_year), font=font, fill="#000000")
-    image.paste(editImage(pictures[current_year]), (20,20))
+    display_date = strftime("%m/%d/%Y")
+    display_hour = strftime("%H:%M:%S")
+    draw.text((100, 80), str(current_year), font=font, fill="#000000")
+    draw.text((30, 100), str(display_date), font=font, fill="#000000")
+    draw.text((80, 100), str(display_hour), font=font, fill="#000000")
+
+    image.paste(editImage(pictures[current_year]), (0,0))
 
 while True:
     # Draw a black filled box to clear the image.
