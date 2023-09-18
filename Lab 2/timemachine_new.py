@@ -526,16 +526,18 @@ while True:
     if y > 575:
          state = 1
          print("U", state)
-         draw.rectangle((0, 0, width, height), outline=0, fill=400)
+         
          draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+         draw.rectangle((0, 0, width, height), outline=0, fill=400)
          print(current_year,"While true")
          current_year -= 10
          print(current_year,"While true")
     elif y < 450:
          state = 1
          print("D", state)
-         draw.rectangle((0, 0, width, height), outline=0, fill=400)
          draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
+         draw.rectangle((0, 0, width, height), outline=0, fill=400)
+
          print(current_year,"While true")
          current_year += 10
          print(current_year,"While true")
