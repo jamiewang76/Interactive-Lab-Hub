@@ -216,6 +216,7 @@ def PastCarousel():
 
 
 def Internet():
+    image.paste(editImage("dns.png",(0,0)))
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
     x1 = 0.3*width
@@ -236,12 +237,14 @@ def Internet():
     display_title = "Advent of DNS"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
-    disp.image(editImage("dns.png"), rotation)
+    # disp.image(editImage("dns.png"), rotation)
     delta_sleep(1)
 
     print("internet")
 
 def Moon():
+    image.paste(editImage("moon.png",(0,0)))
+
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
     x1 = 0.3*width
@@ -262,12 +265,15 @@ def Moon():
     display_title = "Land on Moon"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
-    disp.image(editImage("moon.png"), rotation)
+
+    # disp.image(editImage("moon.png"), rotation)
     delta_sleep(1)
 
     print("moon")
 
 def WWII():
+    image.paste(editImage("ww2.png",(0,0)))
+
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
     x1 = 0.3*width
@@ -288,12 +294,13 @@ def WWII():
     display_title = "Beginning of WWII"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
-    disp.image(editImage("ww2.png"), rotation)
+    # disp.image(editImage("ww2.png"), rotation)
     delta_sleep(1)
 
     print("wwii")
 
 def Wright():
+    image.paste(editImage("wright.png",(0,0)))
 
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
@@ -319,7 +326,7 @@ def Wright():
     display_title = "Invention of Wright Flyer"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
-    disp.image(editImage("wright.png"), rotation)
+    # disp.image(editImage("wright.png"), rotation)
     delta_sleep(1)
 
     print("wright")
@@ -378,6 +385,8 @@ def FutureCarousel():
         current_year = 2023
         
 def Maldives():
+    image.paste(editImage("maldives.png",(0,0)))
+
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
     x1 = 0.3*width
@@ -398,12 +407,14 @@ def Maldives():
     display_title = "Maldives Sinks"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
-    disp.image(editImage("maldives.png"), rotation)
+    # disp.image(editImage("maldives.png"), rotation)
     delta_sleep(1)
 
     print("Maldives")
 
 def Flight():
+    image.paste(editImage("flight.png",(0,0)))
+
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
     x1 = 0.3*width
@@ -424,12 +435,14 @@ def Flight():
     display_title = "Low Cost Private Jet"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
-    disp.image(editImage("flight.png"), rotation)
+    # disp.image(editImage("flight.png"), rotation)
     delta_sleep(1)
 
     print("flight")
 
 def Mars():
+    image.paste(editImage("mars.png",(0,0)))
+
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
 
     x1 = 0.3*width
@@ -450,12 +463,14 @@ def Mars():
     display_title = "Colonize Mars"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
-    disp.image(editImage("mars.png"), rotation)
+    # disp.image(editImage("mars.png"), rotation)
     delta_sleep(1)
 
     print("Mars")
 
 def Cyborg():
+    image.paste(editImage("cyborg.png",(0,0)))
+
     time_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
     x1 = 0.3*width
@@ -480,7 +495,7 @@ def Cyborg():
     display_title = "Cyberware"
     draw.text((x3, y3), display_title, font=text_font, fill="#20E200")
 
-    disp.image(editImage("cyborg.png"), rotation)
+    # disp.image(editImage("cyborg.png"), rotation)
     delta_sleep(1)
 
     print("cyborg")
