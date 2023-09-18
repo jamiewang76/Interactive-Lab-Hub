@@ -535,6 +535,7 @@ while True:
          print("D")
     if x <= 575 and x >= 450 and y <= 575 and y >= 450:
         print("center")
+        print(current_year,"While true")
         if b == 0:
             print("Button")
 
