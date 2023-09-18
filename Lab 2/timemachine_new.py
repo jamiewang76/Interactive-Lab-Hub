@@ -515,8 +515,8 @@ def time_travel():
     display_date = strftime("%m/%d/%Y")
     display_hour = strftime("%H:%M:%S")
     draw.text((100, 80), str(current_year), font=font, fill="#000000")
-    draw.text((30, 100), str(display_date), font=font, fill="#000000")
-    draw.text((80, 100), str(display_hour), font=font, fill="#000000")
+    draw.text((0, 120), str(display_date), font=font, fill="#000000")
+    draw.text((150, 120), str(display_hour), font=font, fill="#000000")
 
     image.paste(editImage(pictures[current_year]), (0,0))
 
