@@ -522,7 +522,8 @@ while True:
          print("U")
     elif y < 450:
          print("D")
-    
+    else:
+        print("center")
     if b == 0:
          print("Button")
 
