@@ -513,7 +513,7 @@ def ToFutureTest():
 
 while True:
     # Draw a black filled box to clear the image.
-    draw.rectangle((0, 0, width, height), outline=0, fill=400)
+    # draw.rectangle((0, 0, width, height), outline=0, fill=400)
     x = myJoystick.horizontal
     y = myJoystick.vertical
     b = myJoystick.button
