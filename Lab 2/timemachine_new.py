@@ -537,7 +537,7 @@ while True:
          state = 1
          print("U", state)
         #  draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
-         draw.text((0, 0), str(current_year), font=font, fill="#000000")
+         draw.text((40, 70), str(current_year), font=font, fill="#000000")
          print(current_year,"While true")
          current_year -= 10
          print(current_year,"While true")
@@ -546,7 +546,7 @@ while True:
          state = 1
          print("D", state)
         #  draw.rectangle((0, 0, width, height), outline=0, fill="#000000")
-         draw.text((0, 0), str(current_year), font=font, fill="#000000")
+         draw.text((40, 70), str(current_year), font=font, fill="#000000")
 
          print(current_year,"While true")
          current_year += 10
@@ -558,7 +558,7 @@ while True:
         print(current_year,"While true")
         if state !=0:
             draw.text((30, 20), "Press down button", font=font, fill="#000000")
-            draw.text((38, 35), "to time travel!", font=font, fill="#000000")
+            draw.text((42, 35), "to time travel!", font=font, fill="#000000")
 
         if timeTravel:
             time_travel()
