@@ -519,26 +519,26 @@ while True:
     b = myJoystick.button
     if x > 575:
          state = 1
-         print("L")
+         print("L", state)
     elif x < 450:
          state = 1
-         print("R")
+         print("R", state)
     if y > 575:
          state = 1
-         print("U")
+         print("U", state)
          draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
          print(current_year,"While true")
          current_year -= 10
          print(current_year,"While true")
     elif y < 450:
          state = 1
-         print("D")
+         print("D", state)
          draw.text((x, y), str(current_year), font=font, fill="#FFFFFF")
          print(current_year,"While true")
          current_year += 10
          print(current_year,"While true")
     if x <= 575 and x >= 450 and y <= 575 and y >= 450:
-        print("center")
+        print("center",state)
         print(current_year,"While true")
         if b == 0:
             print("Button")
@@ -584,5 +584,5 @@ while True:
     #         print("button A")
 
     # Display image.
-    # disp.image(image, rotation)
+    disp.image(image, rotation)
     time.sleep(0.5)
