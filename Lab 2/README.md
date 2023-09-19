@@ -259,4 +259,10 @@ As always, make sure you document contributions and ideas from others explicitly
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page. 
 
+## Time Travel Machine
+## Description
+
+Time Travel Machine allows users to navigate forward or back in time with joystick. When stopped at the target year, user is prompt to click on the joystick to confirm time travel, and then they are able to see the big event of the year and travel back to that year (with date and hour/minute/second synced with current date, it is still able to function as a clock)!
+
+[![Time Travel Machine](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%202/cover.png)](https://drive.google.com/file/d/1wo31TQYekmBMuUVz1yvpl_EeO7ZbwQmB/view?usp=drive_link)
 
