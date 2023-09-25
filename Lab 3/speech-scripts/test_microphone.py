@@ -29,7 +29,7 @@ def callback(indata, frames, time, status):
 
 def string_to_int(newlist):
     print("your number is")
-    content = newlist[0][15:len(newlist[0])-4]
+    content = newlist[0][14:len(newlist[0])-3]
     print(content)
 
 
