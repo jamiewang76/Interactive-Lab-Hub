@@ -106,6 +106,8 @@ try:
             data = q.get()
             if rec.AcceptWaveform(data):
                 nl.append(rec.Result())
+                print(nl)
+
                 print(rec.Result())
                 # nl.append(rec.Result())
             else:
