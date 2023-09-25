@@ -27,8 +27,10 @@ def callback(indata, frames, time, status):
         print(status, file=sys.stderr)
     q.put(bytes(indata))
 
-def string_to_int():
+def string_to_int(newlist):
     print("your number is")
+    content = newlist[0][15:len(newlist[0]-4)]
+    print(content)
 
 
 parser = argparse.ArgumentParser(add_help=False)
@@ -93,7 +95,8 @@ try:
 except KeyboardInterrupt:
     # string_to_int()
     print("\n")
-    print(nl)
+    # print(nl)
+    string_to_int(nl)
     print("\nDone")
     parser.exit(0)
 except Exception as e:
