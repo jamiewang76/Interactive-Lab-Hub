@@ -77,13 +77,14 @@ try:
         while True:
             data = q.get()
             if rec.AcceptWaveform(data):
+                nl.append(rec.Result())
                 print(rec.Result())
                 # nl.append(rec.Result())
             else:
                 print(rec.PartialResult())
             if dump_fn is not None:
                 dump_fn.write(data)
-                nl.append(data)
+                
 
 except KeyboardInterrupt:
     print("\n")
