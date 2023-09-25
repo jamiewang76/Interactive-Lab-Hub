@@ -81,7 +81,7 @@ try:
         while True:
             data = q.get()
             if rec.AcceptWaveform(data):
-                nl.append(rec.Result()["text"])
+                nl.append(rec.Result())
                 print(rec.Result())
                 # nl.append(rec.Result())
             else:
