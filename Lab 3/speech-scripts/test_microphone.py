@@ -12,6 +12,7 @@ import sounddevice as sd
 from vosk import Model, KaldiRecognizer
 
 q = queue.Queue()
+nl = []
 
 def int_or_str(text):
     """Helper function for argument parsing."""
@@ -77,13 +78,14 @@ try:
             data = q.get()
             if rec.AcceptWaveform(data):
                 print(rec.Result())
+                nl.append(rec.Result())
             else:
                 print(rec.PartialResult())
             if dump_fn is not None:
                 dump_fn.write(data)
 
 except KeyboardInterrupt:
-    print(dump_fn)
+    print(nl)
     print("\nDone")
     parser.exit(0)
 except Exception as e:
