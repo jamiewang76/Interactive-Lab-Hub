@@ -83,9 +83,10 @@ try:
                 print(rec.PartialResult())
             if dump_fn is not None:
                 dump_fn.write(data)
-                nl.append(dump_fn.write(data))
+                nl.append(data)
 
 except KeyboardInterrupt:
+    print("\n")
     print(nl)
     print("\nDone")
     parser.exit(0)
