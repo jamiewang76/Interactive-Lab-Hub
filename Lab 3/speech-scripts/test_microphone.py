@@ -42,9 +42,10 @@ help_dict = {
 
 def string_to_int(newlist):
     
-    content = newlist[0][14:len(newlist[0])-3]
+    # content = newlist[0][14:len(newlist[0])-3]
     # content.split()
     try:
+        content = newlist[0][14:len(newlist[0])-3]
         res = ''.join(help_dict[ele] for ele in content.split())
         print("your number is")
         print(res)
@@ -116,7 +117,7 @@ try:
 except KeyboardInterrupt:
     # string_to_int()
     print("\n")
-    # print(nl)
+    print(nl)
     string_to_int(nl)
     print("\nDone")
     parser.exit(0)
