@@ -83,7 +83,7 @@ try:
                 dump_fn.write(data)
 
 except KeyboardInterrupt:
-    print(q.get())
+    print(dump_fn)
     print("\nDone")
     parser.exit(0)
 except Exception as e:
