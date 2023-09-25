@@ -27,10 +27,26 @@ def callback(indata, frames, time, status):
         print(status, file=sys.stderr)
     q.put(bytes(indata))
 
+help_dict = {
+    'one': '1',
+    'two': '2',
+    'three': '3',
+    'four': '4',
+    'five': '5',
+    'six': '6',
+    'seven': '7',
+    'eight': '8',
+    'nine': '9',
+    'zero': '0'
+}
+
 def string_to_int(newlist):
+    
     print("your number is")
     content = newlist[0][14:len(newlist[0])-3]
-    print(content)
+    # content.split()
+    res = ''.join(help_dict[ele] for ele in content.split())
+    print(res)
 
 
 parser = argparse.ArgumentParser(add_help=False)
