@@ -27,6 +27,10 @@ def callback(indata, frames, time, status):
         print(status, file=sys.stderr)
     q.put(bytes(indata))
 
+def string_to_int():
+    print("your number is")
+
+
 parser = argparse.ArgumentParser(add_help=False)
 parser.add_argument(
     "-l", "--list-devices", action="store_true",
@@ -77,7 +81,7 @@ try:
         while True:
             data = q.get()
             if rec.AcceptWaveform(data):
-                nl.append(rec.Result())
+                nl.append(rec.Result()["text"])
                 print(rec.Result())
                 # nl.append(rec.Result())
             else:
@@ -87,6 +91,7 @@ try:
                 
 
 except KeyboardInterrupt:
+    # string_to_int()
     print("\n")
     print(nl)
     print("\nDone")
