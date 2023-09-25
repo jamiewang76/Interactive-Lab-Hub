@@ -42,11 +42,16 @@ help_dict = {
 
 def string_to_int(newlist):
     
-    print("your number is")
     content = newlist[0][14:len(newlist[0])-3]
     # content.split()
-    res = ''.join(help_dict[ele] for ele in content.split())
-    print(res)
+    try:
+        res = ''.join(help_dict[ele] for ele in content.split())
+        print("your number is")
+        print(res)
+    except:
+        print("You didn't give me the correct response")
+    # print("your number is")
+    # print(res)
 
 
 parser = argparse.ArgumentParser(add_help=False)
