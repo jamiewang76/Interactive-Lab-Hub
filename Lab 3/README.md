@@ -110,6 +110,7 @@ python test_microphone.py -m en
 
 \*\***Write your own shell file that verbally asks for a numerical based input (such as a phone number, zipcode, number of pets, etc) and records the answer the respondent provides.**\*\*
 
+See changes made in test_microphone.py
 
 ### Serving Pages
 
@@ -134,6 +135,9 @@ From a remote browser on the same network, check to make sure your webserver is 
 Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stuck? Make a device that talks for dogs. If that is too stupid, find an application that is better than that.) 
 
 \*\***Post your storyboard and diagram here.**\*\*
+
+![ghost-writer](https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/ce14de03-75cb-4843-af7e-52b82a99a241)
+
 
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses. 
 
