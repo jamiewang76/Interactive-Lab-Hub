@@ -15,6 +15,7 @@ q = queue.Queue()
 nl = []
 content = []
 status = None
+rewriteBegin = False
 newSentence = None
 replaceidx = 0
 
@@ -40,14 +41,17 @@ def sentence_to_words(newSentence):
     if words == ["pie","backspace"] and lastIndex > 0:
         content[lastIndex]= content[lastIndex][:len()-1]
     if "rewrite sentence" in newSentence:
-        status = "rewrite"
+        # status = "rewrite"
+        rewriteBegin = True
         replaceidx = help_dict[words[-1]]-1
         print(replaceidx)
         # replaceidx = help_dict[newSentence[newSentence.rfind():-1]]-1
         content.pop(replaceidx)
-    if status == "rewrite":
+    # if status == "rewrite":
+    if rewriteBegin == True
         content.insert(replaceidx, newSentence)
-        status = None
+        # status = None
+        rewriteBegin = False
     else:
         content.append[newSentence]
         replaceidx = 0
