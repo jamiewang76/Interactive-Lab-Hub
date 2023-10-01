@@ -133,7 +133,7 @@ try:
             if rec.AcceptWaveform(data):
                 newSentence = rec.Result()
                 print(newSentence)
-                content.append(newSentence[newSentence.find(":"+3):-4])
+                content.append(newSentence[15:-4])
                 # sentence_to_words(newSentence)
                 # if "pie rewrite sentence" in rec.Result():
                 #     status = "rewrite"
