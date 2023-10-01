@@ -42,7 +42,7 @@ def sentence_to_words(newSentence):
         content.remove(lastIndex)
     if words == ["pie","backspace"] and lastIndex > 0:
         content[lastIndex]= content[lastIndex][:len()-1]
-    if "rewrite sentence" in newSentence:
+    if "rewrite" in newSentence:
         # status = "rewrite"
         rewriteBegin = True
         try:
