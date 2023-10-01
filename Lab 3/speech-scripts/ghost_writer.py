@@ -38,7 +38,7 @@ def sentence_to_words(newSentence):
     global rewriteBegin
     global replaceidx
     lastIndex = len(nl)-1
-    if "delete" in newSentence and lastIndex > 0:
+    if "delete" in newSentence:
         # content.remove(lastIndex)
         content.pop()
         return
