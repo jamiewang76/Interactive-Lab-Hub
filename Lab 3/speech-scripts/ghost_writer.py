@@ -36,6 +36,7 @@ def sentence_to_words(newSentence):
     newSentence = newSentence[14:-3]
     words = newSentence.split()
     global rewriteBegin
+    global replaceidx
     lastIndex = len(nl)-1
     if words == ["pie","delete"] and lastIndex > 0:
         content.remove(lastIndex)
