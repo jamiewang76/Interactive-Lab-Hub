@@ -18,6 +18,7 @@ status = None
 rewriteBegin = False
 newSentence = None
 replaceidx = 0
+# lastIndex = len(nl)-1
 
 def int_or_str(text):
     """Helper function for argument parsing."""
@@ -37,7 +38,8 @@ def sentence_to_words(newSentence):
     words = newSentence.split()
     global rewriteBegin
     global replaceidx
-    lastIndex = len(nl)-1
+    # global lastIndex
+    lastIndex = len(content)-1
     if "delete" in newSentence:
         # content.remove(lastIndex)
         content.pop()
