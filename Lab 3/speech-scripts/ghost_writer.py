@@ -131,7 +131,7 @@ try:
             data = q.get()
             replaceidx = 0
             if rec.AcceptWaveform(data):
-                newSentence = rec.Record()
+                newSentence = rec.Result()
                 print(newSentence)
                 content.append(newSentence)
                 # sentence_to_words(newSentence)
