@@ -48,6 +48,7 @@ def sentence_to_words(newSentence):
         print(replaceidx)
         # replaceidx = help_dict[newSentence[newSentence.rfind():-1]]-1
         content.pop(replaceidx)
+        return
     # if status == "rewrite":
     if rewriteBegin == True:
         content.insert(replaceidx, newSentence)
