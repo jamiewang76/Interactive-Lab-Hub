@@ -38,10 +38,14 @@ def sentence_to_words(newSentence):
     global rewriteBegin
     global replaceidx
     lastIndex = len(nl)-1
-    if words == ["pie","delete"] and lastIndex > 0:
+    if "delete" in newSentence and lastIndex > 0:
         content.remove(lastIndex)
-    if words == ["pie","backspace"] and lastIndex > 0:
+    # if words == ["pie","delete"] and lastIndex > 0:
+    #     content.remove(lastIndex)
+    if "backspace" in newSentence and lastIndex > 0:
         content[lastIndex]= content[lastIndex][:len()-1]
+    # if words == ["pie","backspace"] and lastIndex > 0:
+    #     content[lastIndex]= content[lastIndex][:len()-1]
     if "rewrite" in newSentence:
         # status = "rewrite"
         rewriteBegin = True
