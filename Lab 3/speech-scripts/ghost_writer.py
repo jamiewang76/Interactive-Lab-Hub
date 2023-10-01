@@ -64,6 +64,9 @@ help_dict = {
 
 # def ghost_analyze():
     
+def output_content(c):
+    output_text = " ".join(c)
+    return output_text
 
 def string_to_int(newlist):
     
@@ -133,7 +136,7 @@ try:
             if rec.AcceptWaveform(data):
                 newSentence = rec.Result()
                 print(newSentence)
-                content.append(newSentence[15:-4])
+                content.append(newSentence[14:-3])
                 # sentence_to_words(newSentence)
                 # if "pie rewrite sentence" in rec.Result():
                 #     status = "rewrite"
@@ -161,7 +164,8 @@ except KeyboardInterrupt:
     print("\n")
     # print(nl)
     # string_to_int(nl)
-    print(content)
+    # print(content)
+    print(output_content(content))
     print("\nDone")
     parser.exit(0)
 except Exception as e:
