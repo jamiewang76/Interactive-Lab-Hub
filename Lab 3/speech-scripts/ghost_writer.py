@@ -48,6 +48,7 @@ def sentence_to_words(newSentence):
     #     content.remove(lastIndex)
     if "fuck" in newSentence:
         content[-1] = content[-1][0:-2]
+        return
     # if words == ["pie","backspace"] and lastIndex > 0:
     #     content[lastIndex]= content[lastIndex][:len()-1]
     if "rewrite" in newSentence:
