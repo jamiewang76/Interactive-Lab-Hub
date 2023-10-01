@@ -39,7 +39,9 @@ def sentence_to_words(newSentence):
     global replaceidx
     lastIndex = len(nl)-1
     if "delete" in newSentence and lastIndex > 0:
-        content.remove(lastIndex)
+        # content.remove(lastIndex)
+        content.pop()
+        return
     # if words == ["pie","delete"] and lastIndex > 0:
     #     content.remove(lastIndex)
     if "backspace" in newSentence and lastIndex > 0:
