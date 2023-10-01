@@ -39,15 +39,15 @@ def sentence_to_words(newSentence):
     global rewriteBegin
     global replaceidx
     # global lastIndex
-    lastIndex = len(content)-1
+    # lastIndex = len(content)-1
     if "delete" in newSentence:
         # content.remove(lastIndex)
         content.pop()
         return
     # if words == ["pie","delete"] and lastIndex > 0:
     #     content.remove(lastIndex)
-    if "fuck" in newSentence and lastIndex > 0:
-        content[lastIndex]= content[lastIndex][:len()-1]
+    if "fuck" in newSentence:
+        content[-1] = content[-1][0:-2]
     # if words == ["pie","backspace"] and lastIndex > 0:
     #     content[lastIndex]= content[lastIndex][:len()-1]
     if "rewrite" in newSentence:
