@@ -16,6 +16,7 @@ nl = []
 content = []
 status = None
 newSentence = None
+replaceidx = 0
 
 def int_or_str(text):
     """Helper function for argument parsing."""
@@ -31,19 +32,24 @@ def callback(indata, frames, time, status):
     q.put(bytes(indata))
 
 def sentence_to_words(newSentence):
+    newSentence = newSentence[14:-3]
     words = newSentence.split()
-    # lastIndex = len(nl)-1
-    # if words == ["pie","delete"]:
-    #     nl.remove(lastIndex)
-    # if words == ["pie","backspace"]:
-    #     nl[lastIndex]= nl[lastIndex][:len()-1]
-    if "pie rewrite sentence" in newSentence:
+    lastIndex = len(nl)-1
+    if words == ["pie","delete"] and lastIndex > 0:
+        content.remove(lastIndex)
+    if words == ["pie","backspace"] and lastIndex > 0:
+        content[lastIndex]= content[lastIndex][:len()-1]
+    if "rewrite sentence" in newSentence:
         status = "rewrite"
-        replaceidx = help_dict[newSentence[newSentence.rfind():-1]]-1
+        replaceidx = help_dict[words[-1]]-1
+        # replaceidx = help_dict[newSentence[newSentence.rfind():-1]]-1
         content.pop(replaceidx)
     if status == "rewrite":
         content.insert(replaceidx, newSentence)
         status = None
+    else:
+        content.append[newSentence]
+        replaceidx = 0
     # if status == continue
 
 help_dict = {
@@ -132,12 +138,12 @@ try:
         rec = KaldiRecognizer(model, args.samplerate)
         while True:
             data = q.get()
-            replaceidx = 0
+            # replaceidx = 0
             if rec.AcceptWaveform(data):
                 newSentence = rec.Result()
                 print(newSentence)
-                content.append(newSentence[14:-3])
-                # sentence_to_words(newSentence)
+                # content.append(newSentence[14:-3])
+                sentence_to_words(newSentence)
                 # if "pie rewrite sentence" in rec.Result():
                 #     status = "rewrite"
                 #     replaceidx = help_dict[rec.Result[rec.Result.rfind():-1]]-1
