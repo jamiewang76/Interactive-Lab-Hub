@@ -131,10 +131,10 @@ try:
             data = q.get()
             replaceidx = 0
             if rec.AcceptWaveform(data):
-                newSentence = str(rec.Record())
+                newSentence = rec.Record()
                 print(newSentence)
                 content.append(newSentence)
-                sentence_to_words(newSentence)
+                # sentence_to_words(newSentence)
                 # if "pie rewrite sentence" in rec.Result():
                 #     status = "rewrite"
                 #     replaceidx = help_dict[rec.Result[rec.Result.rfind():-1]]-1
@@ -148,7 +148,7 @@ try:
 
 
 
-                print(rec.Result())
+                # print(rec.Result())
                 # nl.append(rec.Result())
             else:
                 print(rec.PartialResult())
