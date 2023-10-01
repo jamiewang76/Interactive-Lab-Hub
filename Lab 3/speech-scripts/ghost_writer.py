@@ -35,6 +35,7 @@ def callback(indata, frames, time, status):
 def sentence_to_words(newSentence):
     newSentence = newSentence[14:-3]
     words = newSentence.split()
+    global rewriteBegin
     lastIndex = len(nl)-1
     if words == ["pie","delete"] and lastIndex > 0:
         content.remove(lastIndex)
