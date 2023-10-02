@@ -61,6 +61,7 @@ def sentence_to_words(newSentence):
     if "delete" in newSentence and len(words) > 1:
         try:
             deleteidx = int(help_dict[words[-1]])-1
+            print(deleteidx)
         except:
             print("error listening")
         # print(deleteidx)
