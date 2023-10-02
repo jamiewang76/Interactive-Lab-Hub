@@ -49,7 +49,9 @@ def sentence_to_words(newSentence):
     if "fuck" in newSentence:
         lllist = content[-1].split()
         print("list:"+lllist)
-        content[-1] = lllist[:-1].join(" ")
+        for i in lllist:
+            ans = ans+''+i
+        content[-1] = ans[:-1].join(" ")
         print("cntent"+content)
         return
     # if words == ["pie","backspace"] and lastIndex > 0:
