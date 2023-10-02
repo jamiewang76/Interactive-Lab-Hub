@@ -8,6 +8,7 @@ import argparse
 import queue
 import sys
 import sounddevice as sd
+import subprocess
 
 from vosk import Model, KaldiRecognizer
 
@@ -50,22 +51,22 @@ def sentence_to_words(newSentence):
     # global lastIndex
     # lastIndex = len(content)-1
     if "show me everything" in newSentence:
-        print(content)
+        # print(content)
         print(output_content(content))
         return
     if "delete" in newSentence and len(words) == 1:
         # content.remove(lastIndex)
         content.pop()
-        print(content)
+        # print(content)
         return
     # if words == ["pie","delete"] and lastIndex > 0:
     #     content.remove(lastIndex)
     if "delete" in newSentence and len(words) > 1:
         try:
             deleteidx = int(help_dict[words[-1]])-1
-            print(deleteidx)
+            # print(deleteidx)
             content.pop(deleteidx)
-            print(content)
+            # print(content)
         except:
             print("error listening")
         # print(deleteidx)
@@ -75,12 +76,12 @@ def sentence_to_words(newSentence):
     if "back" in newSentence:
         if len(content[-1].split()) == 1:
             content.pop()
-            print(content)
+            # print(content)
         else:
             lllist = content[-1].split()
             lllist = lllist[:-1]
             content[-1] = " ".join([str(item) for item in lllist])
-            print(content)
+            # print(content)
         # print("content",content)
         return
     # if words == ["pie","backspace"] and lastIndex > 0:
@@ -91,10 +92,10 @@ def sentence_to_words(newSentence):
         try:
             replaceidx = int(help_dict[words[-1]])-1
             content.pop(replaceidx)
-            print(content)
+            # print(content)
         except:
             print("error listening")
-        print(replaceidx)
+        # print(replaceidx)
         # replaceidx = help_dict[newSentence[newSentence.rfind():-1]]-1
         # content.pop(replaceidx)
         return
@@ -107,7 +108,7 @@ def sentence_to_words(newSentence):
         if len(newSentence)!=0:
             content.append(newSentence)
         replaceidx = 0
-        print(content)
+        # print(content)
     # if status == continue
 
 help_dict = {
@@ -232,7 +233,10 @@ except KeyboardInterrupt:
     # string_to_int(nl)
     # print(content)
     print(output_content(content))
+    output_str = output_content(content)
+    subprocess.run(["./ghost_writer.sh", output_str])
     print("\nThe End")
+    # espeak -ven+f2 -k5 -s150 --stdout  output_content(content) | aplay
     parser.exit(0)
 except Exception as e:
     parser.exit(type(e).__name__ + ": " + str(e))
