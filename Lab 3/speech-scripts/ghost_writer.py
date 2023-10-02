@@ -177,7 +177,7 @@ try:
     with sd.RawInputStream(samplerate=args.samplerate, blocksize = 8000, device=args.device,
             dtype="int16", channels=1, callback=callback):
         print("#" * 80)
-        print("Start writing by saying 'PI WRITE' + your content; Say 'PI BACKSPACE' to delete the last element; Say 'PI DELETE SENTENCE' to delete the last sentence; Say 'PI REWRITE SENTENCE' + [number] to rewrite sentence [number]")
+        print("Start saying things you want to write down, sentence by sentence;\n Say 'FUCK' to delete the last element; \nSay 'DELETE' to delete the last sentence; \nSay 'DELETE+ [number]' to delete sentence [number]; \nSay 'REWRITE+ [number]' to rewrite sentence [number]")
         print("#" * 80)
 
         rec = KaldiRecognizer(model, args.samplerate)
