@@ -51,7 +51,7 @@ def sentence_to_words(newSentence):
     # lastIndex = len(content)-1
     if "show me everything" in newSentence:
         print(content)
-        # print(output_content(content))
+        print(output_content(content))
         return
     if "delete" in newSentence and len(words) == 1:
         # content.remove(lastIndex)
