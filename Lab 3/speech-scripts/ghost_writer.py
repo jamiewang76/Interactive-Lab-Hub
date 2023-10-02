@@ -48,7 +48,7 @@ def sentence_to_words(newSentence):
     #     content.remove(lastIndex)
     if "fuck" in newSentence:
         lllist = content[-1].split()
-        print("list:"+lllist)
+        # print("list:",lllist)
         for i in lllist:
             ans = str(ans)+''+i
         content[-1] = ans[:-1]
