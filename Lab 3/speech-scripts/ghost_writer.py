@@ -46,7 +46,7 @@ def sentence_to_words(newSentence):
     global deleteidx
     # global lastIndex
     # lastIndex = len(content)-1
-    if newSentence == "print":
+    if "show me everything" in newSentence:
         print(output_content(content))
         return
     if "delete" in newSentence and len(words) == 1:
