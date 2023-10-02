@@ -101,7 +101,7 @@ def sentence_to_words(newSentence):
         # status = None
         rewriteBegin = False
     else:
-        if newSentence != "":
+        if len(newSentence)!=0:
             content.append(newSentence)
         replaceidx = 0
         print(content)
