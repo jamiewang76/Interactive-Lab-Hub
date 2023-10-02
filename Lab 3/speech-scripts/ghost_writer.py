@@ -69,7 +69,7 @@ def sentence_to_words(newSentence):
         # replaceidx = help_dict[newSentence[newSentence.rfind():-1]]-1
         # content.pop(deleteidx)
         return
-    if "fuck" in newSentence:
+    if "back" in newSentence:
         lllist = content[-1].split()
         lllist = lllist[:-1]
         print (lllist)
@@ -181,7 +181,7 @@ try:
     with sd.RawInputStream(samplerate=args.samplerate, blocksize = 8000, device=args.device,
             dtype="int16", channels=1, callback=callback):
         print("#" * 80)
-        print("\nStart saying things you want to write down, sentence by sentence;\nSay 'FUCK' to delete the last element; \nSay 'DELETE' to delete the last sentence; \nSay 'DELETE+ [number]' to delete sentence [number]; \nSay 'REWRITE+ [number]' to rewrite sentence [number]\n")
+        print("\nStart saying things you want to write down, sentence by sentence;\nSay 'BACK' to delete the last element; \nSay 'DELETE' to delete the last sentence; \nSay 'DELETE+ [number]' to delete sentence [number]; \nSay 'REWRITE+ [number]' to rewrite sentence [number]\n")
         print("#" * 80)
 
         rec = KaldiRecognizer(model, args.samplerate)
