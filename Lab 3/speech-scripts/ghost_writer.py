@@ -22,6 +22,8 @@ deleteidx = 0
 # lastIndex = len(nl)-1
 
 def output_content(c):
+    for i in len(c)-1:
+        c[i] = c[i] + "."
     output_text = ". ".join(c)
     return output_text
 
@@ -215,7 +217,7 @@ except KeyboardInterrupt:
     # string_to_int(nl)
     # print(content)
     print(output_content(content))
-    print("\nDone")
+    print("\nThe End")
     parser.exit(0)
 except Exception as e:
     parser.exit(type(e).__name__ + ": " + str(e))
