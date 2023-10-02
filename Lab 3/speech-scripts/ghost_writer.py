@@ -50,11 +50,13 @@ def sentence_to_words(newSentence):
     # global lastIndex
     # lastIndex = len(content)-1
     if "show me everything" in newSentence:
-        print(output_content(content))
+        print(content)
+        # print(output_content(content))
         return
     if "delete" in newSentence and len(words) == 1:
         # content.remove(lastIndex)
         content.pop()
+        print(content)
         return
     # if words == ["pie","delete"] and lastIndex > 0:
     #     content.remove(lastIndex)
@@ -63,6 +65,7 @@ def sentence_to_words(newSentence):
             deleteidx = int(help_dict[words[-1]])-1
             print(deleteidx)
             content.pop(deleteidx)
+            print(content)
         except:
             print("error listening")
         # print(deleteidx)
@@ -72,8 +75,9 @@ def sentence_to_words(newSentence):
     if "back" in newSentence:
         lllist = content[-1].split()
         lllist = lllist[:-1]
-        print (lllist)
+        # print (lllist)
         content[-1] = " ".join([str(item) for item in lllist])
+        print(content)
         # print("content",content)
         return
     # if words == ["pie","backspace"] and lastIndex > 0:
@@ -84,6 +88,7 @@ def sentence_to_words(newSentence):
         try:
             replaceidx = int(help_dict[words[-1]])-1
             content.pop(replaceidx)
+            print(content)
         except:
             print("error listening")
         print(replaceidx)
@@ -99,6 +104,7 @@ def sentence_to_words(newSentence):
         if newSentence != "":
             content.append(newSentence)
         replaceidx = 0
+        print(content)
     # if status == continue
 
 help_dict = {
