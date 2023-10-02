@@ -234,7 +234,10 @@ except KeyboardInterrupt:
     # print(content)
     print(output_content(content))
     output_str = output_content(content)
-    subprocess.run(["./ghost_writer.sh", output_str])
+    with open("ghostwriter.txt", "w") as file:
+        file.write(output_str)
+    # output_str = output_content(content)
+    # subprocess.run(["./ghost_writer.sh", output_str])
     print("\nThe End")
     # espeak -ven+f2 -k5 -s150 --stdout  output_content(content) | aplay
     parser.exit(0)
