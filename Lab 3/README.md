@@ -185,7 +185,7 @@ The device gives a brief walkthrough of how the program can be interacted with. 
 3. Make a new storyboard, diagram and/or script based on these reflections.
 ![commands](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/73d85462-4643-4574-badb-436e0023d8b3)
 
-![storyboard](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/765975a0-c00d-4a8f-bec1-8b78ee448547)
+![Storyboard](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/2d385d91-3533-48d3-80aa-241a2303bdbb)
 
 
 ## Prototype your system
@@ -195,22 +195,22 @@ The system should:
 * use one or more sensors
 * require participants to speak to it. 
 
-*Document how the system works*
-Our device “ghostwriter” allows users to write paragraphs with just speech input. It could convert the user’s speech to text and recognize user’s commands regarding how to edit the recorded text. 
-Here are the updated commands that the user can interact with ghostwriter:
-Back - Delete the last word from the last sentence
-Delete - Delete the last sentence
-Delete <i> - Delete the sentence with index i
-Rewrite <i> - Replace sentence <i> with the next detected sentence
-Show me everything - Print everything ghostwriter has recorded
-If not detecting any argument, Ghostwriter writes whatever the user speaks into the text document.
+*Document how the system works* <br />
+Our device “ghostwriter” allows users to write paragraphs with just speech input. It could convert the user’s speech to text and recognize user’s commands regarding how to edit the recorded text.  <br />
+Here are the updated commands that the user can interact with ghostwriter: <br />
+Back - Delete the last word from the last sentence <br />
+Delete - Delete the last sentence <br />
+Delete <i> - Delete the sentence with index i <br />
+Rewrite <i> - Replace sentence <i> with the next detected sentence <br />
+Show me everything - Print everything ghostwriter has recorded <br />
+If not detecting any argument, Ghostwriter writes whatever the user speaks into the text document. <br />
 
-The improvements we've made based on feedback:
-Delete the "pi"s in the commands to reduce recognition error.
-Delete the "Activate" and "Continue" features
-Using a sentence as a command argument sometimes yields higher recognition accuracy because the voice-to-text system can make sense of it more than a single word. 
+The improvements we've made based on feedback: <br />
+Delete the "pi"s in the commands to reduce recognition error. <br />
+Delete the "Activate" and "Continue" features <br />
+Using a sentence as a command argument sometimes yields higher recognition accuracy because the voice-to-text system can make sense of it more than a single word. <br />
 
-*Include videos or screencaptures of both the system and the controller.*
+*Include videos or screencaptures of both the system and the controller.* <br />
 [![Ghost Writer Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%203/Screen%20Shot%202023-10-02%20at%2012.12.42%20AM.png)](https://drive.google.com/file/d/1JAwP47VQ_4JaSbzOmN7hVksMjzpjYVJa/view?usp=drive_link)
 
 ## Test the system
@@ -229,17 +229,9 @@ Answer the following:
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 
-\*\**your answer here*\*\*
 1. The user may not feel relaxed when they have to remain silent when they don't want the system to write down anything.
 2. Showing the index of each sentence at the beginning of them could help the user to use the commands that target at a specific sentence without having to count the position of the target sentence.
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
-\*\**your answer here*\*\*
 A button or any haptic sensor could be used for signaling when and when not to take the user's voice as input.
-
-
-### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
-
-\*\**your answer here*\*\*
-
