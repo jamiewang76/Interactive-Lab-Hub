@@ -51,7 +51,7 @@ def sentence_to_words(newSentence):
         print("list:"+lllist)
         for i in lllist:
             ans = str(ans)+''+i
-        content[-1] = ans[:-1].join(" ")
+        content[-1] = ans[:-1]
         print("cntent"+content)
         return
     # if words == ["pie","backspace"] and lastIndex > 0:
