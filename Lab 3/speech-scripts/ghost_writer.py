@@ -22,7 +22,7 @@ deleteidx = 0
 # lastIndex = len(nl)-1
 
 def output_content(c):
-    for i in len(c)-1:
+    for i in range(len(c)-1):
         c[i] = c[i] + "."
     output_text = ". ".join(c)
     return output_text
