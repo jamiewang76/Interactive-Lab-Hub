@@ -23,8 +23,9 @@ deleteidx = 0
 
 def output_content(c):
     for i in range(len(c)-1):
-        c[i] = c[i] + "."
-    output_text = ". ".join(c)
+        if(c[i][-1] != "."):
+            c[i] = c[i] + "."
+    output_text = " ".join(c)
     return output_text
 
 def int_or_str(text):
