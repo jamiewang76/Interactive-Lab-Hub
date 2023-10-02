@@ -50,7 +50,7 @@ def sentence_to_words(newSentence):
         lllist = content[-1].split()
         print("list:"+lllist)
         for i in lllist:
-            ans = ans+''+i
+            ans = str(ans)+''+i
         content[-1] = ans[:-1].join(" ")
         print("cntent"+content)
         return
