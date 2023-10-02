@@ -73,7 +73,7 @@ def sentence_to_words(newSentence):
         # content.pop(deleteidx)
         return
     if "back" in newSentence:
-        if len(newSentence) == 1:
+        if len(content[-1].split()) == 1:
             content.pop()
             print(content)
         else:
