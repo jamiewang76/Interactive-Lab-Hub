@@ -93,7 +93,8 @@ def sentence_to_words(newSentence):
         # status = None
         rewriteBegin = False
     else:
-        content.append(newSentence)
+        if newSentence != None:
+            content.append(newSentence)
         replaceidx = 0
     # if status == continue
 
