@@ -73,11 +73,14 @@ def sentence_to_words(newSentence):
         # content.pop(deleteidx)
         return
     if "back" in newSentence:
-        lllist = content[-1].split()
-        lllist = lllist[:-1]
-        # print (lllist)
-        content[-1] = " ".join([str(item) for item in lllist])
-        print(content)
+        if len(newSentence) == 1:
+            content.pop()
+            print(content)
+        else:
+            lllist = content[-1].split()
+            lllist = lllist[:-1]
+            content[-1] = " ".join([str(item) for item in lllist])
+            print(content)
         # print("content",content)
         return
     # if words == ["pie","backspace"] and lastIndex > 0:
