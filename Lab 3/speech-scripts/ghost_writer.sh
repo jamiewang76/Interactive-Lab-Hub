@@ -8,5 +8,5 @@ python ghost_writer.py -m en
 # echo "Received string: $output_str"
 # espeak -ven+f2 -k5 -s150 --stdout  $output_str | aplay
 my_string=$(<ghostwriter.txt)
-echo "Received string: $my_string"
-espeak < ghostwriter.txt
+# echo "Received string: $my_string"
+espeak -ng -ven+f2 < ghostwriter.txt
