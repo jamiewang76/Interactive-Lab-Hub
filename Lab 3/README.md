@@ -211,7 +211,7 @@ Delete the "Activate" and "Continue" features
 Using a sentence as a command argument sometimes yields higher recognition accuracy because the voice-to-text system can make sense of it more than a single word. 
 
 *Include videos or screencaptures of both the system and the controller.*
-[![Ghost Writer Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/12070eeba135b1a959b313894b3e0e01c8aad311/Lab%203/Screen%20Shot%202023-09-25%20at%209.11.58%20PM.png)](https://drive.google.com/file/d/1JAwP47VQ_4JaSbzOmN7hVksMjzpjYVJa/view?usp=drive_link)
+[![Ghost Writer Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%203/Screen%20Shot%202023-10-02%20at%2012.12.42%20AM.png)](https://drive.google.com/file/d/1JAwP47VQ_4JaSbzOmN7hVksMjzpjYVJa/view?usp=drive_link)
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
