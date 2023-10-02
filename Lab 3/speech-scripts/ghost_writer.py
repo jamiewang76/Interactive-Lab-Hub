@@ -194,8 +194,9 @@ try:
 
                 # print(rec.Result())
                 # nl.append(rec.Result())
-            else:
-                print(rec.PartialResult())
+            # else:
+            #     # print(rec.PartialResult())
+            #     return
             if dump_fn is not None:
                 dump_fn.write(data)
                 
