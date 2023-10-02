@@ -187,7 +187,8 @@ try:
             # replaceidx = 0
             if rec.AcceptWaveform(data):
                 newSentence = rec.Result()
-                print(newSentence)
+                if newSentence != "":
+                    print(newSentence)
                 # content.append(newSentence[14:-3])
                 sentence_to_words(newSentence)
                 # if "pie rewrite sentence" in rec.Result():
