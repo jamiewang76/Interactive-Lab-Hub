@@ -52,7 +52,7 @@ def sentence_to_words(newSentence):
         for i in lllist:
             ans = str(ans)+''+i
         content[-1] = ans[:-1]
-        print("cntent"+content)
+        print("cntent",content)
         return
     # if words == ["pie","backspace"] and lastIndex > 0:
     #     content[lastIndex]= content[lastIndex][:len()-1]
