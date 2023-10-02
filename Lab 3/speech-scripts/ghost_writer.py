@@ -18,6 +18,7 @@ status = None
 rewriteBegin = False
 newSentence = None
 replaceidx = 0
+deleteidx = 0
 # lastIndex = len(nl)-1
 
 def int_or_str(text):
@@ -38,24 +39,29 @@ def sentence_to_words(newSentence):
     words = newSentence.split()
     global rewriteBegin
     global replaceidx
+    global deleteidx
     # global lastIndex
     # lastIndex = len(content)-1
-    if "delete" in newSentence:
+    if "delete" in newSentence and len(words) == 1:
         # content.remove(lastIndex)
         content.pop()
         return
     # if words == ["pie","delete"] and lastIndex > 0:
     #     content.remove(lastIndex)
+    if "delete" in newSentence and len(words) > 1:
+        try:
+            deleteidx = int(help_dict[words[-1]])-1
+        except:
+            print("error listening")
+        # print(deleteidx)
+        # replaceidx = help_dict[newSentence[newSentence.rfind():-1]]-1
+        content.pop(deleteidx)
+        return
     if "fuck" in newSentence:
         lllist = content[-1].split()
         lllist = lllist[:-1]
         print (lllist)
-        content[-1] = "".join([str(item) for item in lllist])
-        # ans = ''
-        # # print("list:",lllist)
-        # for i in lllist:
-        #     ans = ans+''+str(i)
-        # content[-1] = ans[:-1]
+        content[-1] = " ".join([str(item) for item in lllist])
         print("cntent",content)
         return
     # if words == ["pie","backspace"] and lastIndex > 0:
