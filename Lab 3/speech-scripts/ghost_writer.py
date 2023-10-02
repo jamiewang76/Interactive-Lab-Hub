@@ -74,7 +74,7 @@ def sentence_to_words(newSentence):
         lllist = lllist[:-1]
         print (lllist)
         content[-1] = " ".join([str(item) for item in lllist])
-        print("cntent",content)
+        # print("content",content)
         return
     # if words == ["pie","backspace"] and lastIndex > 0:
     #     content[lastIndex]= content[lastIndex][:len()-1]
@@ -83,11 +83,12 @@ def sentence_to_words(newSentence):
         rewriteBegin = True
         try:
             replaceidx = int(help_dict[words[-1]])-1
+            content.pop(replaceidx)
         except:
             print("error listening")
         print(replaceidx)
         # replaceidx = help_dict[newSentence[newSentence.rfind():-1]]-1
-        content.pop(replaceidx)
+        # content.pop(replaceidx)
         return
     # if status == "rewrite":
     if rewriteBegin == True:
