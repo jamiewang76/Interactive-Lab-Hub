@@ -9,4 +9,4 @@ python ghost_writer.py -m en
 # espeak -ven+f2 -k5 -s150 --stdout  $output_str | aplay
 my_string=$(<ghostwriter.txt)
 # echo "Received string: $my_string"
-espeak -ng -ven+f2 < ghostwriter.txt
+espeak -ng -vmb-en1 < ghostwriter.txt
