@@ -21,6 +21,10 @@ replaceidx = 0
 deleteidx = 0
 # lastIndex = len(nl)-1
 
+def output_content(c):
+    output_text = ". ".join(c)
+    return output_text
+
 def int_or_str(text):
     """Helper function for argument parsing."""
     try:
@@ -42,6 +46,9 @@ def sentence_to_words(newSentence):
     global deleteidx
     # global lastIndex
     # lastIndex = len(content)-1
+    if newSentence == "print":
+        print(output_content(content))
+        return
     if "delete" in newSentence and len(words) == 1:
         # content.remove(lastIndex)
         content.pop()
@@ -105,9 +112,9 @@ help_dict = {
 
 # def ghost_analyze():
     
-def output_content(c):
-    output_text = " ".join(c)
-    return output_text
+# def output_content(c):
+#     output_text = ". ".join(c)
+#     return output_text
 
 def string_to_int(newlist):
     
