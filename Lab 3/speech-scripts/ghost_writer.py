@@ -62,11 +62,12 @@ def sentence_to_words(newSentence):
         try:
             deleteidx = int(help_dict[words[-1]])-1
             print(deleteidx)
+            content.pop(deleteidx)
         except:
             print("error listening")
         # print(deleteidx)
         # replaceidx = help_dict[newSentence[newSentence.rfind():-1]]-1
-        content.pop(deleteidx)
+        # content.pop(deleteidx)
         return
     if "fuck" in newSentence:
         lllist = content[-1].split()
