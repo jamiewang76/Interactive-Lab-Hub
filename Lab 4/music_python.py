@@ -2,7 +2,7 @@
 from pylab import *
 import librosa             # The librosa library
 import librosa.display     # librosa's display module (for plotting features)
-import IPython.display     # IPython's display module (for in-line audio)
+# import IPython.display     # IPython's display module (for in-line audio)
 import matplotlib.pyplot as plt # matplotlib plotting functions
 import matplotlib.style as ms   # plotting style
 import numpy as np              # numpy numerical functions
