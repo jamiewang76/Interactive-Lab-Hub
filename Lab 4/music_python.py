@@ -1,21 +1,15 @@
-# To begin using librosa we need to import it, and other tools such as matplotlib and numpy
-from pylab import *
-import librosa             # The librosa library
-import librosa.display     # librosa's display module (for plotting features)
-# import IPython.display     # IPython's display module (for in-line audio)
-import matplotlib.pyplot as plt # matplotlib plotting functions
-import matplotlib.style as ms   # plotting style
-import numpy as np              # numpy numerical functions
-ms.use('seaborn-muted')         # fancy plot designs
+import numpy as np
+import sounddevice as sd
 
-# create a sine wave from scratch 
-# try to modify some parameters
-A = 1;
-f = 440;
-# f = 440 * 11
-phi = 0;
-sr = 44100;
-# sr = 4410
-T = 2;
-y = [A * sin(2*pi*f*t + phi) for t in arange(0.,T,1./sr)]
-IPython.display.Audio(data=y, rate=sr) # press the "play" button to hear audio
+# Create a sine wave
+A = 1
+f = 440
+phi = 0
+sr = 44100
+T = 2
+t = np.linspace(0, T, int(sr * T), endpoint=False)
+y = A * np.sin(2 * np.pi * f * t + phi)
+
+# Play the sine wave
+sd.play(y, sr)
+sd.wait()
