@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # Parameters
 duration = 3  # Duration in seconds
 sample_rate = 44100  # Sample rate (samples per second)
-frequency = 440  # Frequency of the sine wave (Hz)
+frequency = 1000  # Frequency of the sine wave (Hz)
 amplitude = 0.5  # Amplitude of the sine wave (between -1 and 1)
 
 # Generate the time values
