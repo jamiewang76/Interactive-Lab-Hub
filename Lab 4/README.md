@@ -1,6 +1,6 @@
 # Ph-UI!!!
 
-**NAMES OF COLLABORATORS HERE**
+**Jamie Wang, Yunfei Jiao**
 
 
 For lab this week, we focus both on sensing, to bring in new modes of input into your devices, as well as prototyping the physical look and feel of the device. You will think about the physical form the device needs to perform the sensing as well as present the display or feedback about what was sensed. 
@@ -182,9 +182,43 @@ Usually, sensors need to be positioned in specific locations or orientations to 
 
 **\*\*\*Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful.\*\*\***
 
+1. Install distance detectors along the sides of street curbs to sense passing vehicles. Each time a vehicle passes by, the detector will emit a signal.
+   ![WechatIMG3257](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/8f2969e8-9d39-4c3f-aaa9-9db0123d6299)
+
+   
+2. Employ a pair of rotary encoders to replicate the functionality of a radio's dial buttons. The encoders detect angular positions, allowing for precise adjustments of both volume and frequency settings to the desired numerical values.
+   ![WechatIMG3258](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/5c213b71-7eaf-493a-8529-b8a657e1c55e)
+
+
+3. Utilize capacitive sensors affixed to the rims of snack bags to register touches with hands. These signals will be accumulated daily, displayed on the pi monitor to alert the user how many times they were eating snacks on that day.
+<img width="846" alt="Screen Shot 2023-10-11 at 10 57 04 PM" src="https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/29d69ac7-d0b0-4b52-9ec9-523b20ca7231">
+
+4. Use distance detectors for detecting the proximity of a person to the shower head. When the person is detected approaching the shower head, the shower head will be automatically activated. Conversely, when the person moves away, the system will promptly deactivate the shower head, conserving water and energy.
+![WechatIMG3260](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/80919942-6cef-4260-98da-d18d1d80950d)
+
+5. Adding distance detectors inside trash cans to monitor trash bag fullness. These detectors measure the distance between the top of the trash and the top of the bag.
+![WechatIMG3261](https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/25aee456-6e3f-4c84-b4d8-aebdd2a3ad59)
+
+
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
+1. Place distance detectors on the side of street curbs to detect cars passing by. Whenever a car passes by, a signal will be sent from the detector.
+   - Questions
+      - How accurately can the sensor detect the car's presence and distance?
+      - Could the system distract drivers or disrupt traffic flow?
+   - What to physically prototype
+      - Need to simulate the system and test its accuracy in detecting passing cars under various conditions and conduct safety assessments and consider how to minimize distractions or potential hazards.
+1. Using two rotary encoders to simulate a radio’s dial buttons.The angular positions are detected to change the volume and frequency to the right number. 
+   - Questions
+      - What is the range and sensitivity of the volume control?
+      - How can we ensure accurate and reliable gesture recognition?
+      - Any feedback mechanisms (e.g., LED indicators, audio cues) to confirm user actions?
+   - What to physically prototype
+      - Need to set up rotary actuators and create a mechanism to control the radio's volume using these actuators.
+      - Create a user-friendly interface and feedback system that allows users to interact with the radio easily and understand the status of volume and channel selection.
+
 **\*\*\*Pick one of these designs to prototype.\*\*\***
+<img width="854" alt="Screen Shot 2023-10-11 at 10 56 29 PM" src="https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/b640ed3e-db38-497d-bb72-86175acfde5d">
 
 
 ### Part D
@@ -225,16 +259,29 @@ Here is an example:
 Think about how you want to present the information about what your sensor is sensing! Design a paper display for your project that communicates the state of the Pi and a sensor. Ideally you should design it so that you can slide the Pi out to work on the circuit or programming, and then slide it back in and reattach a few wires to be back in operation.
  
 **\*\*\*Sketch 5 designs for how you would physically position your display and any buttons or knobs needed to interact with it.\*\*\***
+<img width="1235" alt="Screen Shot 2023-10-11 at 11 29 36 PM" src="https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/3956e248-bd2f-4359-a5dc-515aa91688c8">
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
+1. The digital display is flat, but some of the surfaces we want to attach it to are not flat. Physical prototype is needed to test if the display can be securely fixated on a unflat surface.
+2. The copper tape may easily entangle each other, which could limit the number of the items that can be attached to. We need physical prototype to see how to make things more organized.
 
 **\*\*\*Pick one of these display designs to integrate into your prototype.\*\*\***
+<img width="1031" alt="Screen Shot 2023-10-11 at 11 05 31 PM" src="https://github.com/Yunfei-J/Interactive-Lab-Hub/assets/142849884/dd42d8b3-2fa7-45ce-a1d8-9e9e6a2a75ba">
 
 **\*\*\*Explain the rationale for the design.\*\*\*** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
 Build a cardboard prototype of your design.
 
+The size doesn't have to be big because the display is what matters. But since the screens we could use are small, we want to connect the webcam to utilize its speaker to read the information out so that the person interacting with it doesn't necessarily need to receive the information visually.
+
 **\*\*\*Document your rough prototype.\*\*\***
+The capacitive sensor is connected to the pi, and each contact will be linked to a bag of snack. When a snack bag is touched, the number on the display will increment by 1.
+
+Since the most crucial information in the device is the number of times that snacks were opened, to maximize its font size on the display, we wrote every other words on the 'costume' of pi.
+
+The buttons on the MiniTFTs can be used for resetting the number to zero.
+
+A webcam will be later connected to the pi to produce audio output with its speaker.
 
 
 LAB PART 2
