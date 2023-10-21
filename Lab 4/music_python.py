@@ -3,7 +3,7 @@ import sounddevice as sd
 
 # Create a sine wave
 A = 1
-f = 440
+f = 1000
 phi = 0
 sr = 44100
 T = 2
