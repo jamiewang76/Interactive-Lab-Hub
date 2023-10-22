@@ -45,6 +45,19 @@ from __future__ import print_function
 import qwiic_proximity
 import time
 import sys
+import sounddevice as sd
+import numpy as np
+
+
+# Initialize parameters
+A = 1  # Amplitude
+frequency = 440  # Fixed frequency
+phi = 0  # Phase
+sr = 44100  # Sample rate
+
+# Start the sound stream
+sd_stream = sd.OutputStream(callback=None, channels=1, samplerate=sr, dtype='float32')
+sd_stream.start()
 
 def runExample():
 
@@ -62,6 +75,13 @@ def runExample():
 		proxValue = oProx.get_proximity()
 		print("Proximity Value: %d" % proxValue)
 		time.sleep(.4)
+		frequency = proxValue
+		try:
+			t = np.arange(sr) / sr  # Generate a time vector for one second
+			y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
+			sd_stream.write(y)
+		except KeyboardInterrupt:
+			break
 
 
 if __name__ == '__main__':
@@ -70,3 +90,7 @@ if __name__ == '__main__':
 	except (KeyboardInterrupt, SystemExit) as exErr:
 		print("\nEnding Example 1")
 		sys.exit(0)
+
+# Stop and close the sound stream
+sd_stream.stop()
+sd_stream.close()
