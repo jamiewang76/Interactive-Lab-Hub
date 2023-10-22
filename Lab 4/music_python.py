@@ -1,26 +1,33 @@
-import numpy as np
 import sounddevice as sd
-import time
+import numpy as np
+import keyboard
 
-# Initialize parameters
-A = 1
-f = 440
-phi = 0
-sr = 44100
+# Define the constant frequency
+frequency = 440  # Change this to your desired frequency
 
-# Main loop
+# Create a time vector
+fs = 44100  # Sample rate
+t = np.arange(0, 10, 1/fs)  # This generates a 10-second time vector
+
+# Initialize a flag to indicate if the sound is playing
+sound_playing = True
+
+# Function to toggle the sound state
+def toggle_sound_state(e):
+    global sound_playing
+    sound_playing = not sound_playing
+
+# Register the spacebar key event
+keyboard.on_press_key('space', toggle_sound_state)
+
 while True:
-    # Create a sine wave
-    T = 0.01  # Time duration for each frequency step
-    t = np.linspace(0, T, int(sr * T), endpoint=False)
-    y = A * np.sin(2 * np.pi * f * t + phi)
+    if sound_playing:
+        # Generate a sine wave with the constant frequency
+        y = np.sin(2 * np.pi * frequency * t)
 
-    # Play the sine wave
-    sd.play(y, sr)
-    sd.wait()
+        # Play the sine wave
+        sd.play(y, fs, blocking=False)  # Use blocking=False to play the sound without blocking the loop
+    else:
+        sd.stop()  # Stop the sound if the spacebar is held down
 
-    # Increase the frequency
-    f += 1  # You can adjust the frequency increment as needed
-    
-    # Add a small delay before the next iteration (optional)
-    time.sleep(0.5)  # Adjust the delay time as needed
+keyboard.wait('esc')  # Wait for the 'esc' key to exit the program
