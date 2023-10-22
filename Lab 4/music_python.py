@@ -11,7 +11,7 @@ sr = 44100
 # Main loop
 while True:
     # Create a sine wave
-    T = 1  # Time duration for each frequency step
+    T = 0.01  # Time duration for each frequency step
     t = np.linspace(0, T, int(sr * T), endpoint=False)
     y = A * np.sin(2 * np.pi * f * t + phi)
 
@@ -20,7 +20,7 @@ while True:
     sd.wait()
 
     # Increase the frequency
-    f += 100  # You can adjust the frequency increment as needed
+    f += 1  # You can adjust the frequency increment as needed
     
     # Add a small delay before the next iteration (optional)
     time.sleep(0.5)  # Adjust the delay time as needed
