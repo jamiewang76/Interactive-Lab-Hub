@@ -1,20 +1,24 @@
 import sounddevice as sd
 import numpy as np
 
-# Define the constant frequency
-frequency = 440  # Change this to your desired frequency
+# Initialize parameters
+A = 1  # Amplitude
+frequency = 440  # Fixed frequency
+phi = 0  # Phase
+sr = 44100  # Sample rate
 
-# Create a time vector
-fs = 44100  # Sample rate
-t = np.arange(0, 10, 1/fs)  # This generates a 1-second time vector, but the sound will play indefinitely
+# Start the sound stream
+sd_stream = sd.OutputStream(callback=None, channels=1, samplerate=sr, dtype='float32')
+sd_stream.start()
 
 while True:
-    # Generate a sine wave with the constant frequency
-    frequency += 10
-    y = np.sin(2 * np.pi * frequency * t)
+    try:
+        t = np.arange(sr) / sr  # Generate a time vector for one second
+        y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
+        sd_stream.write(y)
+    except KeyboardInterrupt:
+        break
 
-    # Play the sine wave
-    sd.play(y, fs, blocking=False)  # Use blocking=False to play the sound without blocking the loop
-
-    # Wait for the sound to finish (optional, add a delay to avoid excessive CPU usage)
-    sd.wait()
+# Stop and close the sound stream
+sd_stream.stop()
+sd_stream.close()
