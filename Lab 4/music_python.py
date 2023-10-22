@@ -4,7 +4,7 @@ import time
 
 # Initialize parameters
 A = 1
-f = 1000
+f = 440
 phi = 0
 sr = 44100
 
