@@ -10,6 +10,7 @@ t = np.arange(0, 10, 1/fs)  # This generates a 1-second time vector, but the sou
 
 while True:
     # Generate a sine wave with the constant frequency
+    frequency += 10
     y = np.sin(2 * np.pi * frequency * t)
 
     # Play the sine wave
