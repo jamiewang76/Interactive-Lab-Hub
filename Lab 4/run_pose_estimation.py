@@ -37,6 +37,93 @@ GPIO.setup(4, GPIO.OUT)
 #button
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
+# from __future__ import print_function
+# import qwiic_proximity
+import time
+import sys
+import sounddevice as sd
+import numpy as np
+
+
+# ## pi display
+# import subprocess
+# import digitalio
+# import board
+# from PIL import Image, ImageDraw, ImageFont
+# import adafruit_rgb_display.st7789 as st7789
+# from time import strftime, sleep
+
+# # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
+# cs_pin = digitalio.DigitalInOut(board.CE0)
+# dc_pin = digitalio.DigitalInOut(board.D25)
+# reset_pin = None
+
+# # Config for display baudrate (default max is 24mhz):
+# BAUDRATE = 64000000
+
+# # Setup SPI bus using hardware SPI:
+# spi = board.SPI()
+
+# # Create the ST7789 display:
+# disp = st7789.ST7789(
+#     spi,
+#     cs=cs_pin,
+#     dc=dc_pin,
+#     rst=reset_pin,
+#     baudrate=BAUDRATE,
+#     width=135,
+#     height=240,
+#     x_offset=53,
+#     y_offset=40,
+# )
+
+# # Create blank image for drawing.
+# # Make sure to create image with mode 'RGB' for full color.
+# height = disp.width  # we swap height/width to rotate it to landscape!
+# width = disp.height
+# image = Image.new("RGB", (width, height))
+# rotation = 90
+
+# # Get drawing object to draw on image.
+# draw = ImageDraw.Draw(image)
+
+# # Draw a black filled box to clear the image.
+# draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+# disp.image(image, rotation)
+# # Draw some shapes.
+# # First define some constants to allow easy resizing of shapes.
+# padding = -2
+# top = padding
+# bottom = height - padding
+# # Move left to right keeping track of the current x position for drawing shapes.
+# x = 0
+
+# # Alternatively load a TTF font.  Make sure the .ttf font file is in the
+# # same directory as the python script!
+# # Some other nice fonts to try: http://www.dafont.com/bitmap.php
+# font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+
+# # Turn on the backlight
+# backlight = digitalio.DigitalInOut(board.D22)
+# backlight.switch_to_output()
+# backlight.value = True
+
+
+
+
+A = 1  # Amplitude
+frequency1 = 390  # First frequency
+frequency2 = 490  # Second frequency
+frequency3 = 590  # Third frequency
+phi = 0  # Phase
+sr = 44100  # Sample rate
+
+# chords_list = [[260,330,390],[290,370,440],[330,420,490],[370,470,550],[390,490,590]]
+
+# Start the sound stream
+sd_stream = sd.OutputStream(callback=None, channels=1, samplerate=sr, dtype='float32')
+sd_stream.start()
+
 
 # Define VideoStream class to handle streaming of video from webcam in separate processing thread
 # Source - Adrian Rosebrock, PyImageSearch: https://www.pyimagesearch.com/2015/12/28/increasing-raspberry-pi-fps-with-python-and-opencv/
@@ -208,6 +295,67 @@ def get_offsets(output_details, coords, num_key_points=17):
 
 def draw_lines(keypoints, image, bad_pts):
     """connect important body part keypoints with lines"""
+    distance_value = abs(keypoints[0][1]-keypoints[9][1])
+    # distance_value = keypoints[0][1]
+    # print(distance_value)
+    # math.dist(keypoints[0],keypoints[9])
+
+    print(distance_value)
+    # # play sound
+    change_interval = 2  # seconds
+    next_change_time = time.time() + change_interval
+    # time.sleep(3)
+    
+    next_change_time += change_interval
+    chords_list = [[260,330,390],[290,370,440],[330,420,490],[370,470,550],[390,490,590]]
+
+    if distance_value >= 0 and distance_value < 40:
+        frequency1, frequency2, frequency3 = chords_list[0][0],chords_list[0][1],chords_list[0][2]
+    if distance_value >= 40 and distance_value < 60:
+        frequency1, frequency2, frequency3 = chords_list[1][0],chords_list[1][1],chords_list[1][2]
+    if distance_value >= 60 and distance_value < 80:
+        frequency1, frequency2, frequency3 = chords_list[2][0],chords_list[2][1],chords_list[2][2]
+    if distance_value >=80 and distance_value < 100:
+        frequency1, frequency2, frequency3 = chords_list[3][0],chords_list[3][1],chords_list[3][2]
+    if distance_value >=100:
+        frequency1, frequency2, frequency3 = chords_list[4][0],chords_list[4][1],chords_list[4][2]
+
+    t = np.arange(int(sr * change_interval)) / sr  # Generate a time vector for one second
+    y1 = A * np.sin(2 * np.pi * frequency1 * t + phi).astype('float32')
+    y2 = A * np.sin(2 * np.pi * frequency2 * t + phi).astype('float32')
+    y3 = A * np.sin(2 * np.pi * frequency3 * t + phi).astype('float32')
+    # Add the three signals together
+    y = (y1 + y2 + y3) / 3  # Adjust the scaling factor for desired volume balance
+
+    sd_stream.write(y)
+
+
+    # draw.rectangle((0, 0, width, height), outline=0, fill=400)
+    # font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+    # y = top
+    # # display_time = strftime("%m/%d/%Y %H:%M:%S")
+    # text_content = "You pulled"
+    # text_length = str(distance_value)
+
+    # draw.text((x, y), text_content + text_length, font=font, fill="#FFFFFF")
+
+    # # Display image.
+    # disp.image(image, rotation)
+    # time.sleep(1)
+
+
+    # while True:
+    #     # proxValue = oProx.get_proximity()
+    #     # print("Proximity Value: %d" % proxValue)
+    #     time.sleep(.1)
+    #     frequency = distance_value*10
+    #     try:
+    #         t = np.arange(sr) / sr  # Generate a time vector for one second
+    #         y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
+    #         sd_stream.write(y)
+    #     except KeyboardInterrupt:
+    #         break
+
     #color = (255, 0, 0)
     color = (0, 255, 0)
     thickness = 2
@@ -220,6 +368,7 @@ def draw_lines(keypoints, image, bad_pts):
         start_pos = (int(keypoints[map_pair[0]][1]), int(keypoints[map_pair[0]][0]))
         end_pos = (int(keypoints[map_pair[1]][1]), int(keypoints[map_pair[1]][0]))
         image = cv2.line(image, start_pos, end_pos, color, thickness)
+        # print(keypoints)
     return image
 
 #flag for debugging
@@ -230,7 +379,7 @@ try:
     while True:
     #if True:
         #make sure LED is off and wait for button press
-        if not led_on and  not GPIO.input(17):
+        # if not led_on and  not GPIO.input(17):
         #if True:
             #timestamp an output directory for each capture
             outdir = pathlib.Path(args.output_path) / time.strftime('%Y-%m-%d_%H-%M-%S-%Z')
@@ -243,8 +392,8 @@ try:
             # Initialize frame rate calculation
             frame_rate_calc = 1
             freq = cv2.getTickFrequency()
-            videostream = VideoStream(resolution=(imW,imH),framerate=30).start()
-            time.sleep(1)
+            videostream = VideoStream(resolution=(imW,imH),framerate=60).start()
+            time.sleep(0.1)
 
             #for frame1 in camera.capture_continuous(rawCapture, format="bgr",use_video_port=True):
             while True:
