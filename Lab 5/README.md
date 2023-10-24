@@ -1,6 +1,6 @@
 # Observant Systems
 
-**NAMES OF COLLABORATORS HERE**
+**Jamie Wang zw448 Yunfei Jiao yj497**
 
 
 For lab this week, we focus on creating interactive systems that can detect and respond to events or stimuli in the environment of the Pi, like the Boat Detector we mentioned in lecture. 
@@ -161,11 +161,45 @@ For example:
 Now that you have experimented with one or more of these sense-making systems **characterize their behavior**.
 During the lecture, we mentioned questions to help characterize a material:
 * What can you use X for?
+
+Interactive Music or Sound Generation: Interactive Music Controller can be used for creating interactive music or sound effects based on hand gestures. It allows users to control the pitch of the generated sound by changing the distance between their thumb and index finger. This can be used for creative musical performances or sound manipulation. <br\>
+
+Educational Tools: Interactive Music Controller can serve as an educational tool for teaching concepts related to sound and music. It provides a hands-on way for users to understand the relationship between pitch and physical gestures. <br\>
+
+Entertainment and Art Installations: Interactive Music Controller can be part of interactive art installations or entertainment experiences, where users can experiment with sound and music in a playful and engaging manner. <br\>
+
 * What is a good environment for X?
+
+Evenly Lit Spaces: Well-lit spaces with uniform lighting can enhance the accuracy of hand detection and tracking. Avoid areas with strong shadows, as they can interfere with gesture recognition. <br\>
+
+Appropriate Color Contrast: Background color should be selected to provide clear contrast with the color of the user's hands. For example, a brightly lit room with a darker background can work well, while a dark room with dark walls may confuse the algorithm. <br\>
+
+Physical Space: Ensure that there is enough physical space for users to perform hand gestures comfortably. This allows for natural and unobstructed interaction with the Interactive Music Controller. <br\>
+
 * What is a bad environment for X?
+
+High-Noise Environments: Interactive Music Controller may not perform well in noisy environments as background noise can interfere with hand gesture detection and audio perception. <br\>
+
+Critical Audio Applications: Interactive Music Controller may not be suitable for critical audio applications where precise and consistent sound quality is required, as it relies on hand gestures that may not always provide precise control. <br\>
+
 * When will X break?
+
+Interactive Music Controller may break if: <br\>
+- Insufficient Lighting: Poor lighting conditions may affect the accuracy of hand detection. <br\>
+- Unfamiliar Gestures: Users making gestures that the program doesn't recognize. Or having both hands in the camera frame. <br\>
+- Hardware or Software Failures: Issues with the camera, audio hardware, or software can disrupt the functionality of Interactive Music Controller. <br\>
+
 * When it breaks how will X break?
+
+Inaccurate Pitch Control: Users may not be able to control the pitch as expected due to hand detection inaccuracies. <br\>
+Audio Disturbances: Unexpected audio glitches or distortions could occur if there are issues with audio processing. <br\>
+
 * What are other properties/behaviors of X?
+
+Interactive Music Controller provides real-time interaction between physical gestures and sound, allowing users to have immediate control over the generated audio.<br\>
+Interactive Music Controller promotes interactivity, engagement, and experimentation, making it suitable for interactive art and educational purposes.<br\>
+The program can be customized to control various audio parameters beyond just pitch, it can control the timbre, and volume.<br\>
+
 * How does X feel?
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
