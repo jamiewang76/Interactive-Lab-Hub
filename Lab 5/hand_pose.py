@@ -6,7 +6,7 @@ import math
 from ctypes import cast, POINTER
 import alsaaudio
 m = alsaaudio.Mixer(control='Speaker', cardindex=3)
-m.setvolume(5) 
+m.setvolume(0) 
 import subprocess
 
 import sounddevice as sd
@@ -17,6 +17,10 @@ A = 1  # Amplitude
 frequency = 440  # Fixed frequency
 phi = 0  # Phase
 sr = 44100  # Sample rate
+
+# Start the sound stream
+sd_stream = sd.OutputStream(callback=None, channels=1, samplerate=sr, dtype='float32')
+sd_stream.start()
 
 
 def play_audio():
@@ -73,19 +77,22 @@ while True:
         length4 = len_calc(thumbX,thumbY, ringX, ringY)
         print(length1,length2,length3)
         condition = length>100 and length1>100 and length2<100 and length3>100 and length4<100
-        if condition:
-            m.setvolume(0)
-            volPer = 0
-            volBar = 400
-            print("CONDITION")
-            cv2.putText(img, 'quiet coyote!', (40, 70), cv2.FONT_HERSHEY_COMPLEX,
-                1, (255, 255, 255), 3)
-        else:
+        # if condition:
+        #     m.setvolume(0)
+        #     volPer = 0
+        #     volBar = 400
+        #     print("CONDITION")
+        #     cv2.putText(img, 'quiet coyote!', (40, 70), cv2.FONT_HERSHEY_COMPLEX,
+        #         1, (255, 255, 255), 3)
+        # else:
  
-            vol = np.interp(length, [50, 300], [minVol, maxVol])
-            volBar = np.interp(length, [50, 300], [400, 150])
-            volPer = np.interp(length, [50, 300], [0, 100])
-            m.setvolume(int(vol))
+        #     vol = np.interp(length, [50, 300], [minVol, maxVol])
+        #     volBar = np.interp(length, [50, 300], [400, 150])
+        #     volPer = np.interp(length, [50, 300], [0, 100])
+        #     m.setvolume(int(vol))
+        t = np.arange(sr) / sr  # Generate a time vector for one second
+        y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
+        sd_stream.write(y)
 
         print(int(length), vol)
 
@@ -110,5 +117,7 @@ while True:
         audio_process.terminate()  #
         break
 
+sd_stream.stop()
+sd_stream.close()
 cap.release()
 cv2.destroyAllWindows()
