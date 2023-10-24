@@ -46,6 +46,9 @@ maxVol = 100
 vol = 0
 volBar = 400
 volPer = 0
+
+minFreq = 440  # Minimum frequency
+maxFreq = 1000  # Maximum frequency
 while True:
     success, img = cap.read()
     img = detector.findHands(img)
@@ -90,6 +93,7 @@ while True:
         #     volBar = np.interp(length, [50, 300], [400, 150])
         #     volPer = np.interp(length, [50, 300], [0, 100])
         #     m.setvolume(int(vol))
+        frequency = np.interp(length, [50, 300], [minFreq, maxFreq])
         t = np.arange(sr) / sr  # Generate a time vector for one second
         y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
         sd_stream.write(y)
