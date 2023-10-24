@@ -136,6 +136,7 @@ In an earlier version of this class students experimented with foundational comp
 * This can be as simple as the boat detector showen in a previous lecture from Nikolas Matelaro.
 * Try out different interaction outputs and inputs.
 
+We have used Mediapipe to implement the interaction of using the distance between the user’s thumb and index finger to control pitches of music notes. We compared the distance detection between different fingers to find out the pair with highest detection accuracy. We also tried out using different pitches and timbers of notes.
 
 **\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
 
@@ -145,15 +146,26 @@ In an earlier version of this class students experimented with foundational comp
 Now flight test your interactive prototype and **note down your observations**:
 For example:
 1. When does it what it is supposed to do?
-1. When does it fail?
-1. When it fails, why does it fail?
-1. Based on the behavior you have seen, what other scenarios could cause problems?
+2. When does it fail?
+3. When it fails, why does it fail?
+4. Based on the behavior you have seen, what other scenarios could cause problems?
+
+As the user places their thumb and index finger closer by acting the “pinch” gesture, the pitch of the note goes down. The minimum it can go is 400hz and the maximum is 1000hz.
+The prototype failed at first because we wrongly set m.setVolume as zero, so the webcam wasn’t able to play any sound.
+While now it seems clear of technical problems, other problems may arise such as when the hand structure cannot be captured clearly by the camera. For instance, when the palm is almost 90 degrees to the camera so the fingers are too close to each other.
+
 
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
-1. How bad would they be impacted by a miss classification?
-1. How could change your interactive system to address this?
-1. Are there optimizations you can try to do on your sense-making algorithm.
+2. How bad would they be impacted by a miss classification?
+3. How could change your interactive system to address this?
+4. Are there optimizations you can try to do on your sense-making algorithm.
+
+Uncertainty 1: The detection can be inaccurate. When the system fails to detect the expected finger input, it will generate notes that are off the right pitch. To avoid this uncertainty, we may have to instruct the user to make more salient and exaggerated gestures.
+Uncertainty 2: The system may not be intuitive enough. We should display instructions such as the relationship between the finger placement and the note pitch.
+Regarding the visual feedback, users should be able to have a clear understanding of the system's status as they can observe the video and real-time display of detected mesh points on the screen. 
+
+
 
 ### Part D
 ### Characterize your own Observant system
@@ -201,6 +213,8 @@ Interactive Music Controller promotes interactivity, engagement, and experimenta
 The program can be customized to control various audio parameters beyond just pitch, it can control the timbre, and volume.<br>
 
 * How does X feel?
+
+Interactive Music Controller feels interactive, engaging, and creative. It provides users with a tactile and visually appealing way to influence sound and music. It may also be frustrating at times, especially if hand detection is not accurate or if users struggle to achieve the desired sound.
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
