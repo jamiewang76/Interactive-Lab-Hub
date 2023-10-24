@@ -19,7 +19,7 @@ phi = 0  # Phase
 sr = 44100  # Sample rate
 
 # Start the sound stream
-sd_stream = sd.OutputStream(callback=None, channels=1, samplerate=sr, dtype='float32')
+sd_stream = sd.OutputStream(callback=None, channels=1, samplerate=sr, dtype='float32', blocksize=2048)
 sd_stream.start()
 
 
