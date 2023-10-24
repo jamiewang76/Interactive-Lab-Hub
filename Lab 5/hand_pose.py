@@ -79,10 +79,11 @@ while True:
         length2 = len_calc(middleX, middleY, ringX, ringY)
         length3 = len_calc(ringX, ringY, pinkyX, pinkyY)
         length4 = len_calc(thumbX,thumbY, ringX, ringY)
-        print(length1,length2,length3)
+        # print(length1,length2,length3)
         condition = length>100 and length1>100 and length2<100 and length3>100 and length4<100
 
         frequency = np.interp(length, [50, 300], [minFreq, maxFreq])
+        print("frequency = " + str(frequency))
         try:
             t = np.arange(sr) / sr  # Generate a time vector for one second
             y = A * np.sin(2 * np.pi * frequency * t + phi).astype('float32')
