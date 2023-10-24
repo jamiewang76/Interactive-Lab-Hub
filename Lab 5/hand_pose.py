@@ -6,7 +6,7 @@ import math
 from ctypes import cast, POINTER
 import alsaaudio
 m = alsaaudio.Mixer(control='Speaker', cardindex=3)
-m.setvolume(0) 
+m.setvolume(5) 
 import subprocess
 
 import sounddevice as sd
