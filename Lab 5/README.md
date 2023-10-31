@@ -97,7 +97,7 @@ Consider how you might use this position based approach to create an interaction
 
 (You might also consider how this notion of percentage control with hand tracking might be used in some of the physical UI you may have experimented with in the last lab, for instance in controlling a servo or rotary encoder.)
 
-
+[![Hand Pose](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%205/Screen%20Shot%202023-10-30%20at%208.55.18%20PM.png)](https://drive.google.com/file/d/12qoKBLof523LlRxaCP21arJSXL0QkpEL/view?usp=sharing)
 
 #### Teachable Machines
 Google's [TeachableMachines](https://teachablemachine.withgoogle.com/train) is very useful for prototyping with the capabilities of machine learning. We are using [a python package](https://github.com/MeqdadDev/teachable-machine-lite) with tensorflow lite to simplify the deployment process.
