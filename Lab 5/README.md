@@ -74,6 +74,8 @@ Read the `infer.py` script, and get familiar with the code. You can change the v
 ### Machine Vision With Other Tools
 The following sections describe tools ([MediaPipe](#mediapipe) and [Teachable Machines](#teachable-machines)).
 
+[![Model 1](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%205/%20model1.png)](https://drive.google.com/file/d/1yMBy1bN1cNWW--kKmLknIa8U9Y3hGyB-/view?usp=drive_link)
+
 #### MediaPipe
 
 A recent open source and efficient method of extracting information from video streams comes out of Google's [MediaPipe](https://mediapipe.dev/), which offers state of the art face, face mesh, hand pose, and body pose detection.
@@ -120,6 +122,8 @@ Next train your own model. Visit [TeachableMachines](https://teachablemachine.wi
 ![Tensorflow Lite Download](Readme_files/tml_download-model.png)
 
 Include screenshots of your use of Teachable Machines, and write how you might use this to create your own classifier. Include what different affordances this method brings, compared to the OpenCV or MediaPipe options.
+
+[![Teaching Model](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%205/teaching.png)](https://drive.google.com/file/d/1yMBy1bN1cNWW--kKmLknIa8U9Y3hGyB-/view?usp=drive_link)
 
 #### (Optional) Legacy audio and computer vision observation approaches
 In an earlier version of this class students experimented with observing through audio cues. Find the material here:
