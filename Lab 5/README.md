@@ -140,6 +140,8 @@ We have used Mediapipe to implement the interaction of using the distance betwee
 
 **\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
 
+[![Hand Pose Pitch](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%205/hand_pose_pitch.png)](https://drive.google.com/file/d/1BCuWeMrrcgJ__scZ08_litG5JkSk54pH/view?usp=sharing)
+
 ### Part C
 ### Test the interaction prototype
 
@@ -217,6 +219,8 @@ The program can be customized to control various audio parameters beyond just pi
 Interactive Music Controller feels interactive, engaging, and creative. It provides users with a tactile and visually appealing way to influence sound and music. It may also be frustrating at times, especially if hand detection is not accurate or if users struggle to achieve the desired sound.
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
+
+[![Hand Pose Pitch](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%205/hand_pose_misrecoognize.png)](https://drive.google.com/file/d/15IBIEf09rMQx024zpiXvtc-FH9x08_7Q/view?usp=sharing)
 
 ### Part 2.
 
