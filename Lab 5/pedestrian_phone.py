@@ -55,7 +55,7 @@ def draw_landmarks_on_image(rgb_image, detection_result):
 
 
 options = FaceLandmarkerOptions(
-    base_options=BaseOptions(model_asset_path='face_landmarker_v2_with_blendshapes.task'),
+    base_options=BaseOptions(model_asset_path='pose_landmarker_lite.task'),
     running_mode=VisionRunningMode.LIVE_STREAM,
     result_callback=print_result)
 i = 0
