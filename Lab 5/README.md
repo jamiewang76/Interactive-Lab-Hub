@@ -231,3 +231,10 @@ Interactive Music Controller feels interactive, engaging, and creative. It provi
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
+
+We designed a new observant system for part 2.
+Using PoseNet, we detect pedestrians that are playing phones when crossing the road. Whenever a pedestrian is detected to have a small angle between their upper arm and lower arm, our system will give off a warning -- an audio clip along with the person's photo captured and displayed on a screen.
+
+File: https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%205/roadcrossing.py
+
+[![Lab 5b](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%205/lab5b_cover.png)](https://drive.google.com/file/d/1FIWTzrPfg0bprHQVZVwdyvHqLspnIpyu/view?usp=sharing)
