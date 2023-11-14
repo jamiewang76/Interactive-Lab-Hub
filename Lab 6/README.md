@@ -210,5 +210,9 @@ Notifies the user about the wrong passcode attempt.
 
 **\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
 
+We were unable to hook the keypad with PI because of the following error :(
+<img width="564" alt="Screen Shot 2023-11-13 at 10 21 56 PM" src="https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/99fd22f4-c3a8-4e72-8276-a2155fca986a">
+
+
 <!--**\*\*\*5. BONUS (Wendy didn't approve this so you should probably ignore it)\*\*\*** get the whole class to run your code and make your distributed system BIGGER.-->
 
