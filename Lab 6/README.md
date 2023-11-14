@@ -185,7 +185,26 @@ Find at least one class (more are okay) partner, and design a distributed applic
 
 **\*\*\*1. Explain your design\*\*\*** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
 
+We've designed a remote safe case passcode system that enhances security by alerting the user whenever someone attempts to enter the wrong combination on the safe case keypad. This adds an extra layer of security and allows the user to take immediate action in case of a potential break-in. 
+
+Components:
+Raspberry Pi:
+Acts as the central hub and control unit for the entire system.
+Monitors the keypad input and sends alerts via MQTT in case of a wrong passcode attempt.
+Qwiic Keypad:
+Connected to the Raspberry Pi, this is the input device where the user enters the passcode.
+Sends passcode information to the Raspberry Pi for verification.
+MQTT Sender:
+Utilizes the MQTT protocol to send messages/alerts to a remote device.
+Sends messages to a predefined MQTT topic when a wrong passcode attempt is detected.
+User Remote End:
+Receiver Device (e.g., Smartphone or Another Raspberry Pi):
+Subscribes to the MQTT topic and receives messages/alerts from the safe case system.
+Notifies the user about the wrong passcode attempt.
+
 **\*\*\*2. Diagram the architecture of the system.\*\*\*** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
+
+![Capcitive_sensor](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%206/architecture.png)
 
 **\*\*\*3. Build a working prototype of the system.\*\*\*** Do think about the user interface: if someone encountered these bananas somewhere in the wild, would they know how to interact with them? Should they know what to expect?
 
