@@ -10,6 +10,8 @@ import adafruit_rgb_display.st7789 as st7789
 from time import strftime, sleep
 import tkinter as tk
 
+import ssl
+
 import paho.mqtt.client as mqtt
 import uuid
 
