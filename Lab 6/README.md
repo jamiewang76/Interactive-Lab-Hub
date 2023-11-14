@@ -1,6 +1,7 @@
 # Little Interactions Everywhere
 
 **NAMES OF COLLABORATORS HERE**
+**Jamie Wang zw448 Yunfei Jiao yj497**
 
 ## Prep
 
