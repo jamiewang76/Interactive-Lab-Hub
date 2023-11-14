@@ -176,7 +176,7 @@ By running the script, wou will find the two squares on the display. Half is sho
 (A message from the previous TA, Ilan: I was not super careful with handling the loop so you may need to press more than once if the timing isn't quite right. Also, I haven't load-tested it so things might just immediately break when everyone pushes the button at once.)
 
 **\*\*\*Can you set up the script that can read the color anyone else publish and display it on your screen?\*\*\***
-
+[![Color](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%206/color_cover.png)](https://drive.google.com/file/d/1-pQKOfRZVhQ-fCOJFriNfgOWDgmcVo45/view?usp=sharing)
 
 ### Part E
 ### Make it your own
