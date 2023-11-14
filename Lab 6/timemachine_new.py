@@ -10,7 +10,18 @@ import adafruit_rgb_display.st7789 as st7789
 from time import strftime, sleep
 import tkinter as tk
 
+import paho.mqtt.client as mqtt
+import uuid
 
+client = mqtt.Client(str(uuid.uuid1()))
+client.tls_set(cert_reqs=ssl.CERT_NONE)
+client.username_pw_set('idd', 'device@theFarm')
+
+client.connect(
+    'farlab.infosci.cornell.edu',
+    port=8883)
+
+topic = 'IDD/your/topic/here'
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -566,6 +577,9 @@ while True:
          current_year -= 10
          print(current_year,"While true")
          timeTravel = False
+         val = current_year
+         client.publish(topic, val)
+         
     elif y < 450:
          state = 1
          print("D", state)
