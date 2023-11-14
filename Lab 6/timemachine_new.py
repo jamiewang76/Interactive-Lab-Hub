@@ -11,7 +11,6 @@ from time import strftime, sleep
 import tkinter as tk
 
 import ssl
-
 import paho.mqtt.client as mqtt
 import uuid
 
