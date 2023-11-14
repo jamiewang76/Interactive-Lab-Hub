@@ -96,6 +96,31 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 
 **\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
 
+Pet Monitoring and Interaction:
+Attach a camera and a microphone to the Raspberry Pi for monitoring and interacting with pets.
+Publish images or video snippets along with sound data to MQTT topics.
+Use a subscribed device or service to remotely view and talk to pets, or trigger automated responses (e.g., dispense treats) based on certain conditions.
+
+Fitness Tracker Integration:
+Connect a heart rate monitor or pedometer to the Raspberry Pi.
+Publish fitness data (heart rate, step count) to MQTT topics.
+Subscribe to these topics to track fitness metrics over time, set goals, and receive notifications or rewards for achieving milestones.
+
+Security System:
+Integrate PIR (Passive Infrared) motion sensors with the Raspberry Pi.
+Publish motion detection events to MQTT topics.
+Subscribe to these topics to receive real-time alerts or trigger actions (e.g., turning on lights) in response to motion detection.
+
+Weather Station:
+Connect weather sensors (such as BMP180 for pressure, BMP280 for temperature and pressure, or a rain gauge) to the Raspberry Pi.
+Publish weather data (temperature, pressure, rainfall) to MQTT topics.
+Use a subscribed device or service to analyze and display weather information.
+
+Plant Recognition and Care Assistant:
+Combine a camera with image recognition software on the Raspberry Pi to identify plant species.
+Publish plant information and care tips to MQTT topics.
+Use a subscribed device or app to learn more about plants and receive personalized care recommendations.
+
 ### Part C
 ### Streaming a Sensor
 
@@ -117,8 +142,12 @@ Plug in the capacitive sensor board with the Qwiic connector. Use the alligator 
 
 **\*\*\*Include a picture of your setup here: what did you see on MQTT Explorer?\*\*\***
 
+![Capcitive_sensor](https://github.com/FAR-Lab/Interactive-Lab-Hub/assets/142849884/614c42e3-cd2b-4e9c-ab84-04bf4b526f74)
+
 **\*\*\*Pick another part in your kit and try to implement the data streaming with it.\*\*\***
 
+Using Joystick:
+[![Joystick](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Lab%206/PartC_cover.png)](https://drive.google.com/file/d/1-pQKOfRZVhQ-fCOJFriNfgOWDgmcVo45/view?usp=sharing)
 
 ### Part D
 ### The One True ColorNet
