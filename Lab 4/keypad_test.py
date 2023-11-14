@@ -50,7 +50,7 @@ def runExample():
 			# Flush the stdout buffer to give immediate user feedback
 			sys.stdout.flush()
 
-		time.sleep(.25)
+		time.sleep(1)
 
 if __name__ == '__main__':
 	try:
