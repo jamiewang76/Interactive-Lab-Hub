@@ -8,8 +8,13 @@ api_key = '0592FD37-2D0D-150E-7A56-000E6821998B' # Your Secure Unique API key
 msg_to = '+19178259760' # Recipient Mobile Number in international format (+61411111111 test number). 
 msg_from = '' # Custom sender ID (leave blank to accept replies). 
 msg_body = 'This message is from PI' # The message to be sent. 
+
+# from __future__ import print_function
 import json, subprocess 
+import digitalio
 import board
+from PIL import Image, ImageDraw, ImageFont
+import adafruit_rgb_display.st7789 as st7789
 import time
 import threading
 from adafruit_seesaw import seesaw, rotaryio, digitalio, neopixel
@@ -18,22 +23,66 @@ i2c = board.I2C()  # uses board.SCL and board.SDA
 # i2c = board.STEMMA_I2C()  # For using the built-in STEMMA QT connector on a microcontroller
 
 
-# clicksend
-# -*- coding: utf-8 -*- 
-# username = 'ziyingwang76@gmail.com' # Your ClickSend username 
-# api_key = '0592FD37-2D0D-150E-7A56-000E6821998B' # Your Secure Unique API key 
-# msg_to = '+19178259760' # Recipient Mobile Number in international format (+61411111111 test number). 
-# msg_from = '' # Custom sender ID (leave blank to accept replies). 
-# msg_body = 'This message is from PI' # The message to be sent. 
-# import json, subprocess 
-# request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
-# request = json.dumps(request) 
-# cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
-# p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
-# (output,err) = p.communicate() 
-# print 
-# output
+# Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
+cs_pin = digitalio.DigitalInOut(board.CE0)
+dc_pin = digitalio.DigitalInOut(board.D25)
+reset_pin = None
 
+# Config for display baudrate (default max is 24mhz):
+BAUDRATE = 64000000
+
+# Setup SPI bus using hardware SPI:
+spi = board.SPI()
+
+# Create the ST7789 display:
+disp = st7789.ST7789(
+    spi,
+    cs=cs_pin,
+    dc=dc_pin,
+    rst=reset_pin,
+    baudrate=BAUDRATE,
+    width=135,
+    height=240,
+    x_offset=53,
+    y_offset=40,
+)
+
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
+
+# Create blank image for drawing.
+# Make sure to create image with mode 'RGB' for full color.
+height = disp.width  # we swap height/width to rotate it to landscape!
+width = disp.height
+image = Image.new("RGB", (width, height))
+rotation = 90
+
+draw = ImageDraw.Draw(image)
+# Draw a black filled box to clear the image.
+draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+disp.image(image, rotation)
+# Draw some shapes.
+# First define some constants to allow easy resizing of shapes.
+padding = -2
+top = padding
+bottom = height - padding
+# Move left to right keeping track of the current x position for drawing shapes.
+x = 0
+# Alternatively load a TTF font.  Make sure the .ttf font file is in the
+# same directory as the python script!
+# Some other nice fonts to try: http://www.dafont.com/bitmap.php
+font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+
+# Turn on the backlight
+backlight = digitalio.DigitalInOut(board.D22)
+backlight.switch_to_output()
+backlight.value = True
+
+#Init all stove timer
+text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
+draw.text((0.3*width, 0.05*height), "Stove 1", font=text_font, fill="#FFFFFF")
 
 qt_enc1 = seesaw.Seesaw(i2c, addr=0x36)  # 1
 qt_enc2 = seesaw.Seesaw(i2c, addr=0x3C)  # 2
@@ -108,17 +157,6 @@ def countdown_timer1(timer_name, initial_time):
     (output,err) = p.communicate() 
     print 
     output
-
-# def countdown_timer2(seconds):
-#     while seconds:
-#         mins, secs = divmod(seconds, 60)
-#         timeformat = "{:02d}:{:02d}".format(mins, secs)
-#         print(timeformat, end="\r")
-#         time.sleep(1)
-#         seconds -= 1
-
-#     print("Time's up!")
-
 
 while True:
     # negate the position to make clockwise rotation positive
