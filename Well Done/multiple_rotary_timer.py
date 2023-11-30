@@ -21,7 +21,7 @@ button1 = digitalio.DigitalIO(qt_enc1, 24)
 button_held1 = False
 
 qt_enc2.pin_mode(24, qt_enc2.INPUT_PULLUP)
-button2 = digitalio.DigitalIO(qt_enc2, 24)
+button2 = digitalio.DigitalIO(qt_enc2, 24) 
 button_held2 = False
 
 qt_enc3.pin_mode(24, qt_enc3.INPUT_PULLUP)
@@ -112,8 +112,8 @@ while True:
         button_held2 = True
         pixel2.brightness = 0.5
         print("Button 2 pressed")
-        if position2>0:
-            countdown_timer2(position2*60)
+        # if position2>0:
+        #     countdown_timer2(position2*60)
 
     if button2.value and button_held2:
         button_held2 = False
