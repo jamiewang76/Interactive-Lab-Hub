@@ -66,7 +66,7 @@ rotation = 90
 draw = ImageDraw.Draw(image)
 # Draw a black filled box to clear the image.
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 255, 0))
-disp.image(image, rotation)
+# disp.image(image, rotation)
 # Draw some shapes.
 # First define some constants to allow easy resizing of shapes.
 padding = -2
@@ -86,13 +86,9 @@ backlight.value = True
 
 #Init all stove timer
 text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
-# draw.text((0, 0), "Stove 1", font=text_font, fill=(255, 255, 255))
-try:
-    # Your text drawing code here
-    draw.text((0, 0), "Stove 1", font=text_font, fill=(255, 255, 255))
-except Exception as e:
-    print("Exception:", e)
-# time.sleep(1)
+draw.text((0.5*width, 0.5*height), "Stove 1", font=text_font, fill=(255, 255, 255))
+
+
 
 qt_enc1 = seesaw.Seesaw(i2c, addr=0x36)  # 1
 qt_enc2 = seesaw.Seesaw(i2c, addr=0x3C)  # 2
