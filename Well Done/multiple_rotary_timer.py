@@ -135,7 +135,7 @@ while True:
         pixel4.brightness = 0.2
         print("Button 4 released")
 
-    # Set the countdown time (in seconds)
-    countdown_time = 300  # 5 minutes
+    # # Set the countdown time (in seconds)
+    # countdown_time = 300  # 5 minutes
 
-    countdown_timer(countdown_time)
+    # countdown_timer(countdown_time)
