@@ -205,7 +205,7 @@ while True:
         print("Position 1: {}".format(position1))
         draw.text((0.4*width, 0.1*height), str(position1), font=font, fill=(255, 255, 255))
         # settime_text = draw.text((0.3*width, 0.1*height), position1, font=font, fill=(255, 255, 255))
-        # disp.image(image, rotation)
+        print("hiiiiiii")
 
     if not button1.value and not button_held1:
         if position1 >= 120:
