@@ -205,6 +205,7 @@ while True:
 
     if not button1.value and not button_held1:
         if position1 > 0 and position1 <= 120:
+            print("works now")
             time1 = position1
             timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1))
             timer_thread1.start()
