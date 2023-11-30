@@ -102,6 +102,8 @@ while True:
         button_held2 = True
         pixel2.brightness = 0.5
         print("Button 2 pressed")
+        if position2>0:
+            countdown_timer(position2*60)
 
     if button2.value and button_held2:
         button_held2 = False
@@ -116,6 +118,8 @@ while True:
         button_held3 = True
         pixel3.brightness = 0.5
         print("Button 3 pressed")
+        if position3>0:
+            countdown_timer(position3*60)
 
     if button3.value and button_held3:
         button_held3 = False
@@ -130,6 +134,8 @@ while True:
         button_held4 = True
         pixel4.brightness = 0.5
         print("Button 4 pressed")
+        if position4>0:
+            countdown_timer(position4*60)
 
     if button4.value and button_held4:
         button_held4 = False
