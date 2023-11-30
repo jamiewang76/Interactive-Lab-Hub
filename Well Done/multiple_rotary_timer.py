@@ -172,7 +172,7 @@ def countdown_timer1(timer_name, initial_time):
         if timer_name == "Stove 4":
             height_var = 0.7
             rect_height = 0.8
-        draw.rectangle((0.4*width, rect_height*height, width, 0.25*height), outline=0, fill=(0, 0, 0))
+        # draw.rectangle((0.4*width, rect_height*height, width, 0.25*height), outline=0, fill=(0, 0, 0))
         draw.text((0.5*width, height_var*height), str(initial_time), font=font, fill=(255, 255, 255))
         disp.image(image, rotation)
 
@@ -188,6 +188,7 @@ def countdown_timer1(timer_name, initial_time):
 
 while True:
     # negate the position to make clockwise rotation positive
+    draw.rectangle((0.4*width, 0, width, height), outline=0, fill=(0, 0, 0))
     position1 = -encoder1.position
     position2 = -encoder2.position
     position3 = -encoder3.position
@@ -197,8 +198,8 @@ while True:
         last_position1 = position1
         if position1 >= 120:
             position1 = 120
-        if position1 <= 0:
-            position1 = 0
+        if position1 <= 1:
+            position1 = 1
         print("Position 1: {}".format(position1))
         # settime_text = draw.text((0.3*width, 0.1*height), position1, font=font, fill=(255, 255, 255))
         # disp.image(image, rotation)
@@ -206,10 +207,8 @@ while True:
     if not button1.value and not button_held1:
         if position1 >= 120:
             position1 = 120
-        if position1 <= 0:
-            position1 = 0
-        # if position1 > 0 and position1 <= 120:
-        print("works now")
+        if position1 <= 1:
+            position1 = 1
         time1 = position1
         timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1))
         timer_thread1.start()
@@ -226,15 +225,15 @@ while True:
         last_position2 = position2
         if position2 >= 120:
             position2 = 120
-        if position2 <= 0:
-            position2 = 0
+        if position2 <= 1:
+            position2 = 1
         print("Position 2: {}".format(position2))
 
     if not button2.value and not button_held2:
         if position2 >= 120:
             position2 = 120
-        if position2 <= 0:
-            position2 = 0
+        if position2 <= 1:
+            position2 = 1
         time2 = -encoder2.position
         timer_thread2 = threading.Thread(target=countdown_timer1, args=("Stove 2", time2))
         timer_thread2.start()
@@ -251,16 +250,16 @@ while True:
         last_position3 = position3
         if position3 >= 120:
             position3 = 120
-        if position3 <= 0:
-            position3 = 0
+        if position3 <= 1:
+            position3 = 1
         print("Position 3: {}".format(position3))
 
     if not button3.value and not button_held2:
         button_held3 = True
         if position3 >= 120:
             position3 = 120
-        if position3 <= 0:
-            position3 = 0
+        if position3 <= 1:
+            position3 = 1
         time3 = -encoder3.position
         timer_thread3 = threading.Thread(target=countdown_timer1, args=("Stove 3", time3))
         timer_thread3.start()
@@ -284,8 +283,8 @@ while True:
         button_held4 = True
         if position4 >= 120:
             position4 = 120
-        if position4 <= 0:
-            position4 = 0
+        if position4 <= 1:
+            position4 = 1
         time4 = -encoder4.position
         timer_thread4 = threading.Thread(target=countdown_timer1, args=("Stove 4", time4))
         timer_thread4.start()
