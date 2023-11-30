@@ -101,9 +101,10 @@ while True:
         print("Position 1: {}".format(position1))
 
     if not button1.value and not button_held1:
-        time1 = -encoder1.position
-        timer_thread1 = threading.Thread(target=countdown_timer1, args=("Timer 1", time1))
-        timer_thread1.start()
+        if position1 > 0 and position1 < 120:
+            time1 = -encoder1.position
+            timer_thread1 = threading.Thread(target=countdown_timer1, args=("Timer 1", time1))
+            timer_thread1.start()
         button_held1 = True
         pixel1.brightness = 0.5
         print("Button 1 pressed")
@@ -120,10 +121,11 @@ while True:
         print("Position 2: {}".format(position2))
 
     if not button2.value and not button_held2:
+        if position2 > 0 and position2 < 120:
+            time2 = -encoder2.position
+            timer_thread2 = threading.Thread(target=countdown_timer1, args=("Timer 2", time2))
+            timer_thread2.start()
         button_held2 = True
-        time2 = -encoder2.position
-        timer_thread2 = threading.Thread(target=countdown_timer1, args=("Timer 2", time2))
-        timer_thread2.start()
         pixel2.brightness = 0.5
         print("Button 2 pressed")
         # if position2>0:
@@ -140,9 +142,10 @@ while True:
 
     if not button3.value and not button_held2:
         button_held3 = True
-        time3 = -encoder3.position
-        timer_thread3 = threading.Thread(target=countdown_timer1, args=("Timer 3", time3))
-        timer_thread3.start()
+        if position3 > 0 and position3 < 120:
+            time3 = -encoder3.position
+            timer_thread3 = threading.Thread(target=countdown_timer1, args=("Timer 3", time3))
+            timer_thread3.start()
         pixel3.brightness = 0.5
         print("Button 3 pressed")
         
@@ -158,9 +161,10 @@ while True:
 
     if not button4.value and not button_held4:
         button_held4 = True
-        time4 = -encoder4.position
-        timer_thread4 = threading.Thread(target=countdown_timer1, args=("Timer 4", time4))
-        timer_thread4.start()
+        if position4 > 0 and position4 < 120:
+            time4 = -encoder4.position
+            timer_thread4 = threading.Thread(target=countdown_timer1, args=("Timer 4", time4))
+            timer_thread4.start()
         pixel4.brightness = 0.5
         print("Button 4 pressed")
         
