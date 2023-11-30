@@ -85,9 +85,8 @@ backlight.switch_to_output()
 backlight.value = True
 
 #Init all stove timer
-text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
-draw.text((0.5*width, 0.5*height), "Stove 1", font=text_font, fill=(255, 255, 255))
-
+draw.text((0.5*width, 0.5*height), "Stove 1", font=font, fill=(255, 255, 255))
+disp.image(image, rotation)
 
 
 qt_enc1 = seesaw.Seesaw(i2c, addr=0x36)  # 1
