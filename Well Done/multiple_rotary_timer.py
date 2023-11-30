@@ -189,7 +189,8 @@ def countdown_timer1(timer_name, initial_time):
 while True:
     # negate the position to make clockwise rotation positive
     draw.rectangle((0.4*width, 0, width, height), outline=0, fill=(0, 0, 0))
-    print("hiiiiii")
+    
+    # print("hiiiiii")
     position1 = -encoder1.position
     position2 = -encoder2.position
     position3 = -encoder3.position
@@ -202,6 +203,7 @@ while True:
         if position1 <= 1:
             position1 = 1
         print("Position 1: {}".format(position1))
+        draw.text((0.4*width, 0.1*height), position1, font=font, fill=(255, 255, 255))
         # settime_text = draw.text((0.3*width, 0.1*height), position1, font=font, fill=(255, 255, 255))
         # disp.image(image, rotation)
 
@@ -229,6 +231,7 @@ while True:
         if position2 <= 1:
             position2 = 1
         print("Position 2: {}".format(position2))
+        draw.text((0.4*width, 0.3*height), position2, font=font, fill=(255, 255, 255))
 
     if not button2.value and not button_held2:
         if position2 >= 120:
@@ -254,6 +257,7 @@ while True:
         if position3 <= 1:
             position3 = 1
         print("Position 3: {}".format(position3))
+        draw.text((0.4*width, 0.5*height), position3, font=font, fill=(255, 255, 255))
 
     if not button3.value and not button_held2:
         button_held3 = True
@@ -279,6 +283,7 @@ while True:
         if position4 <= 0:
             position4 = 0
         print("Position 4: {}".format(position4))
+        draw.text((0.4*width, 0.7*height), position4, font=font, fill=(255, 255, 255))
 
     if not button4.value and not button_held4:
         button_held4 = True
