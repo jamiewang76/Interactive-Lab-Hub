@@ -196,7 +196,7 @@ while True:
     if position1 != last_position1:
         last_position1 = position1
         if position1 >= 120:
-            print("position 1 max is 120!")
+            # print("position 1 max is 120!")
             position1 = 120
         if position1 <= 0:
             position1 = 0
@@ -205,6 +205,7 @@ while True:
         # disp.image(image, rotation)
 
     if not button1.value and not button_held1:
+        print(position1)
         if position1 > 0 and position1 <= 120:
             print("works now")
             time1 = position1
