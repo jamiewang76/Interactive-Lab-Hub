@@ -154,10 +154,11 @@ pixel4.fill(0x00FF00)
 def countdown_timer1(timer_name, initial_time):
     global draw, image, disp
     while initial_time > 0:
+        draw.rectangle((0.6*width, 0, width, height), outline=0, fill=(0, 0, 0))
         print(f"{timer_name}: {initial_time} seconds")
         time.sleep(1)
         initial_time -= 1
-        draw.text((0.3*width, 0.1*height), str(initial_time), font=font, fill=(255, 255, 255))
+        draw.text((0.6*width, 0.1*height), str(initial_time), font=font, fill=(255, 255, 255))
         disp.image(image, rotation)
 
     print(f"{timer_name}: Time's up!")
