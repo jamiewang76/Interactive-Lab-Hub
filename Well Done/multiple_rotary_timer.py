@@ -189,6 +189,7 @@ def countdown_timer1(timer_name, initial_time):
 while True:
     # negate the position to make clockwise rotation positive
     draw.rectangle((0.4*width, 0, width, height), outline=0, fill=(0, 0, 0))
+    print("hiiiiii")
     position1 = -encoder1.position
     position2 = -encoder2.position
     position3 = -encoder3.position
