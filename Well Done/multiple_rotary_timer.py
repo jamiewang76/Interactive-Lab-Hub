@@ -121,6 +121,7 @@ while True:
 
     if not button2.value and not button_held2:
         button_held2 = True
+        time2 = -encoder2.position
         timer_thread2 = threading.Thread(target=countdown_timer1, args=("Timer 2", time2))
         timer_thread2.start()
         pixel2.brightness = 0.5
