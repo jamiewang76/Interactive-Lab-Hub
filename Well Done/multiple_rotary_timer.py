@@ -155,7 +155,7 @@ def countdown_timer1(timer_name, initial_time):
     global draw, image, disp
     height_var = 0.1
     while initial_time > 0:
-        draw.rectangle((0.4*width, 0, width, height), outline=0, fill=(0, 0, 0))
+        
         print(f"{timer_name}: {initial_time} seconds")
         time.sleep(1)
         initial_time -= 1
@@ -167,6 +167,7 @@ def countdown_timer1(timer_name, initial_time):
             height_var = 0.5
         if timer_name == "Stove 4":
             height_var = 0.7
+        draw.rectangle((0.4*width, height_var*height, width, 0.2*height), outline=0, fill=(0, 0, 0))
         draw.text((0.4*width, height_var*height), str(initial_time), font=font, fill=(255, 255, 255))
         disp.image(image, rotation)
 
