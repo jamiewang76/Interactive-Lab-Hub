@@ -26,10 +26,10 @@ timer_thread2.start()
 timer_thread3.start()
 timer_thread4.start()
 
-# Wait for all threads to finish
-timer_thread1.join()
-timer_thread2.join()
-timer_thread3.join()
-timer_thread4.join()
+# # Wait for all threads to finish
+# timer_thread1.join()
+# timer_thread2.join()
+# timer_thread3.join()
+# timer_thread4.join()
 
 print("All timers have finished.")
