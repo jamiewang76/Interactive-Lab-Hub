@@ -60,7 +60,17 @@ pixel4 = neopixel.NeoPixel(qt_enc4, 6, 1)
 pixel4.brightness = 0.2
 pixel4.fill(0x00FF00)
 
-def countdown_timer(seconds):
+def countdown_timer1(seconds):
+    while seconds:
+        mins, secs = divmod(seconds, 60)
+        timeformat = "{:02d}:{:02d}".format(mins, secs)
+        print(timeformat, end="\r")
+        time.sleep(1)
+        seconds -= 1
+
+    print("Time's up!")
+
+def countdown_timer2(seconds):
     while seconds:
         mins, secs = divmod(seconds, 60)
         timeformat = "{:02d}:{:02d}".format(mins, secs)
@@ -87,7 +97,7 @@ while True:
         pixel1.brightness = 0.5
         print("Button 1 pressed")
         if position1>0:
-            countdown_timer(position1*60)
+            countdown_timer1(position1*60)
 
     if button1.value and button_held1:
         button_held1 = False
@@ -103,7 +113,7 @@ while True:
         pixel2.brightness = 0.5
         print("Button 2 pressed")
         if position2>0:
-            countdown_timer(position2*60)
+            countdown_timer2(position2*60)
 
     if button2.value and button_held2:
         button_held2 = False
@@ -119,7 +129,7 @@ while True:
         pixel3.brightness = 0.5
         print("Button 3 pressed")
         if position3>0:
-            countdown_timer(position3*60)
+            countdown_timer1(position3*60)
 
     if button3.value and button_held3:
         button_held3 = False
@@ -135,7 +145,7 @@ while True:
         pixel4.brightness = 0.5
         print("Button 4 pressed")
         if position4>0:
-            countdown_timer(position4*60)
+            countdown_timer1(position4*60)
 
     if button4.value and button_held4:
         button_held4 = False
