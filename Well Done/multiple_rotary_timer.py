@@ -156,6 +156,9 @@ def countdown_timer1(timer_name, initial_time):
         print(f"{timer_name}: {initial_time} seconds")
         time.sleep(1)
         initial_time -= 1
+        draw.text((0.3*width, 0.1*height), initial_time, font=font, fill=(255, 255, 255))
+        disp.image(image, rotation)
+
     print(f"{timer_name}: Time's up!")
     msg_body = f"{timer_name} Done!"
     request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
@@ -176,6 +179,8 @@ while True:
     if position1 != last_position1:
         last_position1 = position1
         print("Position 1: {}".format(position1))
+        settime_text = draw.text((0.3*width, 0.1*height), position1, font=font, fill=(255, 255, 255))
+        disp.image(image, rotation)
 
     if not button1.value and not button_held1:
         if position1 > 0 and position1 < 120:
@@ -185,16 +190,6 @@ while True:
         button_held1 = True
         pixel1.brightness = 0.5
         print("Button 1 pressed")
-        # if position1>0:
-        #     countdown_timer1(position1*60)
-        # msg_body = "Stove 1 Done!"
-        # request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
-        # request = json.dumps(request) 
-        # cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
-        # p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
-        # (output,err) = p.communicate() 
-        # print 
-        # output
 
     if button1.value and button_held1:
         button_held1 = False
