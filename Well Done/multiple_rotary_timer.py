@@ -86,9 +86,13 @@ backlight.value = True
 
 #Init all stove timer
 text_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 15)
-draw.text((0,0), "Stove 1", font=text_font, fill="#FF0000")
-
-time.sleep(1)
+# draw.text((0, 0), "Stove 1", font=text_font, fill=(255, 255, 255))
+try:
+    # Your text drawing code here
+    draw.text((0, 0), "Stove 1", font=text_font, fill=(255, 255, 255))
+except Exception as e:
+    print("Exception:", e)
+# time.sleep(1)
 
 qt_enc1 = seesaw.Seesaw(i2c, addr=0x36)  # 1
 qt_enc2 = seesaw.Seesaw(i2c, addr=0x3C)  # 2
