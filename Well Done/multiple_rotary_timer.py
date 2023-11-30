@@ -165,8 +165,10 @@ def countdown_timer1(timer_name, initial_time):
             rect_height = 0
         if timer_name == "Stove 2":
             height_var = 0.3
+            rect_height = 0.26
         if timer_name == "Stove 3":
             height_var = 0.5
+            rect_height = 0.53
         if timer_name == "Stove 4":
             height_var = 0.7
             rect_height = 0.8
