@@ -195,22 +195,25 @@ while True:
 
     if position1 != last_position1:
         last_position1 = position1
-        if position1 >= 120:
-            # print("position 1 max is 120!")
-            position1 = 120
-        if position1 <= 0:
-            position1 = 0
+        # if position1 >= 120:
+        #     # print("position 1 max is 120!")
+        #     position1 = 120
+        # if position1 <= 0:
+        #     position1 = 0
         print("Position 1: {}".format(position1))
         # settime_text = draw.text((0.3*width, 0.1*height), position1, font=font, fill=(255, 255, 255))
         # disp.image(image, rotation)
 
     if not button1.value and not button_held1:
-        print(position1)
-        if position1 > 0 and position1 <= 120:
-            print("works now")
-            time1 = position1
-            timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1))
-            timer_thread1.start()
+        if position1 >= 120:
+            position1 = 120
+        if position1 <= 0:
+            position1 = 0
+        # if position1 > 0 and position1 <= 120:
+        print("works now")
+        time1 = position1
+        timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1))
+        timer_thread1.start()
         button_held1 = True
         pixel1.brightness = 0.5
         print("Button 1 pressed")
