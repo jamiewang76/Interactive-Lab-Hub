@@ -100,6 +100,14 @@ def countdown_timer1(timer_name, initial_time):
         time.sleep(1)
         initial_time -= 1
     print(f"{timer_name}: Time's up!")
+    msg_body = f"{timer_name} Done!"
+    request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
+    request = json.dumps(request) 
+    cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
+    p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
+    (output,err) = p.communicate() 
+    print 
+    output
 
 # def countdown_timer2(seconds):
 #     while seconds:
@@ -126,21 +134,21 @@ while True:
     if not button1.value and not button_held1:
         if position1 > 0 and position1 < 120:
             time1 = -encoder1.position
-            timer_thread1 = threading.Thread(target=countdown_timer1, args=("Timer 1", time1))
+            timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1))
             timer_thread1.start()
         button_held1 = True
         pixel1.brightness = 0.5
         print("Button 1 pressed")
         # if position1>0:
         #     countdown_timer1(position1*60)
-        msg_body = "Stove 1 Done!"
-        request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
-        request = json.dumps(request) 
-        cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
-        p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
-        (output,err) = p.communicate() 
-        print 
-        output
+        # msg_body = "Stove 1 Done!"
+        # request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
+        # request = json.dumps(request) 
+        # cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
+        # p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
+        # (output,err) = p.communicate() 
+        # print 
+        # output
 
     if button1.value and button_held1:
         button_held1 = False
@@ -154,21 +162,21 @@ while True:
     if not button2.value and not button_held2:
         if position2 > 0 and position2 < 120:
             time2 = -encoder2.position
-            timer_thread2 = threading.Thread(target=countdown_timer1, args=("Timer 2", time2))
+            timer_thread2 = threading.Thread(target=countdown_timer1, args=("Stove 2", time2))
             timer_thread2.start()
         button_held2 = True
         pixel2.brightness = 0.5
         print("Button 2 pressed")
         # if position2>0:
         #     countdown_timer2(position2*60)
-        msg_body = "Stove 2 Done!"
-        request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
-        request = json.dumps(request) 
-        cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
-        p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
-        (output,err) = p.communicate() 
-        print 
-        output
+        # msg_body = "Stove 2 Done!"
+        # request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
+        # request = json.dumps(request) 
+        # cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
+        # p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
+        # (output,err) = p.communicate() 
+        # print 
+        # output
 
     if button2.value and button_held2:
         button_held2 = False
@@ -183,18 +191,18 @@ while True:
         button_held3 = True
         if position3 > 0 and position3 < 120:
             time3 = -encoder3.position
-            timer_thread3 = threading.Thread(target=countdown_timer1, args=("Timer 3", time3))
+            timer_thread3 = threading.Thread(target=countdown_timer1, args=("Stove 3", time3))
             timer_thread3.start()
         pixel3.brightness = 0.5
         print("Button 3 pressed")
-        msg_body = "Stove 3 Done!"
-        request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
-        request = json.dumps(request) 
-        cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
-        p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
-        (output,err) = p.communicate() 
-        print 
-        output
+        # msg_body = "Stove 3 Done!"
+        # request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
+        # request = json.dumps(request) 
+        # cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
+        # p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
+        # (output,err) = p.communicate() 
+        # print 
+        # output
         
 
     if button3.value and button_held3:
@@ -210,18 +218,18 @@ while True:
         button_held4 = True
         if position4 > 0 and position4 < 120:
             time4 = -encoder4.position
-            timer_thread4 = threading.Thread(target=countdown_timer1, args=("Timer 4", time4))
+            timer_thread4 = threading.Thread(target=countdown_timer1, args=("Stove 4", time4))
             timer_thread4.start()
         pixel4.brightness = 0.5
         print("Button 4 pressed")
-        msg_body = "Stove 4 Done!"
-        request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
-        request = json.dumps(request) 
-        cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
-        p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
-        (output,err) = p.communicate() 
-        print 
-        output
+        # msg_body = "Stove 4 Done!"
+        # request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
+        # request = json.dumps(request) 
+        # cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
+        # p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
+        # (output,err) = p.communicate() 
+        # print 
+        # output
         
 
     if button4.value and button_held4:
