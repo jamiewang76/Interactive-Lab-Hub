@@ -205,7 +205,7 @@ while True:
 
     if not button1.value and not button_held1:
         if position1 > 0 and position1 <= 120:
-            time1 = -encoder1.position
+            time1 = position1
             timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1))
             timer_thread1.start()
         button_held1 = True
