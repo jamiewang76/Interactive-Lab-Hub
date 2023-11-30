@@ -65,7 +65,7 @@ rotation = 90
 
 draw = ImageDraw.Draw(image)
 # Draw a black filled box to clear the image.
-draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+draw.rectangle((0, 0, width, height), outline=0, fill=(0, 255, 0))
 disp.image(image, rotation)
 # Draw some shapes.
 # First define some constants to allow easy resizing of shapes.
