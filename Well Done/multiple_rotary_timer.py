@@ -61,22 +61,22 @@ pixel4.brightness = 0.2
 pixel4.fill(0x00FF00)
 
 def countdown_timer1(seconds):
-    while seconds:
-        mins, secs = divmod(seconds, 60)
-        timeformat = "{:02d}:{:02d}".format(mins, secs)
-        print(timeformat, end="\r")
-        time.sleep(1)
-        seconds -= 1
+    # while seconds:
+    mins, secs = divmod(seconds, 60)
+    timeformat = "{:02d}:{:02d}".format(mins, secs)
+    print(timeformat, end="\r")
+    time.sleep(1)
+    seconds -= 1
 
     print("Time's up!")
 
 def countdown_timer2(seconds):
-    while seconds:
-        mins, secs = divmod(seconds, 60)
-        timeformat = "{:02d}:{:02d}".format(mins, secs)
-        print(timeformat, end="\r")
-        time.sleep(1)
-        seconds -= 1
+    # while seconds:
+    mins, secs = divmod(seconds, 60)
+    timeformat = "{:02d}:{:02d}".format(mins, secs)
+    print(timeformat, end="\r")
+    time.sleep(1)
+    seconds -= 1
 
     print("Time's up!")
 
@@ -112,8 +112,8 @@ while True:
         button_held2 = True
         pixel2.brightness = 0.5
         print("Button 2 pressed")
-        # if position2>0:
-        #     countdown_timer2(position2*60)
+        if position2>0:
+            countdown_timer2(position2*60)
 
     if button2.value and button_held2:
         button_held2 = False
