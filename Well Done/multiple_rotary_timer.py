@@ -158,7 +158,9 @@ def countdown_timer1(timer_name, initial_time):
         print(f"{timer_name}: {initial_time} seconds")
         time.sleep(1)
         initial_time -= 1
-        draw.text((0.4*width, 0.1*height), str(initial_time), font=font, fill=(255, 255, 255))
+        if timer_name == "Stove 1":
+            height_var = 0.1
+        draw.text((0.4*width, height_var*height), str(initial_time), font=font, fill=(255, 255, 255))
         disp.image(image, rotation)
 
     print(f"{timer_name}: Time's up!")
