@@ -11,7 +11,7 @@ msg_body = 'This message is from PI' # The message to be sent.
 
 # from __future__ import print_function
 import json, subprocess 
-import digitalio
+# import digitalio
 import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
@@ -24,7 +24,9 @@ i2c = board.I2C()  # uses board.SCL and board.SDA
 
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
-cs_pin = digitalio.DigitalInOut(board.CE0)
+# cs_pin = digitalio.DigitalInOut(board.CE0)
+cs_seesaw = seesaw.Seesaw(i2c, addr=0x36)
+cs_pin = digitalio.DigitalIO(cs_seesaw, 22)
 dc_pin = digitalio.DigitalInOut(board.D25)
 reset_pin = None
 
