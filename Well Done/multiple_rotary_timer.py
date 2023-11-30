@@ -195,12 +195,16 @@ while True:
 
     if position1 != last_position1:
         last_position1 = position1
+        if position1 >= 120:
+            position1 = 120
+        if position1 <= 0:
+            position1 = 0
         print("Position 1: {}".format(position1))
         # settime_text = draw.text((0.3*width, 0.1*height), position1, font=font, fill=(255, 255, 255))
         # disp.image(image, rotation)
 
     if not button1.value and not button_held1:
-        if position1 > 0 and position1 < 120:
+        if position1 > 0 and position1 <= 120:
             time1 = -encoder1.position
             timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1))
             timer_thread1.start()
@@ -225,16 +229,6 @@ while True:
         button_held2 = True
         pixel2.brightness = 0.5
         print("Button 2 pressed")
-        # if position2>0:
-        #     countdown_timer2(position2*60)
-        # msg_body = "Stove 2 Done!"
-        # request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
-        # request = json.dumps(request) 
-        # cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
-        # p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
-        # (output,err) = p.communicate() 
-        # print 
-        # output
 
     if button2.value and button_held2:
         button_held2 = False
@@ -253,16 +247,7 @@ while True:
             timer_thread3.start()
         pixel3.brightness = 0.5
         print("Button 3 pressed")
-        # msg_body = "Stove 3 Done!"
-        # request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
-        # request = json.dumps(request) 
-        # cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
-        # p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
-        # (output,err) = p.communicate() 
-        # print 
-        # output
         
-
     if button3.value and button_held3:
         button_held3 = False
         pixel3.brightness = 0.2
