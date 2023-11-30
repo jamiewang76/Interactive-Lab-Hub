@@ -65,7 +65,7 @@ rotation = 90
 
 draw = ImageDraw.Draw(image)
 # Draw a black filled box to clear the image.
-draw.rectangle((0, 0, width, height), outline=0, fill=(0, 255, 0))
+draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 # disp.image(image, rotation)
 # Draw some shapes.
 # First define some constants to allow easy resizing of shapes.
@@ -85,7 +85,10 @@ backlight.switch_to_output()
 backlight.value = True
 
 #Init all stove timer
-draw.text((0.5*width, 0.5*height), "Stove 1", font=font, fill=(255, 255, 255))
+draw.text((0.1*width, 0.1*height), "Stove 1", font=font, fill=(255, 255, 255))
+draw.text((0.1*width, 0.3*height), "Stove 2", font=font, fill=(255, 255, 255))
+draw.text((0.1*width, 0.5*height), "Stove 3", font=font, fill=(255, 255, 255))
+draw.text((0.1*width, 0.7*height), "Stove 4", font=font, fill=(255, 255, 255))
 disp.image(image, rotation)
 
 
