@@ -6,6 +6,7 @@
 
 import board
 import time
+import threading
 from adafruit_seesaw import seesaw, rotaryio, digitalio, neopixel
 
 i2c = board.I2C()  # uses board.SCL and board.SDA
@@ -61,22 +62,22 @@ pixel4.brightness = 0.2
 pixel4.fill(0x00FF00)
 
 def countdown_timer1(seconds):
-    # while seconds:
-    mins, secs = divmod(seconds, 60)
-    timeformat = "{:02d}:{:02d}".format(mins, secs)
-    print(timeformat, end="\r")
-    time.sleep(1)
-    seconds -= 1
+    while seconds:
+        mins, secs = divmod(seconds, 60)
+        timeformat = "{:02d}:{:02d}".format(mins, secs)
+        print(timeformat, end="\r")
+        time.sleep(1)
+        seconds -= 1
 
     print("Time's up!")
 
 def countdown_timer2(seconds):
-    # while seconds:
-    mins, secs = divmod(seconds, 60)
-    timeformat = "{:02d}:{:02d}".format(mins, secs)
-    print(timeformat, end="\r")
-    time.sleep(1)
-    seconds -= 1
+    while seconds:
+        mins, secs = divmod(seconds, 60)
+        timeformat = "{:02d}:{:02d}".format(mins, secs)
+        print(timeformat, end="\r")
+        time.sleep(1)
+        seconds -= 1
 
     print("Time's up!")
 
@@ -93,6 +94,9 @@ while True:
         print("Position 1: {}".format(position1))
 
     if not button1.value and not button_held1:
+        time1 = -encoder1.position
+        timer_thread1 = threading.Thread(target=countdown, args=("Timer 1", time1))
+        timer_thread1.start()
         button_held1 = True
         pixel1.brightness = 0.5
         print("Button 1 pressed")
@@ -110,9 +114,12 @@ while True:
 
     if not button2.value and not button_held2:
         button_held2 = True
+        timer_thread2 = threading.Thread(target=countdown, args=("Timer 2", time2))
+        timer_thread2.start()
         pixel2.brightness = 0.5
         print("Button 2 pressed")
         if position2>0:
+            
             countdown_timer2(position2*60)
 
     if button2.value and button_held2:
