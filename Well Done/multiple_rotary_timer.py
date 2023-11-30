@@ -179,8 +179,8 @@ while True:
     if position1 != last_position1:
         last_position1 = position1
         print("Position 1: {}".format(position1))
-        settime_text = draw.text((0.3*width, 0.1*height), position1, font=font, fill=(255, 255, 255))
-        disp.image(image, rotation)
+        # settime_text = draw.text((0.3*width, 0.1*height), position1, font=font, fill=(255, 255, 255))
+        # disp.image(image, rotation)
 
     if not button1.value and not button_held1:
         if position1 > 0 and position1 < 120:
