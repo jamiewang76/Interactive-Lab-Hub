@@ -154,6 +154,7 @@ pixel4.fill(0x00FF00)
 def countdown_timer1(timer_name, initial_time):
     global draw, image, disp
     height_var = 0.1
+    rect_height = 0.1
     while initial_time > 0:
         
         print(f"{timer_name}: {initial_time} seconds")
@@ -161,14 +162,16 @@ def countdown_timer1(timer_name, initial_time):
         initial_time -= 1
         if timer_name == "Stove 1":
             height_var = 0.1
+            rect_height = 0
         if timer_name == "Stove 2":
             height_var = 0.3
         if timer_name == "Stove 3":
             height_var = 0.5
         if timer_name == "Stove 4":
             height_var = 0.7
-        draw.rectangle((0.4*width, height_var*height, width, 0.2*height), outline=0, fill=(0, 0, 0))
-        draw.text((0.4*width, height_var*height), str(initial_time), font=font, fill=(255, 255, 255))
+            rect_height = 0.8
+        draw.rectangle((0.4*width, rect_height*height, width, 0.25*height), outline=0, fill=(0, 0, 0))
+        draw.text((0.5*width, height_var*height), str(initial_time), font=font, fill=(255, 255, 255))
         disp.image(image, rotation)
 
     print(f"{timer_name}: Time's up!")
