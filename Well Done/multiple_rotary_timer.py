@@ -287,6 +287,8 @@ while True:
         draw.text((0.85*width, 0.7*height), " left", font=font, fill=(255, 255, 255))
     disp.image(image, rotation)
 
+    print("time_left is " + str(time_left1) + ", set_timer1 is " + str(set_timer1) + ", timer1_started is " + str(timer1_started))
+
 
     # # print("hiiiiii")
     # position1 = -encoder1.position
