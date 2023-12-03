@@ -253,11 +253,7 @@ while True:
     draw.text((0.4*width, 0.5*height), " total", font=font, fill=(255, 255, 255))
     draw.text((0.25*width, 0.7*height), str(position4), font=font, fill=(255, 255, 255))
     draw.text((0.4*width, 0.7*height), " total", font=font, fill=(255, 255, 255))
-    # disp.image(image, rotation)
 
-    draw.text((0.65*width, 0.1*height), str(time_left1), font=font, fill=(255, 255, 255))
-    draw.text((0.8*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
-    # disp.image(image, rotation)
     if time_left1 != 0:
         draw.text((0.65*width, 0.1*height), str(time_left1), font=font, fill=(255, 255, 255))
         draw.text((0.8*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
