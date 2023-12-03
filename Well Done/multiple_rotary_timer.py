@@ -234,7 +234,7 @@ while True:
 
     
 
-    draw.rectangle((0.4*width, 0, width, height), outline=0, fill=(0, 0, 0))
+    draw.rectangle((0.4*width, 0, width, height), outline=0, fill=(0, 255, 0))
     # disp.image(image, rotation)
     draw.text((0.4*width, 0.1*height), str(position1), font=font, fill=(255, 255, 255))
     draw.text((0.4*width, 0.3*height), str(position2), font=font, fill=(255, 255, 255))
