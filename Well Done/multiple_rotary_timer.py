@@ -253,23 +253,24 @@ while True:
     draw.text((0.4*width, 0.5*height), " total", font=font, fill=(255, 255, 255))
     draw.text((0.25*width, 0.7*height), str(position4), font=font, fill=(255, 255, 255))
     draw.text((0.4*width, 0.7*height), " total", font=font, fill=(255, 255, 255))
-    disp.image(image, rotation)
+    # disp.image(image, rotation)
 
     draw.text((0.65*width, 0.1*height), str(time_left1), font=font, fill=(255, 255, 255))
     draw.text((0.8*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
+    disp.image(image, rotation)
     # if time_left1 != 0:
     #     draw.text((0.65*width, 0.1*height), str(time_left1), font=font, fill=(255, 255, 255))
     #     draw.text((0.8*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
-    if time_left2 != 0:
-        draw.text((0.65*width, 0.3*height), str(time_left2), font=font, fill=(255, 255, 255))
-        draw.text((0.8*width, 0.3*height), " left", font=font, fill=(255, 255, 255))
-    if time_left3 != 0:
-        draw.text((0.65*width, 0.5*height), str(time_left3), font=font, fill=(255, 255, 255))
-        draw.text((0.8*width, 0.5*height), " left", font=font, fill=(255, 255, 255))
-    if time_left4 != 0:
-        draw.text((0.65*width, 0.7*height), str(time_left4), font=font, fill=(255, 255, 255))
-        draw.text((0.8*width, 0.7*height), " left", font=font, fill=(255, 255, 255))
-    disp.image(image, rotation)
+    # if time_left2 != 0:
+    #     draw.text((0.65*width, 0.3*height), str(time_left2), font=font, fill=(255, 255, 255))
+    #     draw.text((0.8*width, 0.3*height), " left", font=font, fill=(255, 255, 255))
+    # if time_left3 != 0:
+    #     draw.text((0.65*width, 0.5*height), str(time_left3), font=font, fill=(255, 255, 255))
+    #     draw.text((0.8*width, 0.5*height), " left", font=font, fill=(255, 255, 255))
+    # if time_left4 != 0:
+    #     draw.text((0.65*width, 0.7*height), str(time_left4), font=font, fill=(255, 255, 255))
+    #     draw.text((0.8*width, 0.7*height), " left", font=font, fill=(255, 255, 255))
+    # disp.image(image, rotation)
 
 
     # # print("hiiiiii")
