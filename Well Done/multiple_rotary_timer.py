@@ -284,7 +284,7 @@ while True:
             position2 = 120
         if position2 <= 1:
             position2 = 1
-        time2 = -encoder2.position
+        time2 = position2
         timer_thread2 = threading.Thread(target=countdown_timer1, args=("Stove 2", time2))
         timer_thread2.start()
         button_held2 = True
@@ -312,7 +312,7 @@ while True:
             position3 = 120
         if position3 <= 1:
             position3 = 1
-        time3 = -encoder3.position
+        time3 = position3
         timer_thread3 = threading.Thread(target=countdown_timer1, args=("Stove 3", time3))
         timer_thread3.start()
         pixel3.brightness = 0.5
@@ -339,7 +339,7 @@ while True:
             position4 = 120
         if position4 <= 1:
             position4 = 1
-        time4 = -encoder4.position
+        time4 = position4
         timer_thread4 = threading.Thread(target=countdown_timer1, args=("Stove 4", time4))
         timer_thread4.start()
         pixel4.brightness = 0.5
