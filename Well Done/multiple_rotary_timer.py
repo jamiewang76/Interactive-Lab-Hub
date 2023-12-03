@@ -158,7 +158,7 @@ pixel4.fill(0x00FF00)
 
 #     print("Time's up!")
 
-def countdown_timer1(timer_name, initial_time, stop_event):
+def countdown_timer1(timer_name, initial_time, stop_event, time_left):
     global draw, image, disp
     global time_left1, time_left2, time_left3, time_left4
     height_var = 0.1
@@ -189,17 +189,27 @@ def countdown_timer1(timer_name, initial_time, stop_event):
         # draw.text((0.5*width, height_var*height), str(initial_time), font=font, fill=(255, 255, 255))
         # disp.image(image, rotation)
     if not stop_event.is_set():
+        if time_left <= 0:
+            print(f"{timer_name}: Time's up!")
+            msg_body = f"{timer_name} Done!"
+            request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
+            request = json.dumps(request) 
+            cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
+            p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
+            (output,err) = p.communicate() 
+            print 
+            output
         print(f"{timer_name}: Time's up!")
 
-    print(f"{timer_name}: Time's up!")
-    msg_body = f"{timer_name} Done!"
-    request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
-    request = json.dumps(request) 
-    cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
-    p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
-    (output,err) = p.communicate() 
-    print 
-    output
+    # print(f"{timer_name}: Time's up!")
+    # msg_body = f"{timer_name} Done!"
+    # request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
+    # request = json.dumps(request) 
+    # cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
+    # p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
+    # (output,err) = p.communicate() 
+    # print 
+    # output
 
 while True:
     # negate the position to make clockwise rotation positive
@@ -331,7 +341,7 @@ while True:
             time_left1 = 1
             timer1_started = True
         if set_timer1 == True:
-            timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1, stop_event1))
+            timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1, stop_event1, time_left1))
             timer_thread1.start()
 
     if button1.value and button_held1:
@@ -355,7 +365,7 @@ while True:
         if position2 <= 1:
             position2 = 1
         time2 = position2
-        timer_thread2 = threading.Thread(target=countdown_timer1, args=("Stove 2", time2, stop_event1))
+        timer_thread2 = threading.Thread(target=countdown_timer1, args=("Stove 2", time2, stop_event1, time_left2))
         timer_thread2.start()
         button_held2 = True
         pixel2.brightness = 0.5
@@ -383,7 +393,7 @@ while True:
         if position3 <= 1:
             position3 = 1
         time3 = position3
-        timer_thread3 = threading.Thread(target=countdown_timer1, args=("Stove 3", time3, stop_event1))
+        timer_thread3 = threading.Thread(target=countdown_timer1, args=("Stove 3", time3, stop_event1, time_left3))
         timer_thread3.start()
         pixel3.brightness = 0.5
         print("Button 3 pressed")
@@ -410,7 +420,7 @@ while True:
         if position4 <= 1:
             position4 = 1
         time4 = position4
-        timer_thread4 = threading.Thread(target=countdown_timer1, args=("Stove 4", time4, stop_event1))
+        timer_thread4 = threading.Thread(target=countdown_timer1, args=("Stove 4", time4, stop_event1, time_left4))
         timer_thread4.start()
         pixel4.brightness = 0.5
         print("Button 4 pressed")
