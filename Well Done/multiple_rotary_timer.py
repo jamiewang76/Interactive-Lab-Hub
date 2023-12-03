@@ -323,11 +323,11 @@ while True:
         # if time_left1 == 0 and timer1_started:
         #     timer1_started = False
         print("Button 1 pressed")
-        if timer1_started and time_left1 >= 0:
-            set_timer1 = False
-            timer1_started = False
-            encoder1.position = -1
-            stop_event1.set()
+        # if timer1_started and time_left1 >= 0:
+        #     set_timer1 = False
+        #     timer1_started = False
+        #     encoder1.position = -1
+        #     stop_event1.set()
         if timer1_started == False and time_left1 == 0: 
             time_left1 = 1
             timer1_started = True
