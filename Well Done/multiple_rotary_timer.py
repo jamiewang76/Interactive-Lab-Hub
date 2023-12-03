@@ -66,6 +66,7 @@ time_left1 = 0
 time_left2 = 0
 time_left3 = 0
 time_left4 = 0
+set_timer1 = False
 
 draw = ImageDraw.Draw(image)
 # Draw a black filled box to clear the image.
@@ -245,8 +246,11 @@ while True:
 
     draw.rectangle((0.3*width, 0, width, height), outline=0, fill=(0, 0, 0))
     # disp.image(image, rotation)
-    draw.text((0.3*width, 0.1*height), str(position1), font=font, fill=(255, 255, 255))
-    draw.text((0.45*width, 0.1*height), " total", font=font, fill=(255, 255, 255))
+    if set_timer1:
+        draw.text((0.3*width, 0.1*height), str(position1), font=font, fill=(255, 255, 255))
+        draw.text((0.45*width, 0.1*height), " total", font=font, fill=(255, 255, 255))
+    if set_timer1 == False:
+        draw.text((0.3*width, 0.1*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
     draw.text((0.3*width, 0.3*height), str(position2), font=font, fill=(255, 255, 255))
     draw.text((0.45*width, 0.3*height), " total", font=font, fill=(255, 255, 255))
     draw.text((0.3*width, 0.5*height), str(position3), font=font, fill=(255, 255, 255))
@@ -257,6 +261,9 @@ while True:
     if time_left1 != 0:
         draw.text((0.7*width, 0.1*height), str(time_left1), font=font, fill=(255, 255, 255))
         draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
+    if time_left1 == 0 and set_timer1:
+        set_timer1 = False
+        draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
     if time_left2 != 0:
         draw.text((0.7*width, 0.3*height), str(time_left2), font=font, fill=(255, 255, 255))
         draw.text((0.85*width, 0.3*height), " left", font=font, fill=(255, 255, 255))
@@ -282,6 +289,8 @@ while True:
         if position1 <= 1:
             position1 = 1
         print("Position 1: {}".format(position1))
+        if set_timer1 == False:
+            set_timer1 = True
         # draw.text((0.4*width, 0.1*height), str(position1), font=font, fill=(255, 255, 255))
         # disp.image(image, rotation)
         # settime_text = draw.text((0.3*width, 0.1*height), position1, font=font, fill=(255, 255, 255))
