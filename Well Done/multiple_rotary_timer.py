@@ -325,7 +325,7 @@ while True:
         # if time_left1 == 0 and timer1_started:
         #     timer1_started = False
         print("Button 1 pressed")
-        if timer1_started and time_left1 == 1:
+        if timer1_started and time_left1 == 0:
             set_timer1 = False
             timer1_started = False
             encoder1.position = -1
@@ -336,6 +336,7 @@ while True:
         if set_timer1 == True:
             timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1, stop_event1))
             timer_thread1.start()
+            time_left1 = time1
             timer1_started = True
 
     if button1.value and button_held1:
