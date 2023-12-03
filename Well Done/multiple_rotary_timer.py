@@ -225,8 +225,8 @@ while True:
         if position1 <= 1:
             position1 = 1
         print("Position 1: {}".format(position1))
-        draw.text((0.4*width, 0.1*height), str(position1), font=font, fill=(255, 255, 255))
-        disp.image(image, rotation)
+        # draw.text((0.4*width, 0.1*height), str(position1), font=font, fill=(255, 255, 255))
+        # disp.image(image, rotation)
         # settime_text = draw.text((0.3*width, 0.1*height), position1, font=font, fill=(255, 255, 255))
         # print("hiiiiiii")
 
@@ -254,8 +254,8 @@ while True:
         if position2 <= 1:
             position2 = 1
         print("Position 2: {}".format(position2))
-        draw.text((0.4*width, 0.3*height), str(position2), font=font, fill=(255, 255, 255))
-        disp.image(image, rotation)
+        # draw.text((0.4*width, 0.3*height), str(position2), font=font, fill=(255, 255, 255))
+        # disp.image(image, rotation)
 
     if not button2.value and not button_held2:
         if position2 >= 120:
@@ -281,8 +281,8 @@ while True:
         if position3 <= 1:
             position3 = 1
         print("Position 3: {}".format(position3))
-        draw.text((0.4*width, 0.5*height), str(position3), font=font, fill=(255, 255, 255))
-        disp.image(image, rotation)
+        # draw.text((0.4*width, 0.5*height), str(position3), font=font, fill=(255, 255, 255))
+        # disp.image(image, rotation)
 
     if not button3.value and not button_held2:
         button_held3 = True
@@ -308,8 +308,8 @@ while True:
         if position4 <= 1:
             position4 = 1
         print("Position 4: {}".format(position4))
-        draw.text((0.4*width, 0.7*height), str(position4), font=font, fill=(255, 255, 255))
-        disp.image(image, rotation)
+        # draw.text((0.4*width, 0.7*height), str(position4), font=font, fill=(255, 255, 255))
+        # disp.image(image, rotation)
 
     if not button4.value and not button_held4:
         button_held4 = True
