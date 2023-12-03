@@ -259,23 +259,23 @@ while True:
     draw.text((0.3*width, 0.7*height), str(position4), font=font, fill=(255, 255, 255))
     draw.text((0.45*width, 0.7*height), " total", font=font, fill=(255, 255, 255))
 
-    if time_left1 != 0:
-        draw.text((0.7*width, 0.1*height), str(time_left1), font=font, fill=(255, 255, 255))
-        draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
-    if time_left1 == 0 and set_timer1 and timer1_started:
-        set_timer1 = False
-        timer1_started = False
-        draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
-    if time_left2 != 0:
-        draw.text((0.7*width, 0.3*height), str(time_left2), font=font, fill=(255, 255, 255))
-        draw.text((0.85*width, 0.3*height), " left", font=font, fill=(255, 255, 255))
-    if time_left3 != 0:
-        draw.text((0.7*width, 0.5*height), str(time_left3), font=font, fill=(255, 255, 255))
-        draw.text((0.85*width, 0.5*height), " left", font=font, fill=(255, 255, 255))
-    if time_left4 != 0:
-        draw.text((0.7*width, 0.7*height), str(time_left4), font=font, fill=(255, 255, 255))
-        draw.text((0.85*width, 0.7*height), " left", font=font, fill=(255, 255, 255))
-    disp.image(image, rotation)
+    # if time_left1 != 0:
+    #     draw.text((0.7*width, 0.1*height), str(time_left1), font=font, fill=(255, 255, 255))
+    #     draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
+    # if time_left1 == 0 and set_timer1 and timer1_started:
+    #     set_timer1 = False
+    #     timer1_started = False
+    #     draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
+    # if time_left2 != 0:
+    #     draw.text((0.7*width, 0.3*height), str(time_left2), font=font, fill=(255, 255, 255))
+    #     draw.text((0.85*width, 0.3*height), " left", font=font, fill=(255, 255, 255))
+    # if time_left3 != 0:
+    #     draw.text((0.7*width, 0.5*height), str(time_left3), font=font, fill=(255, 255, 255))
+    #     draw.text((0.85*width, 0.5*height), " left", font=font, fill=(255, 255, 255))
+    # if time_left4 != 0:
+    #     draw.text((0.7*width, 0.7*height), str(time_left4), font=font, fill=(255, 255, 255))
+    #     draw.text((0.85*width, 0.7*height), " left", font=font, fill=(255, 255, 255))
+    # disp.image(image, rotation)
 
 
     # # print("hiiiiii")
@@ -405,6 +405,24 @@ while True:
         button_held4 = False
         pixel4.brightness = 0.2
         print("Button 4 released")
+
+    if time_left1 != 0:
+        draw.text((0.7*width, 0.1*height), str(time_left1), font=font, fill=(255, 255, 255))
+        draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
+    if time_left1 == 0 and set_timer1 and timer1_started:
+        set_timer1 = False
+        timer1_started = False
+        draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
+    if time_left2 != 0:
+        draw.text((0.7*width, 0.3*height), str(time_left2), font=font, fill=(255, 255, 255))
+        draw.text((0.85*width, 0.3*height), " left", font=font, fill=(255, 255, 255))
+    if time_left3 != 0:
+        draw.text((0.7*width, 0.5*height), str(time_left3), font=font, fill=(255, 255, 255))
+        draw.text((0.85*width, 0.5*height), " left", font=font, fill=(255, 255, 255))
+    if time_left4 != 0:
+        draw.text((0.7*width, 0.7*height), str(time_left4), font=font, fill=(255, 255, 255))
+        draw.text((0.85*width, 0.7*height), " left", font=font, fill=(255, 255, 255))
+    disp.image(image, rotation)
 
     # # Set the countdown time (in seconds)
     # countdown_time = 300  # 5 minutes
