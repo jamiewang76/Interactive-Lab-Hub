@@ -251,6 +251,7 @@ while True:
         draw.text((0.3*width, 0.1*height), str(position1), font=font, fill=(255, 255, 255))
         draw.text((0.45*width, 0.1*height), " total", font=font, fill=(255, 255, 255))
     if set_timer1 == False:
+        print("here")
         draw.text((0.3*width, 0.1*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
     draw.text((0.3*width, 0.3*height), str(position2), font=font, fill=(255, 255, 255))
     draw.text((0.45*width, 0.3*height), " total", font=font, fill=(255, 255, 255))
