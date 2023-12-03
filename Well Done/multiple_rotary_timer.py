@@ -62,6 +62,10 @@ height = disp.width  # we swap height/width to rotate it to landscape!
 width = disp.height
 image = Image.new("RGB", (width, height))
 rotation = 90
+time_left1 = 0
+time_left2 = 0
+time_left3 = 0
+time_left4 = 0
 
 draw = ImageDraw.Draw(image)
 # Draw a black filled box to clear the image.
@@ -153,28 +157,33 @@ pixel4.fill(0x00FF00)
 
 def countdown_timer1(timer_name, initial_time):
     global draw, image, disp
+    global time_left1, time_left2, time_left3, time_left4
     height_var = 0.1
     rect_height = 0.1
     while initial_time > 0:
-        
+        # time_left = initial_time
         print(f"{timer_name}: {initial_time} seconds")
         time.sleep(1)
         initial_time -= 1
         if timer_name == "Stove 1":
             height_var = 0.1
             rect_height = 0
+            time_left1 = initial_time
         if timer_name == "Stove 2":
             height_var = 0.3
             rect_height = 0.26
+            time_left2 = initial_time
         if timer_name == "Stove 3":
             height_var = 0.5
             rect_height = 0.53
+            time_left3 = initial_time
         if timer_name == "Stove 4":
             height_var = 0.7
             rect_height = 0.8
+            time_left4 = initial_time
         # draw.rectangle((0.4*width, rect_height*height, width, 0.25*height), outline=0, fill=(0, 0, 0))
-        draw.text((0.5*width, height_var*height), str(initial_time), font=font, fill=(255, 255, 255))
-        disp.image(image, rotation)
+        # draw.text((0.5*width, height_var*height), str(initial_time), font=font, fill=(255, 255, 255))
+        # disp.image(image, rotation)
 
     print(f"{timer_name}: Time's up!")
     msg_body = f"{timer_name} Done!"
@@ -245,6 +254,21 @@ while True:
     draw.text((0.25*width, 0.7*height), str(position4), font=font, fill=(255, 255, 255))
     draw.text((0.4*width, 0.7*height), " total", font=font, fill=(255, 255, 255))
     disp.image(image, rotation)
+
+    if time_left1 != 0:
+        draw.text((0.6*width, 0.1*height), str(time_left1), font=font, fill=(255, 255, 255))
+        draw.text((0.75*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
+    if time_left2 != 0:
+        draw.text((0.6*width, 0.3*height), str(time_left2), font=font, fill=(255, 255, 255))
+        draw.text((0.75*width, 0.3*height), " left", font=font, fill=(255, 255, 255))
+    if time_left3 != 0:
+        draw.text((0.6*width, 0.5*height), str(time_left3), font=font, fill=(255, 255, 255))
+        draw.text((0.75*width, 0.5*height), " left", font=font, fill=(255, 255, 255))
+    if time_left4 != 0:
+        draw.text((0.6*width, 0.7*height), str(time_left4), font=font, fill=(255, 255, 255))
+        draw.text((0.75*width, 0.7*height), " left", font=font, fill=(255, 255, 255))
+    disp.image(image, rotation)
+
 
     # # print("hiiiiii")
     # position1 = -encoder1.position
