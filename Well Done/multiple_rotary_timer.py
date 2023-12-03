@@ -188,14 +188,35 @@ def countdown_timer1(timer_name, initial_time):
 
 while True:
     # negate the position to make clockwise rotation positive
-    draw.rectangle((0.4*width, 0, width, height), outline=0, fill=(0, 0, 0))
-    disp.image(image, rotation)
-    
     # print("hiiiiii")
     position1 = -encoder1.position
     position2 = -encoder2.position
     position3 = -encoder3.position
     position4 = -encoder4.position
+
+    positions = [position1, position2, position3, position4]
+
+    if any(pos > 120 for pos in positions):
+        for i, pos in enumerate(positions):
+            if pos > 120:
+                pos = 120
+                # print(f"Position {i + 1} is greater than 120: {pos}")
+            if pos < 1:
+                pos = 1
+
+    draw.rectangle((0.4*width, 0, width, height), outline=0, fill=(0, 0, 0))
+    # disp.image(image, rotation)
+    draw.text((0.4*width, 0.1*height), str(position1), font=font, fill=(255, 255, 255))
+    draw.text((0.4*width, 0.1*height), str(position2), font=font, fill=(255, 255, 255))
+    draw.text((0.4*width, 0.1*height), str(position3), font=font, fill=(255, 255, 255))
+    draw.text((0.4*width, 0.1*height), str(position4), font=font, fill=(255, 255, 255))
+    disp.image(image, rotation)
+
+    # # print("hiiiiii")
+    # position1 = -encoder1.position
+    # position2 = -encoder2.position
+    # position3 = -encoder3.position
+    # position4 = -encoder4.position
 
     if position1 != last_position1:
         last_position1 = position1
