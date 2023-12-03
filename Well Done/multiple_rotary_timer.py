@@ -171,7 +171,7 @@ def countdown_timer1(timer_name, initial_time):
             height_var = 0.1
             rect_height = 0
             time_left1 = initial_time
-            print("set initial time to time_left1")
+            # print("set initial time to time_left1")
         if timer_name == "Stove 2":
             height_var = 0.3
             rect_height = 0.26
@@ -271,10 +271,10 @@ while True:
         # timer1_started = False
         if timer1_started:
             draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
-            set_timer1 = False
-            encoder1.position = -1
         elif timer1_started == False:
             draw.text((0.7*width, 0.1*height), "", font=font, fill=(255, 255, 255))
+            set_timer1 = False
+            encoder1.position = -1
             
 
     if time_left2 != 0:
@@ -320,7 +320,7 @@ while True:
         button_held1 = True
         pixel1.brightness = 0.5
         timer1_started = True
-        if time_left1 == 0 and timer1_started:
+        if time_left1 == 0 and timer1_started and set_timer1:
             timer1_started = False
         print("Button 1 pressed")
         if time_left1 == 0: 
