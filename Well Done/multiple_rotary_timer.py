@@ -261,15 +261,12 @@ while True:
     draw.text((0.45*width, 0.7*height), " total", font=font, fill=(255, 255, 255))
 
     if time_left1 != 0:
-        draw.text((0.7*width, 0.1*height), str(time_left1), font=font, fill=(255, 255, 255))
-        draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
-    print("time_left 1 is " + str(time_left1))
-
-    # if time_left1 == 0 and set_timer1 and timer1_started:
+        if timer1_started:
+            draw.text((0.7*width, 0.1*height), str(time_left1), font=font, fill=(255, 255, 255))
+            draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
+        else:
+            draw.text((0.85*width, 0.1*height), "", font=font, fill=(255, 255, 255))
     if time_left1 == 0:
-        # print("this here")
-        # set_timer1 = False
-        # timer1_started = False
         if timer1_started:
             draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
 
