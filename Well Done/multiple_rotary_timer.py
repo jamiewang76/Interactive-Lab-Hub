@@ -171,6 +171,7 @@ def countdown_timer1(timer_name, initial_time):
             height_var = 0.1
             rect_height = 0
             time_left1 = initial_time
+            print("set initial time to time_left1")
         if timer_name == "Stove 2":
             height_var = 0.3
             rect_height = 0.26
