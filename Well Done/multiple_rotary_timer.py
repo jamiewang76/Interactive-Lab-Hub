@@ -291,7 +291,7 @@ while True:
         if position1 <= 1:
             position1 = 1
         print("Position 1: {}".format(position1))
-        if set_timer1 == False and position1 == 1:
+        if set_timer1 == False and position1 != 1:
             set_timer1 = True
         # draw.text((0.4*width, 0.1*height), str(position1), font=font, fill=(255, 255, 255))
         # disp.image(image, rotation)
