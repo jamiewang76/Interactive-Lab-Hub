@@ -325,7 +325,7 @@ while True:
         if timer1_started == False and time_left1 == 0: 
             time_left1 = 1
             timer1_started = True
-        if timer1_started and time_left1 == 0:
+        if timer1_started and time_left1 >= 0:
             set_timer1 = False
             timer1_started = False
             encoder1.position = -1
