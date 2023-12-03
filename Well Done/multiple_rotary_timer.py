@@ -199,10 +199,10 @@ while True:
     if any(pos > 120 for pos in positions):
         for i, pos in enumerate(positions):
             if pos > 120:
-                pos = 120
+                positions[i] = 120
                 # print(f"Position {i + 1} is greater than 120: {pos}")
             if pos < 1:
-                pos = 1
+                positions[i] = 1
 
     draw.rectangle((0.4*width, 0, width, height), outline=0, fill=(0, 0, 0))
     # disp.image(image, rotation)
