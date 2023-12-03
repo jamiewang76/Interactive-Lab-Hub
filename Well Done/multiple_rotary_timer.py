@@ -67,6 +67,7 @@ time_left2 = 0
 time_left3 = 0
 time_left4 = 0
 set_timer1 = False
+timer1_started = False
 
 draw = ImageDraw.Draw(image)
 # Draw a black filled box to clear the image.
@@ -261,8 +262,9 @@ while True:
     if time_left1 != 0:
         draw.text((0.7*width, 0.1*height), str(time_left1), font=font, fill=(255, 255, 255))
         draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
-    if time_left1 == 0 and set_timer1:
+    if time_left1 == 0 and set_timer1 and timer1_started:
         set_timer1 = False
+        timer1_started = False
         draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
     if time_left2 != 0:
         draw.text((0.7*width, 0.3*height), str(time_left2), font=font, fill=(255, 255, 255))
@@ -306,6 +308,7 @@ while True:
         timer_thread1.start()
         button_held1 = True
         pixel1.brightness = 0.5
+        timer1_started = True
         print("Button 1 pressed")
 
     if button1.value and button_held1:
