@@ -264,6 +264,7 @@ while True:
         draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
     print("time_left 1 is " + str(time_left1))
     if time_left1 == 0 and set_timer1 and timer1_started:
+        print("this here")
         set_timer1 = False
         timer1_started = False
         draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
