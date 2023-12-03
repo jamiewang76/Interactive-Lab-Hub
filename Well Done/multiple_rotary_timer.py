@@ -313,6 +313,8 @@ while True:
         pixel1.brightness = 0.5
         timer1_started = True
         print("Button 1 pressed")
+        if time_left1 == 0: 
+            time_left1 = 1
 
     if button1.value and button_held1:
         button_held1 = False
