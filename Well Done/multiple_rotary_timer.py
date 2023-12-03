@@ -313,8 +313,8 @@ while True:
         if position1 <= 1:
             position1 = 1
         time1 = position1
-        timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1))
-        timer_thread1.start()
+        # timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1))
+        # timer_thread1.start()
         button_held1 = True
         pixel1.brightness = 0.5
         # timer1_started = True
@@ -324,6 +324,8 @@ while True:
         if timer1_started == False and time_left1 == 0: 
             time_left1 = 1
             timer1_started = True
+            timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1))
+            timer_thread1.start()
         if timer1_started and time_left1 == 0:
             set_timer1 = False
             timer1_started = False
