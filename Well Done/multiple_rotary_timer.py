@@ -271,10 +271,11 @@ while True:
         # timer1_started = False
         if timer1_started:
             draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
-        elif timer1_started == False:
-            draw.text((0.7*width, 0.1*height), "", font=font, fill=(255, 255, 255))
             set_timer1 = False
             encoder1.position = -1
+        elif timer1_started == False:
+            draw.text((0.7*width, 0.1*height), "", font=font, fill=(255, 255, 255))
+            
 
     if time_left2 != 0:
         draw.text((0.7*width, 0.3*height), str(time_left2), font=font, fill=(255, 255, 255))
