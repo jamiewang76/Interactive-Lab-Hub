@@ -213,18 +213,24 @@ while True:
 
     if position2 >= 120:
         position2 = 120
+        encoder2.position = -120
     if position2 <= 1:
         position2 = 1
+        encoder2.position = -1
 
     if position3 >= 120:
         position3 = 120
+        encoder3.position = -120
     if position3 <= 1:
         position3 = 1
+        encoder3.position = -1
 
     if position4 >= 120:
         position4 = 120
+        encoder4.position = -120
     if position4 <= 1:
         position4 = 1
+        encoder4.position = -1
 
     
 
