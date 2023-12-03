@@ -68,6 +68,7 @@ time_left3 = 0
 time_left4 = 0
 set_timer1 = False
 timer1_started = False
+stop_event1 = threading.Event()
 
 draw = ImageDraw.Draw(image)
 # Draw a black filled box to clear the image.
@@ -157,12 +158,12 @@ pixel4.fill(0x00FF00)
 
 #     print("Time's up!")
 
-def countdown_timer1(timer_name, initial_time):
+def countdown_timer1(timer_name, initial_time, stop_event):
     global draw, image, disp
     global time_left1, time_left2, time_left3, time_left4
     height_var = 0.1
     rect_height = 0.1
-    while initial_time > 0:
+    while initial_time > 0 and not stop_event.is_set():
         # time_left = initial_time
         print(f"{timer_name}: {initial_time} seconds")
         time.sleep(1)
@@ -187,6 +188,8 @@ def countdown_timer1(timer_name, initial_time):
         # draw.rectangle((0.4*width, rect_height*height, width, 0.25*height), outline=0, fill=(0, 0, 0))
         # draw.text((0.5*width, height_var*height), str(initial_time), font=font, fill=(255, 255, 255))
         # disp.image(image, rotation)
+    if not stop_event.is_set():
+        print(f"{timer_name}: Time's up!")
 
     print(f"{timer_name}: Time's up!")
     msg_body = f"{timer_name} Done!"
@@ -323,11 +326,12 @@ while True:
             set_timer1 = False
             timer1_started = False
             encoder1.position = -1
+            stop_event1.set()
         if timer1_started == False and time_left1 == 0: 
             time_left1 = 1
             timer1_started = True
         if set_timer1 == True:
-            timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1))
+            timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1, stop_event1))
             timer_thread1.start()
 
     if button1.value and button_held1:
@@ -351,7 +355,7 @@ while True:
         if position2 <= 1:
             position2 = 1
         time2 = position2
-        timer_thread2 = threading.Thread(target=countdown_timer1, args=("Stove 2", time2))
+        timer_thread2 = threading.Thread(target=countdown_timer1, args=("Stove 2", time2, stop_event1))
         timer_thread2.start()
         button_held2 = True
         pixel2.brightness = 0.5
@@ -379,7 +383,7 @@ while True:
         if position3 <= 1:
             position3 = 1
         time3 = position3
-        timer_thread3 = threading.Thread(target=countdown_timer1, args=("Stove 3", time3))
+        timer_thread3 = threading.Thread(target=countdown_timer1, args=("Stove 3", time3, stop_event1))
         timer_thread3.start()
         pixel3.brightness = 0.5
         print("Button 3 pressed")
@@ -406,7 +410,7 @@ while True:
         if position4 <= 1:
             position4 = 1
         time4 = position4
-        timer_thread4 = threading.Thread(target=countdown_timer1, args=("Stove 4", time4))
+        timer_thread4 = threading.Thread(target=countdown_timer1, args=("Stove 4", time4, stop_event1))
         timer_thread4.start()
         pixel4.brightness = 0.5
         print("Button 4 pressed")
