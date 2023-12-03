@@ -209,7 +209,7 @@ while True:
         encoder1.position = -120
     if position1 <= 1:
         position1 = 1
-        encoder1.position = 1
+        encoder1.position = -1
 
     if position2 >= 120:
         position2 = 120
