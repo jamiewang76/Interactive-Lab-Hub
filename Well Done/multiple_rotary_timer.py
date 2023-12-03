@@ -252,7 +252,7 @@ while True:
         draw.text((0.3*width, 0.1*height), str(position1), font=font, fill=(255, 255, 255))
         draw.text((0.45*width, 0.1*height), " total", font=font, fill=(255, 255, 255))
     if set_timer1 == False:
-        draw.text((0.3*width, 0.1*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
+        draw.text((0.4*width, 0.1*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
     draw.text((0.3*width, 0.3*height), str(position2), font=font, fill=(255, 255, 255))
     draw.text((0.45*width, 0.3*height), " total", font=font, fill=(255, 255, 255))
     draw.text((0.3*width, 0.5*height), str(position3), font=font, fill=(255, 255, 255))
@@ -264,10 +264,11 @@ while True:
         draw.text((0.7*width, 0.1*height), str(time_left1), font=font, fill=(255, 255, 255))
         draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
     print("time_left 1 is " + str(time_left1))
-    if time_left1 == 0 and set_timer1 and timer1_started:
+    # if time_left1 == 0 and set_timer1 and timer1_started:
+    if time_left1 == 0 and set_timer1:
         print("this here")
         set_timer1 = False
-        timer1_started = False
+        # timer1_started = False
         draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
     if time_left2 != 0:
         draw.text((0.7*width, 0.3*height), str(time_left2), font=font, fill=(255, 255, 255))
@@ -311,7 +312,7 @@ while True:
         timer_thread1.start()
         button_held1 = True
         pixel1.brightness = 0.5
-        timer1_started = True
+        # timer1_started = True
         print("Button 1 pressed")
         if time_left1 == 0: 
             time_left1 = 1
