@@ -290,7 +290,7 @@ while True:
 
     if time_left1 != 0:
         if timer1_started:
-            draw.text((0.7*width, 0.1*height), str(time_left1), font=font, fill=(255, 255, 255))
+            draw.text((0.7*width, 0.1*height), str(time_left1), font=font, fill=(255, 103, 27))
             draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
         else:
             draw.text((0.85*width, 0.1*height), "", font=font, fill=(255, 255, 255))
@@ -299,7 +299,7 @@ while True:
             draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(27, 255, 155))
     if time_left2 != 0:
         if timer2_started:
-            draw.text((0.7*width, 0.3*height), str(time_left2), font=font, fill=(255, 255, 255))
+            draw.text((0.7*width, 0.3*height), str(time_left2), font=font, fill=(255, 103, 27))
             draw.text((0.85*width, 0.3*height), " left", font=font, fill=(255, 255, 255))
         else:
             draw.text((0.85*width, 0.3*height), "", font=font, fill=(255, 255, 255))
@@ -308,7 +308,7 @@ while True:
             draw.text((0.7*width, 0.3*height), "Done!", font=font, fill=(27, 255, 155))
     if time_left3 != 0:
         if timer3_started:
-            draw.text((0.7*width, 0.5*height), str(time_left3), font=font, fill=(255, 255, 255))
+            draw.text((0.7*width, 0.5*height), str(time_left3), font=font, fill=(255, 103, 27))
             draw.text((0.85*width, 0.5*height), " left", font=font, fill=(255, 255, 255))
         else:
             draw.text((0.85*width, 0.5*height), "", font=font, fill=(255, 255, 255))
@@ -317,7 +317,7 @@ while True:
             draw.text((0.7*width, 0.5*height), "Done!", font=font, fill=(27, 255, 155))
     if time_left4 != 0:
         if timer4_started:
-            draw.text((0.7*width, 0.7*height), str(time_left4), font=font, fill=(255, 255, 255))
+            draw.text((0.7*width, 0.7*height), str(time_left4), font=font, fill=(255, 103, 27))
             draw.text((0.85*width, 0.7*height), " left", font=font, fill=(255, 255, 255))
         else:
             draw.text((0.85*width, 0.7*height), "", font=font, fill=(255, 255, 255))
