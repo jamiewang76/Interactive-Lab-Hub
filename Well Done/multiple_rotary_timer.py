@@ -182,7 +182,7 @@ def countdown_timer1(timer_name, initial_time, stop_event):
             height_var = 0.1
             rect_height = 0
             time_left1 = initial_time
-            print("set initial time to time_left1")
+            # print("set initial time to time_left1")
         if timer_name == "Stove 2":
             height_var = 0.3
             rect_height = 0.26
@@ -267,20 +267,20 @@ while True:
     if set_timer1 == False:
         draw.text((0.32*width, 0.1*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
     if set_timer2:
-        draw.text((0.32*width, 0.1*height), str(position2), font=font, fill=(255, 255, 255))
-        draw.text((0.45*width, 0.1*height), " total", font=font, fill=(255, 255, 255))
+        draw.text((0.32*width, 0.3*height), str(position2), font=font, fill=(255, 255, 255))
+        draw.text((0.45*width, 0.3*height), " total", font=font, fill=(255, 255, 255))
     if set_timer2 == False:
-        draw.text((0.32*width, 0.1*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
+        draw.text((0.32*width, 0.3*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
     if set_timer3:
-        draw.text((0.32*width, 0.1*height), str(position3), font=font, fill=(255, 255, 255))
-        draw.text((0.45*width, 0.1*height), " total", font=font, fill=(255, 255, 255))
+        draw.text((0.32*width, 0.5*height), str(position3), font=font, fill=(255, 255, 255))
+        draw.text((0.45*width, 0.5*height), " total", font=font, fill=(255, 255, 255))
     if set_timer3 == False:
-        draw.text((0.32*width, 0.1*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
+        draw.text((0.32*width, 0.5*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
     if set_timer4:
-        draw.text((0.32*width, 0.1*height), str(position4), font=font, fill=(255, 255, 255))
-        draw.text((0.45*width, 0.1*height), " total", font=font, fill=(255, 255, 255))
+        draw.text((0.32*width, 0.7*height), str(position4), font=font, fill=(255, 255, 255))
+        draw.text((0.45*width, 0.7*height), " total", font=font, fill=(255, 255, 255))
     if set_timer4 == False:
-        draw.text((0.32*width, 0.1*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
+        draw.text((0.32*width, 0.7*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
     # draw.text((0.32*width, 0.3*height), str(position2), font=font, fill=(255, 255, 255))
     # draw.text((0.45*width, 0.3*height), " total", font=font, fill=(255, 255, 255))
     # draw.text((0.32*width, 0.5*height), str(position3), font=font, fill=(255, 255, 255))
@@ -299,31 +299,31 @@ while True:
             draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
     if time_left2 != 0:
         if timer2_started:
-            draw.text((0.7*width, 0.1*height), str(time_left2), font=font, fill=(255, 255, 255))
-            draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
+            draw.text((0.7*width, 0.3*height), str(time_left2), font=font, fill=(255, 255, 255))
+            draw.text((0.85*width, 0.3*height), " left", font=font, fill=(255, 255, 255))
         else:
-            draw.text((0.85*width, 0.1*height), "", font=font, fill=(255, 255, 255))
+            draw.text((0.85*width, 0.3*height), "", font=font, fill=(255, 255, 255))
     if time_left2 == 0:
         if timer2_started:
-            draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
+            draw.text((0.7*width, 0.3*height), "Done!", font=font, fill=(255, 255, 255))
     if time_left3 != 0:
         if timer3_started:
-            draw.text((0.7*width, 0.1*height), str(time_left3), font=font, fill=(255, 255, 255))
-            draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
+            draw.text((0.7*width, 0.5*height), str(time_left3), font=font, fill=(255, 255, 255))
+            draw.text((0.85*width, 0.5*height), " left", font=font, fill=(255, 255, 255))
         else:
-            draw.text((0.85*width, 0.1*height), "", font=font, fill=(255, 255, 255))
+            draw.text((0.85*width, 0.5*height), "", font=font, fill=(255, 255, 255))
     if time_left3 == 0:
         if timer3_started:
-            draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
+            draw.text((0.7*width, 0.5*height), "Done!", font=font, fill=(255, 255, 255))
     if time_left4 != 0:
         if timer4_started:
-            draw.text((0.7*width, 0.1*height), str(time_left4), font=font, fill=(255, 255, 255))
-            draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
+            draw.text((0.7*width, 0.7*height), str(time_left4), font=font, fill=(255, 255, 255))
+            draw.text((0.85*width, 0.7*height), " left", font=font, fill=(255, 255, 255))
         else:
-            draw.text((0.85*width, 0.1*height), "", font=font, fill=(255, 255, 255))
+            draw.text((0.85*width, 0.7*height), "", font=font, fill=(255, 255, 255))
     if time_left4 == 0:
         if timer4_started:
-            draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
+            draw.text((0.7*width, 0.7*height), "Done!", font=font, fill=(255, 255, 255))
 
 
 
