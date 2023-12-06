@@ -415,7 +415,7 @@ while True:
             encoder2.position = -1
             # stop_event1.set()
         if set_timer2 == True:
-            timer_thread2 = threading.Thread(target=countdown_timer1, args=("Stove 2", time1, stop_event1))
+            timer_thread2 = threading.Thread(target=countdown_timer1, args=("Stove 2", time2, stop_event1))
             timer_thread2.start()
             time_left2 = time2
             timer2_started = True
