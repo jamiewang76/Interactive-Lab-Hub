@@ -92,10 +92,10 @@ backlight.switch_to_output()
 backlight.value = True
 
 #Init all stove timer
-draw.text((0.02*width, 0.1*height), "Stove 1", font=font, fill=(255, 255, 255))
-draw.text((0.02*width, 0.3*height), "Stove 2", font=font, fill=(255, 255, 255))
-draw.text((0.02*width, 0.5*height), "Stove 3", font=font, fill=(255, 255, 255))
-draw.text((0.02*width, 0.7*height), "Stove 4", font=font, fill=(255, 255, 255))
+draw.text((0.02*width, 0.1*height), "Stove 1", font=font, fill=(255, 103, 27))
+draw.text((0.02*width, 0.3*height), "Stove 2", font=font, fill=(255, 103, 27))
+draw.text((0.02*width, 0.5*height), "Stove 3", font=font, fill=(255, 103, 27))
+draw.text((0.02*width, 0.7*height), "Stove 4", font=font, fill=(255, 103, 27))
 disp.image(image, rotation)
 
 
