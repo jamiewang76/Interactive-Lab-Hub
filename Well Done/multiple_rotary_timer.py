@@ -66,8 +66,17 @@ time_left1 = 0
 time_left2 = 0
 time_left3 = 0
 time_left4 = 0
+
 set_timer1 = False
+set_timer2 = False
+set_timer3 = False
+set_timer4 = False
+
 timer1_started = False
+timer2_started = False
+timer3_started = False
+timer4_started = False
+
 stop_event1 = threading.Event()
 
 draw = ImageDraw.Draw(image)
@@ -257,12 +266,27 @@ while True:
         draw.text((0.45*width, 0.1*height), " total", font=font, fill=(255, 255, 255))
     if set_timer1 == False:
         draw.text((0.32*width, 0.1*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
-    draw.text((0.32*width, 0.3*height), str(position2), font=font, fill=(255, 255, 255))
-    draw.text((0.45*width, 0.3*height), " total", font=font, fill=(255, 255, 255))
-    draw.text((0.32*width, 0.5*height), str(position3), font=font, fill=(255, 255, 255))
-    draw.text((0.45*width, 0.5*height), " total", font=font, fill=(255, 255, 255))
-    draw.text((0.32*width, 0.7*height), str(position4), font=font, fill=(255, 255, 255))
-    draw.text((0.45*width, 0.7*height), " total", font=font, fill=(255, 255, 255))
+    if set_timer2:
+        draw.text((0.32*width, 0.1*height), str(position2), font=font, fill=(255, 255, 255))
+        draw.text((0.45*width, 0.1*height), " total", font=font, fill=(255, 255, 255))
+    if set_timer2 == False:
+        draw.text((0.32*width, 0.1*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
+    if set_timer3:
+        draw.text((0.32*width, 0.1*height), str(position3), font=font, fill=(255, 255, 255))
+        draw.text((0.45*width, 0.1*height), " total", font=font, fill=(255, 255, 255))
+    if set_timer3 == False:
+        draw.text((0.32*width, 0.1*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
+    if set_timer4:
+        draw.text((0.32*width, 0.1*height), str(position4), font=font, fill=(255, 255, 255))
+        draw.text((0.45*width, 0.1*height), " total", font=font, fill=(255, 255, 255))
+    if set_timer4 == False:
+        draw.text((0.32*width, 0.1*height), str("Twist to set timer"), font=font, fill=(255, 255, 255))
+    # draw.text((0.32*width, 0.3*height), str(position2), font=font, fill=(255, 255, 255))
+    # draw.text((0.45*width, 0.3*height), " total", font=font, fill=(255, 255, 255))
+    # draw.text((0.32*width, 0.5*height), str(position3), font=font, fill=(255, 255, 255))
+    # draw.text((0.45*width, 0.5*height), " total", font=font, fill=(255, 255, 255))
+    # draw.text((0.32*width, 0.7*height), str(position4), font=font, fill=(255, 255, 255))
+    # draw.text((0.45*width, 0.7*height), " total", font=font, fill=(255, 255, 255))
 
     if time_left1 != 0:
         if timer1_started:
@@ -273,18 +297,45 @@ while True:
     if time_left1 == 0:
         if timer1_started:
             draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
-
-
-
     if time_left2 != 0:
-        draw.text((0.7*width, 0.3*height), str(time_left2), font=font, fill=(255, 255, 255))
-        draw.text((0.85*width, 0.3*height), " left", font=font, fill=(255, 255, 255))
+        if timer2_started:
+            draw.text((0.7*width, 0.1*height), str(time_left2), font=font, fill=(255, 255, 255))
+            draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
+        else:
+            draw.text((0.85*width, 0.1*height), "", font=font, fill=(255, 255, 255))
+    if time_left2 == 0:
+        if timer2_started:
+            draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
     if time_left3 != 0:
-        draw.text((0.7*width, 0.5*height), str(time_left3), font=font, fill=(255, 255, 255))
-        draw.text((0.85*width, 0.5*height), " left", font=font, fill=(255, 255, 255))
+        if timer3_started:
+            draw.text((0.7*width, 0.1*height), str(time_left3), font=font, fill=(255, 255, 255))
+            draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
+        else:
+            draw.text((0.85*width, 0.1*height), "", font=font, fill=(255, 255, 255))
+    if time_left3 == 0:
+        if timer3_started:
+            draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
     if time_left4 != 0:
-        draw.text((0.7*width, 0.7*height), str(time_left4), font=font, fill=(255, 255, 255))
-        draw.text((0.85*width, 0.7*height), " left", font=font, fill=(255, 255, 255))
+        if timer4_started:
+            draw.text((0.7*width, 0.1*height), str(time_left4), font=font, fill=(255, 255, 255))
+            draw.text((0.85*width, 0.1*height), " left", font=font, fill=(255, 255, 255))
+        else:
+            draw.text((0.85*width, 0.1*height), "", font=font, fill=(255, 255, 255))
+    if time_left4 == 0:
+        if timer4_started:
+            draw.text((0.7*width, 0.1*height), "Done!", font=font, fill=(255, 255, 255))
+
+
+
+    # if time_left2 != 0:
+    #     draw.text((0.7*width, 0.3*height), str(time_left2), font=font, fill=(255, 255, 255))
+    #     draw.text((0.85*width, 0.3*height), " left", font=font, fill=(255, 255, 255))
+    # if time_left3 != 0:
+    #     draw.text((0.7*width, 0.5*height), str(time_left3), font=font, fill=(255, 255, 255))
+    #     draw.text((0.85*width, 0.5*height), " left", font=font, fill=(255, 255, 255))
+    # if time_left4 != 0:
+    #     draw.text((0.7*width, 0.7*height), str(time_left4), font=font, fill=(255, 255, 255))
+    #     draw.text((0.85*width, 0.7*height), " left", font=font, fill=(255, 255, 255))
     disp.image(image, rotation)
 
     print("time_left is " + str(time_left1) + ", set_timer1 is " + str(set_timer1) + ", timer1_started is " + str(timer1_started))
@@ -316,14 +367,8 @@ while True:
         if position1 <= 1:
             position1 = 1
         time1 = position1
-        # if set_timer1 == True:
-        #     timer_thread1 = threading.Thread(target=countdown_timer1, args=("Stove 1", time1))
-        #     timer_thread1.start()
         button_held1 = True
         pixel1.brightness = 0.5
-        # timer1_started = True
-        # if time_left1 == 0 and timer1_started:
-        #     timer1_started = False
         print("Button 1 pressed")
         
         if timer1_started and time_left1 == 0:
@@ -349,6 +394,8 @@ while True:
         if position2 <= 1:
             position2 = 1
         print("Position 2: {}".format(position2))
+        if set_timer2 == False and position2 != 1:
+            set_timer2 = True
         # draw.text((0.4*width, 0.3*height), str(position2), font=font, fill=(255, 255, 255))
         # disp.image(image, rotation)
 
@@ -358,11 +405,20 @@ while True:
         if position2 <= 1:
             position2 = 1
         time2 = position2
-        timer_thread2 = threading.Thread(target=countdown_timer1, args=("Stove 2", time2, stop_event1))
-        timer_thread2.start()
         button_held2 = True
         pixel2.brightness = 0.5
         print("Button 2 pressed")
+        
+        if timer2_started and time_left2 == 0:
+            set_timer2 = False
+            timer2_started = False
+            encoder2.position = -1
+            # stop_event1.set()
+        if set_timer2 == True:
+            timer_thread2 = threading.Thread(target=countdown_timer1, args=("Stove 2", time1, stop_event1))
+            timer_thread2.start()
+            time_left2 = time2
+            timer2_started = True
 
     if button2.value and button_held2:
         button_held2 = False
@@ -376,20 +432,31 @@ while True:
         if position3 <= 1:
             position3 = 1
         print("Position 3: {}".format(position3))
+        if set_timer3 == False and position3 != 1:
+            set_timer3 = True
         # draw.text((0.4*width, 0.5*height), str(position3), font=font, fill=(255, 255, 255))
         # disp.image(image, rotation)
 
-    if not button3.value and not button_held2:
-        button_held3 = True
+    if not button3.value and not button_held3:
         if position3 >= 120:
             position3 = 120
         if position3 <= 1:
             position3 = 1
         time3 = position3
-        timer_thread3 = threading.Thread(target=countdown_timer1, args=("Stove 3", time3, stop_event1))
-        timer_thread3.start()
+        button_held3 = True
         pixel3.brightness = 0.5
         print("Button 3 pressed")
+        
+        if timer3_started and time_left3 == 0:
+            set_timer3 = False
+            timer3_started = False
+            encoder3.position = -1
+            # stop_event1.set()
+        if set_timer3 == True:
+            timer_thread3 = threading.Thread(target=countdown_timer1, args=("Stove 3", time3, stop_event1))
+            timer_thread3.start()
+            time_left3 = time3
+            timer3_started = True
         
     if button3.value and button_held3:
         button_held3 = False
@@ -403,28 +470,31 @@ while True:
         if position4 <= 1:
             position4 = 1
         print("Position 4: {}".format(position4))
+        if set_timer4 == False and position4 != 1:
+            set_timer4 = True
         # draw.text((0.4*width, 0.7*height), str(position4), font=font, fill=(255, 255, 255))
         # disp.image(image, rotation)
 
     if not button4.value and not button_held4:
-        button_held4 = True
         if position4 >= 120:
             position4 = 120
         if position4 <= 1:
             position4 = 1
         time4 = position4
-        timer_thread4 = threading.Thread(target=countdown_timer1, args=("Stove 4", time4, stop_event1))
-        timer_thread4.start()
+        button_held4 = True
         pixel4.brightness = 0.5
         print("Button 4 pressed")
-        # msg_body = "Stove 4 Done!"
-        # request = { "messages" : [ { "source":"rpi", "from":msg_from, "to":msg_to, "body":msg_body } ] } 
-        # request = json.dumps(request) 
-        # cmd = "curl https://rest.clicksend.com/v3/sms/send -u " + username + ":" + api_key + " -H \"Content-Type: application/json\" -X POST --data-raw '" + request + "'" 
-        # p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True) 
-        # (output,err) = p.communicate() 
-        # print 
-        # output
+        
+        if timer4_started and time_left4 == 0:
+            set_timer4 = False
+            timer4_started = False
+            encoder4.position = -1
+            # stop_event1.set()
+        if set_timer4 == True:
+            timer_thread4 = threading.Thread(target=countdown_timer1, args=("Stove 4", time4, stop_event1))
+            timer_thread4.start()
+            time_left4 = time4
+            timer4_started = True
         
 
     if button4.value and button_held4:
