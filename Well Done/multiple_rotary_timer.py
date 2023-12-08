@@ -108,8 +108,8 @@ draw.text((0.01*width, 0.7*height), "Stove 4", font=font, fill=(255, 103, 27))
 disp.image(image, rotation)
 
 
-qt_enc1 = seesaw.Seesaw(i2c, addr=0x36)  # 1
-qt_enc2 = seesaw.Seesaw(i2c, addr=0x3C)  # 2
+qt_enc1 = seesaw.Seesaw(i2c, addr=0x3C)  # 1
+qt_enc2 = seesaw.Seesaw(i2c, addr=0x36)  # 2
 qt_enc3 = seesaw.Seesaw(i2c, addr=0x3A)  # 3
 qt_enc4 = seesaw.Seesaw(i2c, addr=0x38)  # 4
 
