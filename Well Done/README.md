@@ -1,6 +1,7 @@
 # Final Project - Well Done
 
-Using the tools and techniques you learned in this class, design, prototype and test an interactive device.
+Jamie Wang zw448<br>
+Yunfei Jiao yj497
 
 ## Project plan
 
