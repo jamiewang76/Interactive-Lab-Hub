@@ -4,27 +4,27 @@ Using the tools and techniques you learned in this class, design, prototype and 
 
 ## Project plan
 
-Big Idea: The user can set timers,by physical knobs,to control multiple stoves to turn on, turn off, or adjust power<br>
+### Big Idea
+The user can set timers,by physical knobs,to control multiple stoves to turn on, turn off, or adjust power<br>
 
-Specific Application: A control panel comprising four rotary encoders or joysticks and some LED signal lights is used to set time for individual stove’s action such as turning on, off, or changing power level. To physically rotate the stove knobs, we want to provide the option of remotely controlling a servo motor to do the job for the user.<br>
+### Specific Application
+A control panel comprising four rotary encoders or joysticks and some LED signal lights is used to set time for individual stove’s action such as turning on, off, or changing power level. To physically rotate the stove knobs, we want to provide the option of remotely controlling a servo motor to do the job for the user.<br>
 
-Well Done is a stove add-on system that offers an individual timer for each stove to save users from the trouble of keeping track of the cooking time themselves.<br>
-
-Timeline: <br>
+### Timeline
 Nov 14: Set proposal<br>
 Nov 21: Scout for suitable rotary encoders, buttons,  joystick, and LED signal lights. Envision its final appearance on actual stove<br>
 Nov 28 & 30: Code timer-setting program and alert-sending system with MQTT<br>
 Dec 5 & 7: Design and produce costumes for “Well Done”. <br>
 Dec 14: User-testing and finish write-up<br>
 
-Expected Challenges:<br>
+### Expected Challenges
 May not find four rotary encoders<br>
 Servo motor may not be powerful enough to turn the knob and if it could do precise turns<br>
 Fall-back plan: <br>
 use joysticks as substitute for rotary encoders<br>
 Discard the remote knob-turning feature<br>
 
-Contribution Overview:<br>
+### Contribution Overview
 Together: Scout resources, design costumes<br>
 Jamie: Develop timer-setting program and alert-sending system<br>
 Fei: Develop LED feedback program and produce costume<br>
@@ -76,7 +76,7 @@ Connected all parts to MiniPi TFT screen with jumpers as following:<br>
 
 <img width="513" alt="Screen Shot 2023-12-09 at 6 27 59 PM" src="https://github.com/jamiewang76/Interactive-Lab-Hub/assets/57398429/0a77c947-ef30-4ce3-bd90-068e5c7c8e3e">
 
-#### Final Product
+#### Final Product Video
 
 [![Well Done Video](https://github.com/jamiewang76/Interactive-Lab-Hub/blob/Fall2023/Well%20Done/Screen%20Shot%202023-12-09%20at%206.15.57%20PM.png)](https://drive.google.com/file/d/1V_nF6uEfMx32FJ5AoiEJPgi34Yzn_owL/view?usp=sharing)
 
