@@ -111,12 +111,12 @@ Challenges in 3D printing and fixing the rotary encoder to the board emphasized 
 ## Team Contribution
 
 ### Jamie
-Timer logic programming
-Laser Cut
-Device Design
-Hardware assembly
+Timer logic programming<br>
+Laser Cut<br>
+Device Design<br>
+Hardware assembly<br>
 ### Yunfei
-Timer logic programming
-Laser Cut
-Device Design
-Hardware assembly
+Timer logic programming<br>
+Laser Cut<br>
+Device Design<br>
+Hardware assembly<br>
