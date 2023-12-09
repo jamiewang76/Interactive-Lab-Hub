@@ -5,7 +5,7 @@
 # solder the A0 jumper on the second QT Rotary Encoder board
 username = 'ziyingwang76@gmail.com' # Your ClickSend username 
 api_key = '0592FD37-2D0D-150E-7A56-000E6821998B' # Your Secure Unique API key 
-msg_to = '+18585319576' # Recipient Mobile Number in international format (+61411111111 test number). 
+msg_to = '+19178259760' # Recipient Mobile Number in international format (+61411111111 test number). 
 msg_from = '' # Custom sender ID (leave blank to accept replies). 
 msg_body = 'This message is from PI' # The message to be sent. 
 
